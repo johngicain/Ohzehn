@@ -1,12 +1,89 @@
-
-
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   class="section section--{{ section.settings.section_width }} spacing-style {% if section.settings.color_scheme != blank %}color-{{ section.settings.color_scheme }}{% endif %}"
-  style="{% render 'spacing-padding', settings: section.settings %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    {% if section.settings.background_media == 'image' %}
+      {% if section.settings.background_image_height == 'custom' %}
+        --section-min-height: {{ section.settings.background_image_height_custom }}svh;
+      {% elsif section.settings.background_image_height == 'full-screen' %}
+        --section-min-height: 100svh;
+      {% elsif section.settings.background_image_height != blank %}
+        --section-min-height: var(--section-height-{{ section.settings.background_image_height }});
+      {% endif %}
+      {% if section.settings.background_image_height != blank %}
+        --section-preview-height: 600px;
+      {% endif %}
+    {% endif %}
+  "
 >
-  {{ section.settings.custom_liquid }}
+  <div class="custom-section-background">
+    {% render 'background-media',
+      background_media: section.settings.background_media,
+      background_image: section.settings.background_image,
+      background_image_position: section.settings.background_image_position,
+      section: section
+    %}
+  </div>
+  {% if section.settings.logo_image != blank %}
+    <div
+      class="custom-liquid-logo custom-liquid-logo--align-{{ section.settings.logo_image_alignment }}"
+      style="
+        --custom-liquid-logo-max-width: {{ section.settings.logo_image_width }}%;
+        --custom-liquid-logo-max-width-mobile: {% if section.settings.logo_image_custom_mobile_width %}{{ section.settings.logo_image_width_mobile }}{% else %}{{ section.settings.logo_image_width }}{% endif %}%;
+      "
+    >
+      {{
+        section.settings.logo_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          class: 'custom-liquid-logo__img',
+          widths: '240, 352, 480, 720, 960, 1200',
+          sizes: '(min-width: 750px) min(720px, 100vw), 100vw',
+          alt: section.settings.logo_image.alt | default: shop.name | escape
+      }}
+    </div>
+  {% endif %} 
+  <div class="custom-section-content">
+    {{ section.settings.custom_liquid }}
+  </div>
 </div>
+
+{% stylesheet %}
+  .custom-liquid-logo {
+    display: flex;
+    width: 100%;
+    margin-block-end: var(--gap-md, 1rem);
+    position: relative;
+    z-index: var(--layer-flat);
+  }
+
+  .custom-liquid-logo--align-left {
+    justify-content: flex-start;
+  }
+
+  .custom-liquid-logo--align-center {
+    justify-content: center;
+  }
+
+  .custom-liquid-logo--align-right {
+    justify-content: flex-end;
+  }
+
+  .custom-liquid-logo__img {
+    width: auto;
+    height: auto;
+    max-width: min(var(--custom-liquid-logo-max-width-mobile, 100%), 100%);
+    object-fit: contain;
+  }
+
+  @media screen and (min-width: 750px) {
+    .custom-liquid-logo__img {
+      max-width: min(var(--custom-liquid-logo-max-width, 100%), 100%);
+    }
+  } 
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -39,6 +116,149 @@
         }
       ],
       "default": "page-width"
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "select",
+      "id": "background_media",
+      "label": "t:settings.background_media",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "image",
+          "label": "t:options.image"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:settings.image",
+      "visible_if": "{{ section.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "background_image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        {
+          "value": "cover",
+          "label": "t:options.cover"
+        },
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        }
+      ],
+      "default": "cover",
+      "visible_if": "{{ section.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "background_image_height",
+      "label": "t:settings.height",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "small",
+          "label": "t:options.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:options.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.large"
+        },
+        {
+          "value": "full-screen",
+          "label": "t:options.full_screen"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "",
+      "visible_if": "{{ section.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "background_image_height_custom",
+      "label": "t:settings.custom_height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "%",
+      "visible_if": "{{ section.settings.background_media == 'image' and section.settings.background_image_height == 'custom' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "t:settings.logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_image_width",
+      "label": "t:settings.width",
+      "min": 5,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_image_custom_mobile_width",
+      "label": "t:settings.custom_mobile_width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "logo_image_width_mobile",
+      "label": "t:settings.width_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ section.settings.logo_image_custom_mobile_width }}"
+    },
+    {
+      "type": "select",
+      "id": "logo_image_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "center"
     },
     {
       "type": "header",
