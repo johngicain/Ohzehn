@@ -382,7 +382,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Designed for your body — not just performance     We’ve engineered an alternative to synthetic activewear    Because what  you were to be healthy; should also make you healthierLess Plastic. More Human.    Move Freely. With Style & Intention.</p>",
+            "text": "<p><strong>Designed for your body</strong> <strong>— not just performance</strong>     We’ve engineered an alternative to synthetic activewear    <em>Because what  you were to be healthy; </em>should also make you healthierLess Plastic. <strong>More Human.    Move Freely. With Style & Intention.</strong></p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
