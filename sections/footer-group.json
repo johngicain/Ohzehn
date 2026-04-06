@@ -172,7 +172,10 @@
         "footer_copyright_jweRK8": {
           "type": "footer-copyright",
           "settings": {
+            "show_copyright_line": true,
             "show_powered_by": false,
+            "text_before": "",
+            "text_after": "All Rights Reserved",
             "font_size": "0.75rem",
             "case": "none"
           },
