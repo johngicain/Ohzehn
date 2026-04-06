@@ -445,17 +445,6 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
-    },
-    "custom_liquid_MDBR9V": {
-      "type": "custom-liquid",
-      "name": "t:names.custom_liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"klaviyo-form-Wc5wmY\"></div>",
-        "color_scheme": "",
-        "section_width": "page-width",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
     }
   },
   "order": [
@@ -463,7 +452,6 @@
     "product_list_fa6P9H",
     "hero_7wAtrx",
     "custom_liquid_X8jXnP",
-    "section_PcjipH",
-    "custom_liquid_MDBR9V"
+    "section_PcjipH"
   ]
 }
