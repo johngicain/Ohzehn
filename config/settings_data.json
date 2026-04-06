@@ -244,8 +244,8 @@
       "scheme-5": {
         "settings": {
           "background": "#202020",
-          "foreground_heading": "#ffffff",
-          "foreground": "#ffffff",
+          "foreground_heading": "#797871",
+          "foreground": "#797871",
           "primary": "#ffffff",
           "primary_hover": "#ffffffb0",
           "border": "#ffffffb0",
