@@ -69,6 +69,10 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -94,6 +98,10 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -164,7 +172,7 @@
         "footer_copyright_jweRK8": {
           "type": "footer-copyright",
           "settings": {
-            "show_powered_by": true,
+            "show_powered_by": false,
             "font_size": "0.75rem",
             "case": "none"
           },
