@@ -312,6 +312,38 @@
     },
     {
       "type": "header",
+      "content": "Bold and italic"
+    },
+    {
+      "type": "checkbox",
+      "id": "strong_color_enable",
+      "label": "Custom bold color",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "strong_color",
+      "label": "Bold color",
+      "alpha": true,
+      "default": "#000000",
+      "visible_if": "{{ block.settings.strong_color_enable }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "em_color_enable",
+      "label": "Custom italic color",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "em_color",
+      "label": "Italic color",
+      "alpha": true,
+      "default": "#000000",
+      "visible_if": "{{ block.settings.em_color_enable }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.appearance"
     },
     {

@@ -67,6 +67,12 @@
       --text-corner-radius: {{ block_settings.corner_radius }}px;
       --text-padding: max(var(--padding-2xs), calc((var(--text-corner-radius) + var(--padding-xs)) * (1 - cos(45deg))));
     {% endif %}
+    {% if block_settings.strong_color_enable %}
+      --text-strong-color: {{ block_settings.strong_color }};
+    {% endif %}
+    {% if block_settings.em_color_enable %}
+      --text-em-color: {{ block_settings.em_color }};
+    {% endif %}
   "
 
   {{ block.shopify_attributes }}
@@ -216,5 +222,13 @@
   .custom-color,
   .custom-color > :is(h1, h2, h3, h4, h5, h6, p, *) {
     color: var(--color);
+  }
+
+  .text-block strong {
+    color: var(--text-strong-color);
+  }
+
+  .text-block em {
+    color: var(--text-em-color);
   }
 {% endstylesheet %}
