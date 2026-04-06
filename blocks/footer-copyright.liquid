@@ -1,5 +1,8 @@
-
-{% assign block_settings = block.settings %}
+{% liquid
+  assign block_settings = block.settings
+  assign text_before = block_settings.text_before | strip
+  assign text_after = block_settings.text_after | strip
+%}
 <div
   class="
     footer-utilities__group-copyright
@@ -9,14 +12,33 @@
   style="{% render 'typography-style', preset: 'custom', settings: block_settings %}"
   {{ block.shopify_attributes }}
 >
+  {%- if text_before != blank -%}
+    <span class="footer-utilities__text">{{ text_before | escape }}</span>
+  {%- endif -%}
   <span class="footer-utilities__text">
-    &copy; {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url -}}
-    {%- if block_settings.show_powered_by -%}
+    {%- if block_settings.show_copyright_line -%}
+      &copy; {{ 'now' | date: '%Y' }}
+      {{ shop.name | link_to: routes.root_url -}}
+    {%- endif -%}
+    {%- if block_settings.show_copyright_line and block_settings.show_powered_by -%}
       , {{ powered_by_link }}
+    {%- elsif block_settings.show_powered_by -%}
+      {{ powered_by_link }}
     {%- endif -%}
   </span>
+  {%- if text_after != blank -%}
+    <span class="footer-utilities__text">{{ text_after | escape }}</span>
+  {%- endif -%}
 </div>
+
+{% stylesheet %}
+  .footer-utilities__group-copyright {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25em 0.5em;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -25,13 +47,34 @@
   "settings": [
     {
       "type": "checkbox",
+      "id": "show_copyright_line",
+      "label": "t:settings.show_copyright_line",
+      "default": true
+    },
+    {
+      "type": "checkbox",
       "id": "show_powered_by",
       "label": "t:settings.show_powered_by_shopify",
       "default": true
     },
     {
       "type": "paragraph",
-      "content": "t:content.manage_store_name"
+      "content": "t:content.manage_store_name",
+      "visible_if": "{{ block.settings.show_copyright_line }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.copyright_additional_text"
+    },
+    {
+      "type": "text",
+      "id": "text_before",
+      "label": "t:settings.copyright_text_before"
+    },
+    {
+      "type": "text",
+      "id": "text_after",
+      "label": "t:settings.copyright_text_after"
     },
     {
       "type": "select",
