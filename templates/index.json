@@ -28,6 +28,10 @@
             "case": "none",
             "wrap": "pretty",
             "color": "var(--color-foreground-heading)",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -390,6 +394,10 @@
             "case": "none",
             "wrap": "pretty",
             "color": "var(--color-foreground)",
+            "strong_color_enable": true,
+            "strong_color": "#5e5d59",
+            "em_color_enable": true,
+            "em_color": "#6f6e69",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -427,6 +435,11 @@
       "block_order": [
         "text_cgtfzA",
         "image_86NFf3"
+      ],
+      "custom_css": [
+        "p {font-weight: 600;}",
+        "strong,em {font-weight: 600;}",
+        "em {font-style: normal;}"
       ],
       "name": "t:names.rich_text_section",
       "settings": {
