@@ -493,28 +493,6 @@
         "padding-block-end": 40
       }
     },
-    "custom_liquid_X8jXnP": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:names.custom_liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"klaviyo-form-Wc5wmY\"></div>",
-        "color_scheme": "",
-        "section_width": "page-width",
-        "background_media": "image",
-        "background_image": "shopify://shop_images/banner-early-access.png",
-        "background_image_position": "cover",
-        "background_image_height": "medium",
-        "background_image_height_custom": 50,
-        "logo_image": "shopify://shop_images/ohzehn-logo-white.png",
-        "logo_image_width": 5,
-        "logo_image_custom_mobile_width": true,
-        "logo_image_width_mobile": 10,
-        "logo_image_alignment": "center",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "section_PcjipH": {
       "type": "section",
       "blocks": {
@@ -609,13 +587,35 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "custom_liquid_X8jXnP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-Wc5wmY\"></div>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "background_media": "image",
+        "background_image": "shopify://shop_images/banner-early-access.png",
+        "background_image_position": "cover",
+        "background_image_height": "medium",
+        "background_image_height_custom": 50,
+        "logo_image": "shopify://shop_images/ohzehn-logo-white.png",
+        "logo_image_width": 5,
+        "logo_image_custom_mobile_width": true,
+        "logo_image_width_mobile": 10,
+        "logo_image_alignment": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
     "hero_7wAtrx",
-    "custom_liquid_X8jXnP",
-    "section_PcjipH"
+    "section_PcjipH",
+    "custom_liquid_X8jXnP"
   ]
 }
