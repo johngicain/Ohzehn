@@ -35,10 +35,10 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-00d3d18c-2f3e-4486-a1cf-a547733b4cf3",
         "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 10,
+        "padding-block-end": 10
       }
     },
     "header_section": {
