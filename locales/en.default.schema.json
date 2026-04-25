@@ -234,7 +234,8 @@
     "video_autoplay": "Videos will be muted by default",
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
-    "media_type_info": "Features are populated from your menu links"
+    "media_type_info": "Features are populated from your menu links",
+    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media."
   },
   "names": {
     "column": "Column",
@@ -970,6 +971,7 @@
     "mobile_logo_image": "Mobile logo",
     "mobile_pagination": "Mobile pagination",
     "mobile_quick_add": "Mobile quick add",
+    "multicolumn_layout": "Multicolumn layout",
     "motion": "Motion",
     "motion_direction": "Motion direction",
     "movement_direction": "Movement direction",

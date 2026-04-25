@@ -29,12 +29,22 @@
   "
 >
   <div class="custom-section-background">
+    {% liquid
+      assign bg_media = section.settings.background_media
+      assign bg_image = section.settings.background_image
+      assign bg_image_position = section.settings.background_image_position
+      if section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank
+        assign bg_media = 'image'
+        assign bg_image = section.settings.multicolumn_background_image
+        assign bg_image_position = section.settings.multicolumn_background_image_position
+      endif
+    %}
     {% render 'background-media',
-      background_media: section.settings.background_media,
+      background_media: bg_media,
       background_video: section.settings.video,
       background_video_position: section.settings.video_position,
-      background_image: section.settings.background_image,
-      background_image_position: section.settings.background_image_position
+      background_image: bg_image,
+      background_image_position: bg_image_position
     %}
   </div>
 
