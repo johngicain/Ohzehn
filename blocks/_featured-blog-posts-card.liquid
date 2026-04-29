@@ -28,9 +28,8 @@
 {% capture image %}
   {% content_for 'block',
     id: 'image',
-    type: '_featured-blog-posts-image',
-    image: article.image,
-    parent_block_id: block.id
+    type: '_blog-post-featured-image',
+    closest.article: article
   %}
 {% endcapture %}
 

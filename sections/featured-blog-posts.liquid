@@ -2,6 +2,8 @@
 
 {% liquid
   assign max_items = section.settings.post_limit
+  assign blog_post_tags = section.settings.blog_post_tags | strip
+  assign blog_post_tags_array = blog_post_tags | split: ','
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -19,29 +21,83 @@
     {%- render 'spacing-style', settings: section.settings -%}
     {%- render 'gap-style', value: section.settings.gap -%}
   "
+  data-featured-blog-posts-section="{{ section.id }}"
 >
-  {% content_for 'block', id: 'static-blog-title', type: '_featured-blog-posts-title' %}
+  {% content_for 'block', id: 'static-blog-title', type: 'text', text: '<h3>{{ closest.blog.title }}</h3>', type_preset: 'rte' %}
 
   {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
-    {% paginate section.settings.blog.articles by max_items %}
-      {% assign section_articles = section.settings.blog.articles %}
-    {% endpaginate %}
+    {% assign section_articles = section.settings.blog.articles %}
+    {% assign onboarding_mode = false %}
   {% else %}
     {% assign section_articles = '' %}
+    {% assign onboarding_mode = true %}
     {% for i in (1..max_items) %}
       {% assign section_articles = section_articles | append: ', ' %}
     {% endfor %}
     {% assign section_articles = section_articles | split: ',' %}
   {% endif %}
 
+  {% if blog_post_tags != blank and onboarding_mode == false %}
+    <div class="featured-blog-posts__filters" data-featured-blog-posts-filters>
+      <button
+        type="button"
+        class="featured-blog-posts__filter-button is-active"
+        data-featured-blog-posts-filter="all"
+      >
+        All
+      </button>
+      {% for tag in blog_post_tags_array %}
+        {% assign tag_label = tag | strip %}
+        {% if tag_label != blank %}
+          <button
+            type="button"
+            class="featured-blog-posts__filter-button"
+            data-featured-blog-posts-filter="{{ tag_label | downcase | escape }}"
+          >
+            {{ tag_label | escape }}
+          </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% assign rendered_items = 0 %}
   {% capture list_items %}
-    {% for article in section_articles limit: max_items %}
-      <div class="resource-list__item">
-        {% content_for 'block', id: 'static-blog-post-card', type: '_featured-blog-posts-card', article: article, closest.article: article %}
-      </div>
-      {% unless forloop.last %}
-        <!--@list/split-->
-      {% endunless %}
+    {% for article in section_articles %}
+      {% assign should_render_article = true %}
+      {% if onboarding_mode == false and blog_post_tags != blank %}
+        {% assign should_render_article = false %}
+        {% assign article_tags = article.tags | join: '||' | downcase %}
+        {% assign article_tags = '||' | append: article_tags | append: '||' %}
+
+        {% for tag in blog_post_tags_array %}
+          {% assign normalized_tag = tag | strip | downcase %}
+          {% if normalized_tag != blank %}
+            {% assign search_tag = '||' | append: normalized_tag | append: '||' %}
+            {% if article_tags contains search_tag %}
+              {% assign should_render_article = true %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if should_render_article %}
+        <div
+          class="resource-list__item"
+          data-blog-post-tags="{% if onboarding_mode == false %}{{ article.tags | join: ',' | downcase | escape }}{% endif %}"
+        >
+          {% content_for 'block', id: 'static-blog-post-card', type: '_featured-blog-posts-card', article: article, closest.article: article %}
+        </div>
+        {% assign rendered_items = rendered_items | plus: 1 %}
+        {% if rendered_items < max_items %}
+          <!--@list/split-->
+        {% endif %}
+      {% endif %}
+
+      {% if rendered_items >= max_items %}
+        {% break %}
+      {% endif %}
     {% endfor %}
   {% endcapture %}
 
@@ -54,11 +110,95 @@
     list_items_array: list_items_array,
     settings: section.settings,
     carousel_ref: 'featuredBlog',
-    slide_count: max_items,
+    slide_count: rendered_items,
     content_type: 'articles',
     test_id: 'featured-blog-posts'
   %}
 </div>
+
+{% if blog_post_tags != blank and onboarding_mode == false %}
+  <style>
+    [data-featured-blog-posts-section='{{ section.id }}'] .featured-blog-posts__filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    [data-featured-blog-posts-section='{{ section.id }}'] .featured-blog-posts__filter-button {
+      border: none;
+      background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+      color: inherit;
+      padding: 7px 12px;
+      border-radius: 1rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    [data-featured-blog-posts-section='{{ section.id }}'] .featured-blog-posts__filter-button.is-active,
+    [data-featured-blog-posts-section='{{ section.id }}'] .featured-blog-posts__filter-button:hover {
+      color: #ffffff;
+      background: var(--color-foreground);
+    }
+
+    [data-featured-blog-posts-section='{{ section.id }}'] .resource-list__item {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.2s ease;
+    }
+
+    [data-featured-blog-posts-section='{{ section.id }}'] .resource-list__item.is-filter-hidden {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    (() => {
+      const section = document.querySelector("[data-featured-blog-posts-section='{{ section.id }}']");
+      if (!section) return;
+      const buttons = Array.from(section.querySelectorAll('[data-featured-blog-posts-filter]'));
+      const items = Array.from(section.querySelectorAll('.resource-list__item'));
+      if (!buttons.length || !items.length) return;
+      const applyFilter = (filterTag) => {
+        items.forEach((item) => {
+          if (filterTag === 'all') {
+            item.hidden = false;
+            item.classList.remove('is-filter-hidden');
+            return;
+          }
+          const itemTags = (item.getAttribute('data-blog-post-tags') || '')
+            .split(',')
+            .map((tag) => tag.trim().toLowerCase())
+            .filter(Boolean);
+          if (itemTags.includes(filterTag)) {
+            item.hidden = false;
+            item.classList.remove('is-filter-hidden');
+            return;
+          }
+          item.classList.add('is-filter-hidden');
+          window.setTimeout(() => {
+            if (item.classList.contains('is-filter-hidden')) item.hidden = true;
+          }, 200);
+        });
+      };
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const filterTag = button.getAttribute('data-featured-blog-posts-filter') || 'all';
+          buttons.forEach((filterButton) => filterButton.classList.remove('is-active'));
+          button.classList.add('is-active');
+          applyFilter(filterTag);
+        });
+      });
+      applyFilter('all');
+    })();
+  </script>
+{% endif %}
 
 {% schema %}
 {
@@ -70,13 +210,13 @@
   "class": "featured-blog-posts",
   "blocks": [
     {
-      "type": "_featured-blog-posts-title"
+      "type": "text"
     },
     {
       "type": "_featured-blog-posts-card"
     },
     {
-      "type": "_featured-blog-posts-image"
+      "type": "_blog-post-featured-image"
     }
   ],
   "settings": [
@@ -124,6 +264,12 @@
       "max": 10,
       "step": 1,
       "default": 3
+    },
+    {
+      "type": "text",
+      "id": "blog_post_tags",
+      "label": "Blog-post tags",
+      "info": "Use comma-separated tags to filter posts. Example: featured, update"
     },
     {
       "type": "range",
@@ -313,7 +459,7 @@
       "category": "t:categories.storytelling",
       "blocks": {
         "static-blog-title": {
-          "type": "_featured-blog-posts-title",
+          "type": "text",
           "name": "t:names.title",
           "static": true,
           "settings": {
@@ -361,6 +507,7 @@
       "settings": {
         "layout_type": "carousel",
         "post_limit": 5,
+        "blog_post_tags": "",
         "columns": 3,
         "columns_gap": 8,
         "mobile_card_size": "60cqw",
@@ -376,7 +523,7 @@
       "category": "t:categories.storytelling",
       "blocks": {
         "static-blog-title": {
-          "type": "_featured-blog-posts-title",
+          "type": "text",
           "name": "t:names.title",
           "static": true,
           "settings": {
@@ -424,6 +571,7 @@
       "settings": {
         "layout_type": "grid",
         "carousel_on_mobile": false,
+        "blog_post_tags": "",
         "columns": 3,
         "mobile_columns": "2",
         "columns_gap": 8,
@@ -438,7 +586,7 @@
       "category": "t:categories.storytelling",
       "blocks": {
         "static-blog-title": {
-          "type": "_featured-blog-posts-title",
+          "type": "text",
           "name": "t:names.title",
           "static": true,
           "settings": {
@@ -486,6 +634,7 @@
       "settings": {
         "layout_type": "editorial",
         "carousel_on_mobile": false,
+        "blog_post_tags": "",
         "gap": 64,
         "padding-block-start": 48,
         "padding-block-end": 48

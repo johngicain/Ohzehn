@@ -27,20 +27,22 @@
     {% render 'border-override', settings: block_settings %}
   {%- endcapture -%}
 
-  {{
-    image
-    | image_url: width: 3840
-    | image_tag:
-      width: image.width,
-      widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
-      height: image.height,
-      class: 'blog-post-featured-image__image border-style',
-      style: image_border_style,
-      sizes: 'auto, (min-width: 750px) 100vw, 100vw',
-      loading: 'eager',
-      fetchpriority: 'high',
-      alt: image.alt
-  }}
+  {% if image != blank %}
+    {{
+      image
+      | image_url: width: 3840
+      | image_tag:
+        width: image.width,
+        widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+        height: image.height,
+        class: 'blog-post-featured-image__image border-style',
+        style: image_border_style,
+        sizes: 'auto, (min-width: 750px) 100vw, 100vw',
+        loading: 'eager',
+        fetchpriority: 'high',
+        alt: image.alt
+    }}
+  {% endif %}
 </div>
 
 {% stylesheet %}
