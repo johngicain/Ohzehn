@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -24,6 +25,7 @@
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
+            "thumbnail_radius": 0,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": true,
             "media_fit": "contain",
@@ -70,7 +72,6 @@
               "type": "group",
               "name": "Header",
               "settings": {
-                "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -98,6 +99,9 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -120,6 +124,10 @@
                     "case": "none",
                     "wrap": "pretty",
                     "color": "",
+                    "strong_color_enable": false,
+                    "strong_color": "#000000",
+                    "em_color_enable": false,
+                    "em_color": "#000000",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -183,11 +191,16 @@
               },
               "blocks": {}
             },
+            "appstle_subscription_appstle_subscription_product_page_widget_K9a6wB": {
+              "type": "shopify://apps/appstle-subscription/blocks/appstle-subscription-product-page-widget/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+              "settings": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
                 "stacking": true,
                 "show_pickup_availability": false,
+                "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -233,6 +246,10 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -248,6 +265,7 @@
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
+            "appstle_subscription_appstle_subscription_product_page_widget_K9a6wB",
             "buy_buttons_eYQEYi",
             "text_aEtTtq"
           ]
@@ -259,6 +277,7 @@
         "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
+        "enable_sticky_add_to_cart": true,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -283,6 +302,10 @@
             "case": "none",
             "wrap": "pretty",
             "color": "",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
