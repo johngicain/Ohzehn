@@ -265,6 +265,66 @@
       "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
     },
     {
+      "type": "header",
+      "content": "t:content.padding",
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_wrapper_padding_top",
+      "label": "t:settings.padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_wrapper_padding_bottom",
+      "label": "t:settings.padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_wrapper_padding_left",
+      "label": "t:settings.left_padding",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_wrapper_padding_right",
+      "label": "t:settings.right_padding",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_wrapper_border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout }}"
+    },
+    {
       "type": "select",
       "id": "background_media",
       "label": "t:settings.background_media",
@@ -1681,6 +1741,11 @@
         "section_height": "",
         "color_scheme": "",
         "multicolumn_layout": true,
+        "multicolumn_wrapper_padding_top": 0,
+        "multicolumn_wrapper_padding_bottom": 0,
+        "multicolumn_wrapper_padding_left": 0,
+        "multicolumn_wrapper_padding_right": 0,
+        "multicolumn_wrapper_border_radius": 0,
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",

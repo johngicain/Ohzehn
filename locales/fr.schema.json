@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "names": {
     "404": "404",
@@ -395,6 +386,7 @@
     "mobile_logo_image": "Logo sur mobile",
     "mobile_quick_add": "Ajout rapide sur mobile",
     "motion_direction": "Direction du mouvement",
+    "multicolumn_layout": "Multicolumn layout",
     "motion": "Mouvement",
     "movement_direction": "Direction du mouvement",
     "navigation_bar_color_scheme": "Combinaison de couleurs de la barre de navigation",
@@ -405,6 +397,8 @@
     "overlay": "Superposition",
     "padding_bottom": "Espacement inférieur",
     "padding_horizontal": "Espacement horizontal",
+    "padding_left": "Padding left",
+    "padding_right": "Padding right",
     "padding_top": "Espacement supérieur",
     "page_width": "Largeur de la page",
     "pagination": "Pagination",
@@ -1100,6 +1094,7 @@
     "applies_on_image_only": "S’applique uniquement aux images",
     "hover_effects": "S’applique aux cartes de produit et de collection",
     "hide_logo_on_home_page_help": "Le logo restera visible lorsque l’en-tête fixe est actif",
+    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "media_type_info": "Les fonctionnalités sont renseignées à partir des liens de votre menu",
     "logo_height": "Affecte uniquement le logo de l’en-tête",
     "actions_display_style": "Les icônes sont toujours utilisées sur mobile"
