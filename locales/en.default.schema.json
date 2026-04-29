@@ -784,6 +784,7 @@
     "blur": "Shadow blur",
     "blurred_reflection": "Blurred reflection",
     "border": "Border",
+    "border_color": "Border color",
     "border_opacity": "Border opacity",
     "border_radius": "Corner radius",
     "border_style": "Border style",
