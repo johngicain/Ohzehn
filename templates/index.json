@@ -3109,7 +3109,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3200,7 +3200,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3291,7 +3291,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3382,7 +3382,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3473,7 +3473,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3564,7 +3564,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3655,7 +3655,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3746,7 +3746,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 80,
+                    "padding-block-end": 100,
                     "padding-inline-start": 40,
                     "padding-inline-end": 40
                   },
@@ -3926,6 +3926,7 @@
         "carousel_on_mobile": true,
         "post_limit": 4,
         "blog_post_tags": "science, guides, coming soon, vs them",
+        "show_featured_image_border": false,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
