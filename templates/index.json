@@ -3850,9 +3850,9 @@
               "name": "t:names.title",
               "static": true,
               "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "0.75rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -3872,6 +3872,7 @@
             "blog-post-info-text": {
               "type": "_blog-post-info-text",
               "name": "t:names.details",
+              "disabled": true,
               "static": true,
               "settings": {
                 "show_date": true,
@@ -3889,15 +3890,15 @@
               "name": "t:names.excerpt",
               "static": true,
               "settings": {
-                "type_preset": "rte",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "0.625rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 8,
+                "padding-block-start": 0,
                 "padding-block-end": 0
               },
               "blocks": {}
