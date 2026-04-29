@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -397,7 +406,6 @@
     "mobile_logo_image": "Mobil logosu",
     "mobile_quick_add": "Mobilde hızlı ekleme",
     "motion_direction": "Hareket yönü",
-    "multicolumn_layout": "Multicolumn layout",
     "motion": "Hareket",
     "movement_direction": "Hareket yönü",
     "navigation_bar_color_scheme": "Gezinme çubuğu renk şeması",
@@ -408,8 +416,6 @@
     "overlay": "Kaplama",
     "padding_bottom": "Alt iç boşluk",
     "padding_horizontal": "Yatay iç boşluk",
-    "padding_left": "Padding left",
-    "padding_right": "Padding right",
     "padding_top": "Üst iç boşluk",
     "page_width": "Sayfa genişliği",
     "pagination": "Sayfalara ayırma",
@@ -1094,7 +1100,6 @@
     "hover_effects": "Ürün ve koleksiyon kartları için geçerlidir",
     "pills_usage": "Uygulanan filtreler, indirim kodları ve arama önerileri için kullanılır",
     "hide_logo_on_home_page_help": "Yapışkan üstbilgi etkinken logo görünür kalır",
-    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "media_type_info": "Özellikler, menü bağlantılarınız kullanılarak oluşturulur",
     "logo_height": "Yalnızca üstbilgi logosunu etkiler",
     "actions_display_style": "Mobilde her zaman simgeler kullanılır"

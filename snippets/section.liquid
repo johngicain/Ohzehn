@@ -5,19 +5,6 @@
   @param {string} children - The children of the section
 {%- enddoc -%}
 
-{% if section.settings.multicolumn_layout %}
-  <style>
-    #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.multicolumn_wrapper_padding_top | default: 0 }}px;
-      padding-bottom: {{ section.settings.multicolumn_wrapper_padding_bottom | default: 0 }}px;
-      padding-left: {{ section.settings.multicolumn_wrapper_padding_left | default: 0 }}px;
-      padding-right: {{ section.settings.multicolumn_wrapper_padding_right | default: 0 }}px;
-      border-radius: {{ section.settings.multicolumn_wrapper_border_radius | default: 0 }}px;
-      overflow: hidden;
-    }
-  </style>
-{% endif %}
-
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"

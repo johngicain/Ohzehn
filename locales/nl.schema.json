@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -399,7 +408,6 @@
     "mobile_height": "Hoogte op mobiel",
     "mobile_quick_add": "Snelle toevoeging op mobiel",
     "motion_direction": "Bewegingsrichting",
-    "multicolumn_layout": "Multicolumn layout",
     "motion": "Beweging",
     "movement_direction": "Bewegingsrichting",
     "navigation_bar_color_scheme": "Kleurenschema navigatiebalk",
@@ -410,8 +418,6 @@
     "overlay": "Overlay",
     "padding_bottom": "Padding onder",
     "padding_horizontal": "Horizontale padding",
-    "padding_left": "Padding left",
-    "padding_right": "Padding right",
     "padding_top": "Padding boven",
     "page_width": "Paginabreedte",
     "pagination": "Paginering",
@@ -1094,7 +1100,6 @@
     "applies_on_image_only": "Alleen van toepassing op afbeeldingen",
     "hover_effects": "Van toepassing op product- en collectiekaarten",
     "hide_logo_on_home_page_help": "Logo blijft zichtbaar wanneer de vaste koptekst actief is",
-    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "media_type_info": "Functies worden gevuld vanuit je menulinks",
     "logo_height": "Alleen van invloed op het koptekstlogo",
     "actions_display_style": "Op mobiel worden altijd pictogrammen gebruikt"

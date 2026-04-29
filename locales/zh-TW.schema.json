@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -389,7 +398,6 @@
     "mobile_height": "行動版高度",
     "mobile_quick_add": "行動版快速加入",
     "motion_direction": "動態方向",
-    "multicolumn_layout": "Multicolumn layout",
     "motion": "動態",
     "movement_direction": "移動方向",
     "navigation_bar_color_scheme": "導覽列顏色配置",
@@ -400,8 +408,6 @@
     "overlay": "疊加層",
     "padding_bottom": "下方內距",
     "padding_horizontal": "水平內距",
-    "padding_left": "Padding left",
-    "padding_right": "Padding right",
     "padding_top": "上方內距",
     "page_width": "頁面寬度",
     "pagination": "分頁",
@@ -1094,7 +1100,6 @@
     "applies_on_image_only": "僅適用於圖片",
     "hover_effects": "適用於產品卡片與商品系列卡片",
     "hide_logo_on_home_page_help": "啟用固定頁首時，標誌仍會顯示",
-    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "media_type_info": "功能會根據您的選單連結自動帶入",
     "logo_height": "僅影響頁首標誌",
     "actions_display_style": "在行動裝置上一律使用圖示"

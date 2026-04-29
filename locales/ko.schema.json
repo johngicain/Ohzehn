@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -383,7 +392,6 @@
     "mobile_logo_image": "모바일 로고",
     "mobile_quick_add": "모바일 빠른 추가",
     "motion_direction": "모션 방향",
-    "multicolumn_layout": "Multicolumn layout",
     "motion": "모션",
     "movement_direction": "이동 방향",
     "navigation_bar_color_scheme": "탐색 모음 색상 구성표",
@@ -394,8 +402,6 @@
     "overlay": "오버레이",
     "padding_bottom": "아래쪽 패딩",
     "padding_horizontal": "가로 패딩",
-    "padding_left": "Padding left",
-    "padding_right": "Padding right",
     "padding_top": "위쪽 패딩",
     "page_width": "페이지 너비",
     "pagination": "페이지 매김",
@@ -1094,7 +1100,6 @@
     "hover_effects": "제품 및 컬렉션 카드에 적용됩니다",
     "pills_usage": "적용된 필터, 할인 코드, 검색 제안에 사용됩니다",
     "hide_logo_on_home_page_help": "고정 머리글이 활성화되면 로고가 계속 표시됩니다",
-    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "media_type_info": "기능은 메뉴 링크에서 가져옵니다.",
     "logo_height": "머리글 로고에만 적용됩니다.",
     "actions_display_style": "모바일에서는 항상 아이콘이 사용됩니다."

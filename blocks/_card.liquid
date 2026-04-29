@@ -10,9 +10,6 @@
   class="card{% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}"
   ref="slides[]"
   data-carousel-card
-  {% if block_settings.toggle_border %}
-    style="--border-style: solid; --border-width: {{ block_settings.border_width }}px; --border-radius: {{ block_settings.border_radius }}px; --border-color: {{ block_settings.border_color }};"
-  {% endif %}
   {{ block.shopify_attributes }}
 >
   {%- if block_settings.link != blank and block_settings.background_media != 'video' -%}
@@ -117,7 +114,7 @@
     border-radius: var(--border-radius, 0);
     border-width: var(--border-width, 0);
     border-style: var(--border-style, none);
-    border-color: var(--border-color, transparent);
+    border-color: var(--border-color);
     container-type: inline-size;
   }
 
@@ -361,46 +358,6 @@
       "label": "t:settings.color_scheme",
       "default": "scheme-1",
       "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.borders"
-    },
-    {
-      "type": "checkbox",
-      "id": "toggle_border",
-      "label": "t:settings.border",
-      "default": false
-    },
-    {
-      "type": "color",
-      "id": "border_color",
-      "label": "t:settings.color",
-      "alpha": true,
-      "default": "#00000026",
-      "visible_if": "{{ block.settings.toggle_border }}"
-    },
-    {
-      "type": "range",
-      "id": "border_radius",
-      "label": "t:settings.border_radius",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.toggle_border }}"
-    },
-    {
-      "type": "range",
-      "id": "border_width",
-      "label": "t:settings.border_width",
-      "min": 0,
-      "max": 10,
-      "step": 0.5,
-      "unit": "px",
-      "default": 1,
-      "visible_if": "{{ block.settings.toggle_border }}"
     },
     {
       "type": "select",
