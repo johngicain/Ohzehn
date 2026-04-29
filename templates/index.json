@@ -3788,11 +3788,10 @@
       "type": "featured-blog-posts",
       "blocks": {
         "static-blog-title": {
-          "type": "_featured-blog-posts-title",
-          "name": "t:names.title",
+          "type": "text",
           "static": true,
           "settings": {
-            "text": "<p><strong>WAIT THERE’S MORE…</strong></p>",
+            "text": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -3804,6 +3803,10 @@
             "case": "none",
             "wrap": "pretty",
             "color": "var(--color-foreground)",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -3834,14 +3837,23 @@
           },
           "blocks": {
             "image": {
-              "type": "_featured-blog-posts-image",
+              "type": "_blog-post-featured-image",
               "static": true,
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -3913,6 +3925,7 @@
         "layout_type": "grid",
         "carousel_on_mobile": true,
         "post_limit": 4,
+        "blog_post_tags": "science, guides, coming soon, vs them",
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
