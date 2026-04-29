@@ -3791,7 +3791,7 @@
           "type": "text",
           "static": true,
           "settings": {
-            "text": "",
+            "text": "<p><strong>WAIT THERE’S MORE…</strong></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
