@@ -116,6 +116,14 @@
   %}
 </div>
 
+{% if section.settings.show_featured_image_border %}
+  <style>
+    [data-featured-blog-posts-section='{{ section.id }}'] .blog-post-featured-image__image {
+      border: 1px solid rgb(var(--color-foreground-rgb) / 0.2);
+    }
+  </style>
+{% endif %}
+
 {% if blog_post_tags != blank and onboarding_mode == false %}
   <style>
     [data-featured-blog-posts-section='{{ section.id }}'] .featured-blog-posts__filters {
@@ -270,6 +278,12 @@
       "id": "blog_post_tags",
       "label": "Blog-post tags",
       "info": "Use comma-separated tags to filter posts. Example: featured, update"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image_border",
+      "label": "Show featured image border",
+      "default": false
     },
     {
       "type": "range",
@@ -508,6 +522,7 @@
         "layout_type": "carousel",
         "post_limit": 5,
         "blog_post_tags": "",
+        "show_featured_image_border": false,
         "columns": 3,
         "columns_gap": 8,
         "mobile_card_size": "60cqw",
@@ -572,6 +587,7 @@
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "blog_post_tags": "",
+        "show_featured_image_border": false,
         "columns": 3,
         "mobile_columns": "2",
         "columns_gap": 8,
@@ -635,6 +651,7 @@
         "layout_type": "editorial",
         "carousel_on_mobile": false,
         "blog_post_tags": "",
+        "show_featured_image_border": false,
         "gap": 64,
         "padding-block-start": 48,
         "padding-block-end": 48
