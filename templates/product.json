@@ -12,6 +12,21 @@
     "main": {
       "type": "product-information",
       "blocks": {
+        "tabs_studio_product_tabs_block_LatH7X": {
+          "type": "shopify://apps/tabs-studio/blocks/product_tabs_block/19980fb9-f2ca-4ada-ad36-c0364c3318b8",
+          "settings": {
+            "default_tab": "app",
+            "start_tab_element": "app",
+            "default_tab_title": "Description",
+            "layout": "app",
+            "layout_breakpoint": 750,
+            "open_first_tab": true,
+            "allow_multiple_open": false,
+            "pro_tabs": true,
+            "initialize_tabs": "immediate",
+            "custom_scripts": ""
+          }
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -233,6 +248,7 @@
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
+              "disabled": true,
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
@@ -271,6 +287,9 @@
           ]
         }
       },
+      "block_order": [
+        "tabs_studio_product_tabs_block_LatH7X"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
