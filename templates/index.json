@@ -661,7 +661,7 @@
                 "product_card_gallery_nHW9eY": {
                   "type": "_product-card-gallery",
                   "settings": {
-                    "image_ratio": "adapt",
+                    "image_ratio": "semi_portrait",
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
@@ -798,7 +798,7 @@
                 "product_card_gallery_XPtza9": {
                   "type": "_product-card-gallery",
                   "settings": {
-                    "image_ratio": "adapt",
+                    "image_ratio": "semi_portrait",
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
@@ -975,7 +975,7 @@
                 "product_card_gallery_inrqPh": {
                   "type": "_product-card-gallery",
                   "settings": {
-                    "image_ratio": "adapt",
+                    "image_ratio": "semi_portrait",
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
@@ -1112,7 +1112,7 @@
                 "product_card_gallery_gUnKeB": {
                   "type": "_product-card-gallery",
                   "settings": {
-                    "image_ratio": "adapt",
+                    "image_ratio": "semi_portrait",
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
@@ -3979,13 +3979,13 @@
           "name": "t:names.accordion",
           "settings": {
             "icon": "caret",
-            "dividers": true,
+            "dividers": false,
             "width_compress": true,
             "width_compress_max": "normal",
             "type_preset": "h4",
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "show_border": true,
+            "show_border": false,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
