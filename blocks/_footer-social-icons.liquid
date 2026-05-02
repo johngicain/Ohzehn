@@ -1,13 +1,57 @@
 
+{% liquid
+  assign block_settings = block.settings
+  assign width_behavior_mobile = block_settings.social_icons_width_behavior_mobile | default: 'fill'
+  assign width_behavior_desktop = block_settings.social_icons_width_behavior_desktop | default: 'fill'
+  assign custom_width_mobile = block_settings.social_icons_custom_width_mobile | default: 100
+  assign custom_width_desktop = block_settings.social_icons_custom_width_desktop | default: 100
+%}
 
 <div
-  class="social-icons__wrapper"
+  class="footer-social-icons-width-wrap footer-social-icons-width-wrap--mobile-{{ width_behavior_mobile }} footer-social-icons-width-wrap--desktop-{{ width_behavior_desktop }}"
+  style="--footer-social-icons-custom-mobile: {{ custom_width_mobile }}%; --footer-social-icons-custom-desktop: {{ custom_width_desktop }}%;"
   {{ block.shopify_attributes }}
 >
-  {% content_for 'blocks' %}
+  <div class="social-icons__wrapper">
+    {% content_for 'blocks' %}
+  </div>
 </div>
 
 {% stylesheet %}
+  .footer-social-icons-width-wrap {
+    max-width: 100%;
+  }
+
+  .footer-social-icons-width-wrap--mobile-fill {
+    width: 100%;
+  }
+
+  .footer-social-icons-width-wrap--mobile-fit {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .footer-social-icons-width-wrap--mobile-custom {
+    width: var(--footer-social-icons-custom-mobile, 100%);
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer-social-icons-width-wrap--desktop-fill {
+      width: 100%;
+    }
+
+    .footer-social-icons-width-wrap--desktop-fit {
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .footer-social-icons-width-wrap--desktop-custom {
+      width: var(--footer-social-icons-custom-desktop, 100%);
+      max-width: 100%;
+    }
+  }
+
   .social-icons__wrapper {
     display: flex;
     gap: var(--gap-sm);
@@ -25,6 +69,74 @@
 {
   "name": "t:names.social_media_links",
   "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.social_icons_block_width"
+    },
+    {
+      "type": "select",
+      "id": "social_icons_width_behavior_desktop",
+      "label": "t:settings.width_desktop",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "social_icons_custom_width_desktop",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.social_icons_width_behavior_desktop == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "social_icons_width_behavior_mobile",
+      "label": "t:settings.width_mobile",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "social_icons_custom_width_mobile",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.social_icons_width_behavior_mobile == 'custom' }}"
+    }
+  ],
   "blocks": [
     {
       "type": "_social-link"

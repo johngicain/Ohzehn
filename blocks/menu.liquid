@@ -33,9 +33,21 @@
   endif
   assign menu_details_desktop_align = block_settings.menu_details_alignment_desktop | default: 'start'
   assign menu_details_class = menu_details_class | append: ' menu__details--desktop-align-' | append: menu_details_desktop_align
+  assign menu_element_width_behavior_mobile = block_settings.menu_element_width_behavior_mobile | default: 'fill'
+  assign menu_element_width_behavior_desktop = block_settings.menu_element_width_behavior_desktop | default: 'fill'
+  assign menu_element_custom_width_mobile = block_settings.menu_element_custom_width_mobile | default: 100
+  assign menu_element_custom_width_desktop = block_settings.menu_element_custom_width_desktop | default: 100
+  assign menu_list_class = 'list-unstyled menu__list'
+  if block_settings.menu_direction == 'horizontal'
+    assign menu_list_class = menu_list_class | append: ' menu__list--horizontal'
+  endif
 %}
 
 {% if menu != blank or heading != blank %}
+  <div
+    class="menu-width-wrap menu-width-wrap--mobile-{{ menu_element_width_behavior_mobile }} menu-width-wrap--desktop-{{ menu_element_width_behavior_desktop }}"
+    style="--menu-element-custom-mobile: {{ menu_element_custom_width_mobile }}%; --menu-element-custom-desktop: {{ menu_element_custom_width_desktop }}%;"
+  >
   {%- liquid
     assign menu_class = 'menu'
     if show_as_accordion == true
@@ -44,6 +56,8 @@
     if dividers_enabled == true
       assign menu_class = menu_class | append: ' menu--dividers'
     endif
+    assign menu_class = menu_class | append: ' menu--width-mobile-' | append: menu_element_width_behavior_mobile
+    assign menu_class = menu_class | append: ' menu--width-desktop-' | append: menu_element_width_behavior_desktop
     assign should_disable_on_mobile = false
     assign should_open_by_default_on_mobile = false
     if show_as_accordion == false
@@ -61,6 +75,7 @@
       data-testid="menu-details"
       style="
         --spacing--size: {{ block_settings.menu_spacing }}px;
+        --spacing--size-desktop: {{ block_settings.menu_spacing_desktop }}px;
         {% render 'spacing-style', settings: block_settings %}
       "
       {% if show_as_accordion == false %}
@@ -91,7 +106,7 @@
         {% endif %}
       >
         {% if menu %}
-          <ul class="list-unstyled">
+          <ul class="{{ menu_list_class }}">
             {% for link in menu.links %}
               <li class="menu__item {{ block_settings.link_preset }}">
                 <a href="{{ link.url }}">
@@ -112,14 +127,74 @@
     disable_on_mobile: should_disable_on_mobile,
     open_by_default_on_mobile: should_open_by_default_on_mobile
   %}
+  </div>
 {% endif %}
 
 {% stylesheet %}
-  .menu {
+  .menu-width-wrap {
+    max-width: 100%;
+  }
+
+  .menu-width-wrap--mobile-fill {
     width: 100%;
   }
 
+  .menu-width-wrap--mobile-fit {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .menu-width-wrap--mobile-custom {
+    width: var(--menu-element-custom-mobile, 100%);
+    max-width: 100%;
+  }
+
+  .menu.menu--width-mobile-fill {
+    width: 100%;
+  }
+
+  .menu.menu--width-mobile-fit {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .menu.menu--width-mobile-custom {
+    width: var(--menu-element-custom-mobile, 100%);
+    max-width: 100%;
+  }
+
   @media screen and (min-width: 750px) {
+    .menu.menu--width-desktop-fill {
+      width: 100%;
+    }
+
+    .menu.menu--width-desktop-fit {
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .menu.menu--width-desktop-custom {
+      width: var(--menu-element-custom-desktop, 100%);
+      max-width: 100%;
+    }
+
+    .menu-width-wrap--desktop-fill {
+      width: 100%;
+    }
+
+    .menu-width-wrap--desktop-fit {
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .menu-width-wrap--desktop-custom {
+      width: var(--menu-element-custom-desktop, 100%);
+      max-width: 100%;
+    }
+    .menu .menu__details.spacing-style {
+      --spacing--size: var(--spacing--size-desktop);
+    }
+
     .menu__details--hide-heading-desktop.spacing-style {
       padding-block-start: 0;
     }
@@ -154,8 +229,21 @@
     margin-block-start: var(--spacing--size);
   }
 
+  .menu__list--horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: var(--spacing--size);
+    row-gap: var(--spacing--size);
+  }
+
   .menu__item + .menu__item {
     margin-block-start: var(--spacing--size);
+  }
+
+  .menu__list--horizontal .menu__item + .menu__item {
+    margin-block-start: 0;
   }
 
   .menu .menu__heading--empty {
@@ -237,6 +325,92 @@
     },
     {
       "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "menu_direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "t:options.vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "t:options.horizontal"
+        }
+      ],
+      "default": "vertical"
+    },
+    {
+      "type": "header",
+      "content": "t:content.menu_block_width"
+    },
+    {
+      "type": "select",
+      "id": "menu_element_width_behavior_desktop",
+      "label": "t:settings.width_desktop",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "menu_element_custom_width_desktop",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.menu_element_width_behavior_desktop == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "menu_element_width_behavior_mobile",
+      "label": "t:settings.width_mobile",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "menu_element_custom_width_mobile",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.menu_element_width_behavior_mobile == 'custom' }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.desktop_alignment"
     },
     {
@@ -258,6 +432,20 @@
         }
       ],
       "default": "start"
+    },
+    {
+      "type": "header",
+      "content": "t:content.desktop_size"
+    },
+    {
+      "type": "range",
+      "id": "menu_spacing_desktop",
+      "label": "t:settings.vertical_gap_desktop",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 12
     },
     {
       "type": "header",

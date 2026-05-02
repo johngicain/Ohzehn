@@ -1,7 +1,12 @@
-
-
+{% liquid
+  assign social_icons_width_behavior_desktop = block.settings.social_icons_width_behavior_desktop | default: 'fill'
+  assign social_icons_width_behavior_mobile = block.settings.social_icons_width_behavior_mobile | default: 'fill'
+  assign social_icons_custom_width_desktop = block.settings.social_icons_custom_width_desktop | default: 100
+  assign social_icons_custom_width_mobile = block.settings.social_icons_custom_width_mobile | default: 100
+%}
 <div
-  class="social-icons__wrapper"
+  class="social-icons__wrapper social-icons__wrapper--width-mobile-{{ social_icons_width_behavior_mobile }} social-icons__wrapper--width-desktop-{{ social_icons_width_behavior_desktop }}"
+  style="--social-icons-custom-mobile: {{ social_icons_custom_width_mobile }}%; --social-icons-custom-desktop: {{ social_icons_custom_width_desktop }}%;"
   {{ block.shopify_attributes }}
 >
   {% liquid
@@ -108,6 +113,20 @@
 </div>
 
 {% stylesheet %}
+  .social-icons__wrapper--width-mobile-fill {
+    width: 100%;
+  }
+
+  .social-icons__wrapper--width-mobile-fit {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .social-icons__wrapper--width-mobile-custom {
+    width: var(--social-icons-custom-mobile, 100%);
+    max-width: 100%;
+  }
+
   .social-icons__wrapper {
     display: flex;
     gap: var(--gap-sm);
@@ -117,6 +136,22 @@
     @media screen and (min-width: 750px) {
       flex-wrap: nowrap;
       justify-content: flex-start;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .social-icons__wrapper--width-desktop-fill {
+      width: 100%;
+    }
+
+    .social-icons__wrapper--width-desktop-fit {
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .social-icons__wrapper--width-desktop-custom {
+      width: var(--social-icons-custom-desktop, 100%);
+      max-width: 100%;
     }
   }
 
@@ -166,6 +201,72 @@
   "name": "t:names.social_media_links",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "t:content.social_icons_block_width"
+    },
+    {
+      "type": "select",
+      "id": "social_icons_width_behavior_desktop",
+      "label": "t:settings.width_desktop",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "social_icons_custom_width_desktop",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.social_icons_width_behavior_desktop == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "social_icons_width_behavior_mobile",
+      "label": "t:settings.width_mobile",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "social_icons_custom_width_mobile",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.social_icons_width_behavior_mobile == 'custom' }}"
+    },
     {
       "type": "url",
       "id": "facebook_url",
