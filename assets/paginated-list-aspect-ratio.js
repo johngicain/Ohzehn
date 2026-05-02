@@ -32,7 +32,13 @@ export class PaginatedListAspectRatioHelper {
     if (!Shopify.designMode) return;
     // Wait for the DOM to update
     requestAnimationFrame(() => {
-      this.#imageRatioSetting === 'adapt' ? this.#fixAdaptiveAspectRatios() : this.#applyFixedAspectRatio();
+      if (this.#imageRatioSetting === 'adapt') {
+        this.#fixAdaptiveAspectRatios();
+      } else if (this.#imageRatioSetting === 'semi_portrait') {
+        this.#applySemiPortraitFixedHeight();
+      } else {
+        this.#applyFixedAspectRatio();
+      }
     });
   }
 
@@ -93,6 +99,27 @@ export class PaginatedListAspectRatioHelper {
    * Apply a fixed aspect ratio to all card-gallery and media container elements
    * Only used for non-adaptive modes (square, portrait, landscape)
    */
+  #applySemiPortraitFixedHeight() {
+    const newCardGalleries = this.#getUnprocessedGalleries();
+    if (!newCardGalleries.length) return;
+
+    requestAnimationFrame(() => {
+      newCardGalleries.forEach((gallery) => {
+        if (!(gallery instanceof HTMLElement)) return;
+        gallery.style.setProperty('--gallery-aspect-ratio', 'auto');
+        const mediaContainers = gallery.querySelectorAll('.product-media-container');
+        mediaContainers.forEach((container) => {
+          if (container instanceof HTMLElement) {
+            container.style.aspectRatio = 'auto';
+            container.style.height = '425px';
+            container.style.maxHeight = 'none';
+          }
+        });
+        this.#markAsProcessed(gallery);
+      });
+    });
+  }
+
   #applyFixedAspectRatio() {
     if (!this.#imageRatioSetting) return;
 

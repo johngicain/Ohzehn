@@ -51,6 +51,8 @@
       assign ratio = '4 / 5'
     when 'square'
       assign ratio = '1'
+    when 'semi_portrait'
+      assign ratio = 'auto'
     when 'adapt'
       assign ratio = product.featured_media.preview_image.aspect_ratio | default: '1'
   endcase
@@ -207,6 +209,14 @@
     overflow: hidden;
     container-type: inline-size; /* Make card-gallery a container */
     container-name: card-gallery-container; /* Optional: name the container */
+  }
+
+  .card-gallery[data-image-ratio='semi_portrait'] .product-media-container,
+  .card-gallery[data-image-ratio='semi_portrait'] .product-card-gallery__title-placeholder,
+  .card-gallery[data-image-ratio='semi_portrait'] .card-gallery__placeholder {
+    aspect-ratio: auto;
+    height: 425px;
+    max-height: none;
   }
 
   .card-gallery__placeholder svg {
