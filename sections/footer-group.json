@@ -290,6 +290,8 @@
                 "social_icons_custom_width_desktop": 25,
                 "social_icons_width_behavior_mobile": "fill",
                 "social_icons_custom_width_mobile": 100,
+                "social_icons_text_alignment_desktop": "left",
+                "social_icons_text_alignment_mobile": "left",
                 "facebook_url": "https://www.facebook.com/text",
                 "instagram_url": "https://www.instagram.com/test",
                 "youtube_url": "https://www.youtube.com/test",
