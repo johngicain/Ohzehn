@@ -110,9 +110,9 @@ export class PaginatedListAspectRatioHelper {
         const mediaContainers = gallery.querySelectorAll('.product-media-container');
         mediaContainers.forEach((container) => {
           if (container instanceof HTMLElement) {
-            container.style.aspectRatio = 'auto';
-            container.style.height = '425px';
-            container.style.maxHeight = 'none';
+            container.style.removeProperty('aspect-ratio');
+            container.style.removeProperty('height');
+            container.style.removeProperty('max-height');
           }
         });
         this.#markAsProcessed(gallery);

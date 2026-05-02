@@ -1,4 +1,19 @@
-
+{% if section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.multicolumn_section_wrapper_padding_top }}px;
+      padding-bottom: {{ section.settings.multicolumn_section_wrapper_padding_bottom }}px;
+      padding-left: {{ section.settings.multicolumn_section_wrapper_padding_left }}px;
+      padding-right: {{ section.settings.multicolumn_section_wrapper_padding_right }}px;
+    }
+    {% if section.settings.multicolumn_background_border_radius > 0 %}
+      #shopify-section-{{ section.id }} .background-image-container,
+      #shopify-section-{{ section.id }} .overlay {
+        border-radius: {{ section.settings.multicolumn_background_border_radius }}px;
+      }
+    {% endif %}
+  </style>
+{% endif %}
 
 {% capture children %}
   {% content_for 'blocks' %}
@@ -262,6 +277,71 @@
         }
       ],
       "default": "cover",
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.multicolumn_section_wrapper_padding",
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_section_wrapper_padding_top",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_section_wrapper_padding_bottom",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_section_wrapper_padding_left",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_section_wrapper_padding_right",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.multicolumn_corner_radius",
+      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "multicolumn_background_border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
       "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
     },
     {

@@ -107,6 +107,8 @@
     "mobile_size": "Mobile size",
     "desktop_size": "Desktop size",
     "mobile_width": "Mobile width",
+    "multicolumn_corner_radius": "Background image and overlay",
+    "multicolumn_section_wrapper_padding": "Section wrapper padding",
     "padding": "Padding",
     "padding_desktop": "Desktop padding",
     "paragraph": "Paragraph",
