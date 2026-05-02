@@ -3,9 +3,11 @@
   assign social_icons_width_behavior_mobile = block.settings.social_icons_width_behavior_mobile | default: 'fill'
   assign social_icons_custom_width_desktop = block.settings.social_icons_custom_width_desktop | default: 100
   assign social_icons_custom_width_mobile = block.settings.social_icons_custom_width_mobile | default: 100
+  assign social_icons_text_alignment_desktop = block.settings.social_icons_text_alignment_desktop | default: 'left'
+  assign social_icons_text_alignment_mobile = block.settings.social_icons_text_alignment_mobile | default: 'center'
 %}
 <div
-  class="social-icons__wrapper social-icons__wrapper--width-mobile-{{ social_icons_width_behavior_mobile }} social-icons__wrapper--width-desktop-{{ social_icons_width_behavior_desktop }}"
+  class="social-icons__wrapper social-icons__wrapper--width-mobile-{{ social_icons_width_behavior_mobile }} social-icons__wrapper--width-desktop-{{ social_icons_width_behavior_desktop }} social-icons__wrapper--text-mobile-{{ social_icons_text_alignment_mobile }} social-icons__wrapper--text-desktop-{{ social_icons_text_alignment_desktop }}"
   style="--social-icons-custom-mobile: {{ social_icons_custom_width_mobile }}%; --social-icons-custom-desktop: {{ social_icons_custom_width_desktop }}%;"
   {{ block.shopify_attributes }}
 >
@@ -131,11 +133,43 @@
     display: flex;
     gap: var(--gap-sm);
     flex-wrap: wrap;
-    justify-content: center;
+  }
 
-    @media screen and (min-width: 750px) {
-      flex-wrap: nowrap;
+  @media screen and (max-width: 749px) {
+    .social-icons__wrapper--text-mobile-left {
       justify-content: flex-start;
+      text-align: left;
+    }
+
+    .social-icons__wrapper--text-mobile-center {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .social-icons__wrapper--text-mobile-right {
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .social-icons__wrapper {
+      flex-wrap: nowrap;
+    }
+
+    .social-icons__wrapper--text-desktop-left {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .social-icons__wrapper--text-desktop-center {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .social-icons__wrapper--text-desktop-right {
+      justify-content: flex-end;
+      text-align: right;
     }
   }
 
@@ -266,6 +300,18 @@
       "unit": "%",
       "default": 100,
       "visible_if": "{{ block.settings.social_icons_width_behavior_mobile == 'custom' }}"
+    },
+    {
+      "type": "text_alignment",
+      "id": "social_icons_text_alignment_desktop",
+      "label": "t:content.desktop_alignment",
+      "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "social_icons_text_alignment_mobile",
+      "label": "t:settings.alignment_mobile",
+      "default": "center"
     },
     {
       "type": "url",
