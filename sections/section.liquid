@@ -14,7 +14,7 @@
     {% endif %}
   </style>
 {% endif %}
-
+ 
 {% capture children %}
   {% content_for 'blocks' %}
 {% endcapture %}
@@ -281,8 +281,7 @@
     },
     {
       "type": "header",
-      "content": "t:content.multicolumn_section_wrapper_padding",
-      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+      "content": "t:content.multicolumn_section_wrapper_padding"
     },
     {
       "type": "range",
@@ -292,8 +291,7 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+      "default": 0
     },
     {
       "type": "range",
@@ -303,8 +301,7 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+      "default": 0
     },
     {
       "type": "range",
@@ -314,8 +311,7 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+      "default": 0 
     },
     {
       "type": "range",
@@ -325,8 +321,7 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.multicolumn_layout and section.settings.multicolumn_background_image != blank }}"
+      "default": 0
     },
     {
       "type": "header",

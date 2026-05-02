@@ -2,7 +2,7 @@
   This snippet is used to render a product card.
   It is used in the product block, featured product block, and the product card block.
   The product object is null or when placeholders are rendered.
-  Aspect ratio for the gallery is a select on the Product image block (_product-card-gallery): Auto (adapt), Portrait, Square, Landscape, Semi-portrait. Semi-portrait: .card-gallery uses a 4 / 5 frame with height 90%; inner media and placeholders use height 90%.
+  Aspect ratio for the gallery is a select on the Product image block (_product-card-gallery): Auto (adapt), Portrait, Square, Landscape, Semi-portrait. Semi-portrait: .card-gallery uses a 4 / 5 frame with height 480px; inner media and placeholders use height 90%.
 
   @param {object} product - The product object
   @param {object} children - The children of the product card
@@ -121,11 +121,11 @@
   }
 
   .product-card .card-gallery[data-image-ratio='semi_portrait'] {
-    aspect-ratio: 4 / 5;
-    height: 90%;
+    aspect-ratio: 5 / 5.5;
+    height: 100%;
     display: flex;
     flex-direction: column;
-  }
+  } 
 
   .product-card .card-gallery[data-image-ratio='semi_portrait'] slideshow-component {
     flex: 1;
@@ -151,13 +151,16 @@
     align-self: stretch;
   }
 
-  .product-card .card-gallery[data-image-ratio='semi_portrait'] .product-media-container,
+  .product-card .card-gallery[data-image-ratio='semi_portrait'] .product-media-container {
+    height: 90%;
+  }
+
   .product-card .card-gallery[data-image-ratio='semi_portrait'] .product-card-gallery__title-placeholder,
   .product-card .card-gallery[data-image-ratio='semi_portrait'] .card-gallery__placeholder {
     aspect-ratio: auto;
-    height: 90%;
+    height: 100%;
     max-height: none;
-  }
+  } 
 
   @media screen and (max-width: 749px) {
     .product-card slideshow-arrows .slideshow-control {
