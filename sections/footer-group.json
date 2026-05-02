@@ -221,7 +221,7 @@
                 "color_scheme": "",
                 "heading_preset": "h5",
                 "link_preset": "",
-                "padding-block-start": 0,
+                "padding-block-start": 17,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -291,28 +291,21 @@
         "section_width": "page-width",
         "gap": 20,
         "color_scheme": "scheme-5",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 20,
+        "padding-block-end": 100
       }
     },
     "footer_utilities_jLGE8U": {
       "type": "footer-utilities",
       "blocks": {
-        "footer_policy_list_VCdnpa": {
-          "type": "footer-policy-list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_copyright_jweRK8": {
+        "footer_copyright_jBDjQg": {
           "type": "footer-copyright",
+          "name": "t:names.copyright",
           "settings": {
             "show_copyright_line": true,
-            "show_powered_by": false,
+            "show_powered_by": true,
             "text_before": "",
-            "text_after": "All Rights Reserved",
+            "text_after": "",
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -320,8 +313,7 @@
         }
       },
       "block_order": [
-        "footer_policy_list_VCdnpa",
-        "footer_copyright_jweRK8"
+        "footer_copyright_jBDjQg"
       ],
       "name": "t:names.utilities",
       "settings": {
