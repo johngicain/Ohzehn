@@ -251,7 +251,7 @@
               "name": "t:names.social_media_links",
               "settings": {
                 "facebook_url": "https://www.facebook.com/text",
-                "instagram_url": "#",
+                "instagram_url": "https://www.instagram.com/test",
                 "youtube_url": "https://www.youtube.com/test",
                 "tiktok_url": "",
                 "twitter_url": "#",
