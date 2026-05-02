@@ -6,9 +6,33 @@
   assign heading = block_settings.heading
   assign color_scheme = block_settings.color_scheme
   assign show_as_accordion = block_settings.show_as_accordion
+  assign show_menu_heading_on_mobile = block_settings.show_menu_heading_on_mobile
+  if show_as_accordion == true
+    assign show_menu_heading_on_mobile = true
+  endif
+  assign menu_heading_class = 'menu__heading'
+  if heading == blank and menu.title == blank
+    assign menu_heading_class = menu_heading_class | append: ' menu__heading--empty'
+  endif
+  assign menu_heading_class = menu_heading_class | append: ' ' | append: block_settings.heading_preset
+  if block_settings.show_menu_heading_on_desktop == false
+    assign menu_heading_class = menu_heading_class | append: ' hidden--desktop'
+  endif
+  if show_menu_heading_on_mobile == false
+    assign menu_heading_class = menu_heading_class | append: ' hidden--mobile'
+  endif
   if show_as_accordion == true and block_settings.accordion_dividers == true
     assign dividers_enabled = true
   endif
+  assign menu_details_class = 'menu__details'
+  if block_settings.show_menu_heading_on_desktop == false
+    assign menu_details_class = menu_details_class | append: ' menu__details--hide-heading-desktop'
+  endif
+  if show_menu_heading_on_mobile == false
+    assign menu_details_class = menu_details_class | append: ' menu__details--hide-heading-mobile'
+  endif
+  assign menu_details_desktop_align = block_settings.menu_details_alignment_desktop | default: 'start'
+  assign menu_details_class = menu_details_class | append: ' menu__details--desktop-align-' | append: menu_details_desktop_align
 %}
 
 {% if menu != blank or heading != blank %}
@@ -30,7 +54,7 @@
   {% capture menu_accordion_children %}
     <details
       class="
-        menu__details
+        {{ menu_details_class }}
         spacing-style
         {% if block_settings.inherit_color_scheme == false %} color-{{ color_scheme }}{% endif %}
       "
@@ -44,7 +68,7 @@
       {% endif %}
       {{ block.shopify_attributes }}
     >
-      <summary class="menu__heading{% if heading == blank and menu.title == blank %} menu__heading--empty{% endif %} {{ block_settings.heading_preset }}">
+      <summary class="{{ menu_heading_class }}">
         <span class="menu__heading__default">{{ heading | default: menu.title }}</span>
         <span class="menu__heading__accordion">
           {{ heading | default: menu.title }}
@@ -93,6 +117,37 @@
 {% stylesheet %}
   .menu {
     width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .menu__details--hide-heading-desktop.spacing-style {
+      padding-block-start: 0;
+    }
+
+    .menu .menu__details--desktop-align-start,
+    .menu .menu__details--desktop-align-center,
+    .menu .menu__details--desktop-align-end {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .menu .menu__details--desktop-align-start {
+      justify-content: flex-start;
+    }
+
+    .menu .menu__details--desktop-align-center {
+      justify-content: center;
+    }
+
+    .menu .menu__details--desktop-align-end {
+      justify-content: flex-end;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .menu__details--hide-heading-mobile.spacing-style {
+      padding-block-start: 0;
+    }
   }
 
   .menu:not(:has(.menu__heading--empty)) .details-content {
@@ -162,6 +217,47 @@
       "type": "text",
       "id": "heading",
       "label": "t:settings.heading"
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading_visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_menu_heading_on_desktop",
+      "label": "t:settings.show_menu_heading_on_desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_menu_heading_on_mobile",
+      "label": "t:settings.show_menu_heading_on_mobile",
+      "default": true,
+      "visible_if": "{{ block.settings.show_as_accordion == false }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.desktop_alignment"
+    },
+    {
+      "type": "select",
+      "id": "menu_details_alignment_desktop",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:options.start"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "end",
+          "label": "t:options.end"
+        }
+      ],
+      "default": "start"
     },
     {
       "type": "header",
