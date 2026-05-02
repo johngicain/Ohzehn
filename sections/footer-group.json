@@ -212,7 +212,7 @@
               "name": "t:names.menu",
               "settings": {
                 "menu": "main-menu",
-                "heading": "",
+                "heading": "asd",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
