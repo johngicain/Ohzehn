@@ -59,6 +59,9 @@
               "settings": {
                 "menu": "my-account",
                 "heading": "My Account",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -80,6 +83,9 @@
               "settings": {
                 "menu": "help",
                 "heading": "Help",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -101,6 +107,9 @@
               "settings": {
                 "menu": "legal",
                 "heading": "Legal",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -122,6 +131,9 @@
               "settings": {
                 "menu": "about-us",
                 "heading": "About Us",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -143,6 +155,9 @@
               "settings": {
                 "menu": "contact-us",
                 "heading": "Contact Us",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -213,6 +228,9 @@
               "settings": {
                 "menu": "footer",
                 "heading": "",
+                "show_menu_heading_on_desktop": true,
+                "show_menu_heading_on_mobile": true,
+                "menu_details_alignment_desktop": "start",
                 "menu_spacing": 12,
                 "show_as_accordion": true,
                 "accordion_icon": "caret",
@@ -298,6 +316,19 @@
     "footer_utilities_jLGE8U": {
       "type": "footer-utilities",
       "blocks": {
+        "payment_icons_8KnXY7": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "footer_copyright_jBDjQg": {
           "type": "footer-copyright",
           "name": "t:names.copyright",
@@ -313,11 +344,13 @@
         }
       },
       "block_order": [
+        "payment_icons_8KnXY7",
         "footer_copyright_jBDjQg"
       ],
       "name": "t:names.utilities",
       "settings": {
         "section_width": "page-width",
+        "layout_direction": "vertical",
         "gap": 24,
         "divider_thickness": 0,
         "color_scheme": "scheme-5",
