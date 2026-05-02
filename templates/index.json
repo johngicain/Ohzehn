@@ -3980,13 +3980,21 @@
           "settings": {
             "icon": "caret",
             "dividers": true,
+            "width_compress": true,
+            "width_compress_max": "normal",
             "type_preset": "h4",
             "inherit_color_scheme": true,
             "color_scheme": "",
+            "show_border": true,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
+            "details_show_border": false,
+            "details_border": "solid",
+            "details_border_width": 1,
+            "details_border_opacity": 100,
+            "details_border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -3999,7 +4007,12 @@
                 "heading": "WORKOUT CLOTHES & GYM CLOTHES",
                 "open_by_default": true,
                 "icon": "none",
-                "width": 20
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
               },
               "blocks": {
                 "text_NewtyG": {
@@ -4042,7 +4055,12 @@
                 "heading": "WORKOUT CLOTHES & GYM CLOTHES",
                 "open_by_default": false,
                 "icon": "none",
-                "width": 20
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
               },
               "blocks": {
                 "text_NAyPgR": {
@@ -4086,7 +4104,12 @@
                 "heading": "WORKOUT CLOTHES & GYM CLOTHES",
                 "open_by_default": false,
                 "icon": "none",
-                "width": 20
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
               },
               "blocks": {
                 "text_rPYxMg": {
@@ -4131,7 +4154,12 @@
                 "heading": "WORKOUT CLOTHES & GYM CLOTHES",
                 "open_by_default": false,
                 "icon": "none",
-                "width": 20
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
               },
               "blocks": {
                 "text_UfrUta": {
