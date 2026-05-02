@@ -275,6 +275,7 @@
     "show_grid_layout_selector": "Pokaż selektor układu siatki",
     "view_more_show": "Pokaż przycisk „Wyświetl więcej”",
     "image_gap": "Odstęp między obrazami",
+    "width_compress": "Compress width",
     "width_desktop": "Szerokość na komputerach",
     "width_mobile": "Szerokość na urządzeniach mobilnych",
     "border_style": "Styl obramowania",
@@ -348,6 +349,7 @@
     "currency_code": "Kod waluty",
     "custom_height": "Niestandardowa wysokość",
     "desktop_height": "Wysokość na komputerach",
+    "details_show_border": "Apply border to rows",
     "direction": "Kierunek",
     "display": "Wyświetlanie",
     "divider_thickness": "Grubość separatora",
@@ -877,6 +879,7 @@
   "content": {
     "background_video": "Wideo w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "details_borders": "Row borders",
     "desktop_alignment": "Wyrównanie na pulpicie",
     "width_is_automatically_optimized": "Szerokość jest automatycznie optymalizowana pod kątem urządzeń mobilnych.",
     "advanced": "Zaawansowane",

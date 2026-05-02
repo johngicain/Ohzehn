@@ -3,8 +3,15 @@
 
 {% capture accordion_row_children %}
   <details
-    class="details"
+    class="details border-style"
     data-testid="accordion-details"
+    style="
+      {% if block_settings.show_border %}
+        {% render 'border-override', settings: block_settings %}
+      {% else %}
+        --border-width: 0px; --border-style: none; --border-radius: {{ block_settings.border_radius }}px;{% if block_settings.border_radius > 0 %} overflow: hidden;{% endif %}
+      {% endif %}
+    "
     {% if block_settings.open_by_default %}
       open
     {% endif %}
@@ -331,6 +338,64 @@
       "step": 2,
       "unit": "px",
       "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:content.borders"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "t:settings.show_border",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "solid",
+          "label": "t:options.solid"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.show_border }}"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:settings.thickness",
+      "default": 1,
+      "visible_if": "{{ block.settings.show_border and block.settings.border != \"none\" }}"
+    },
+    {
+      "type": "range",
+      "id": "border_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:settings.opacity",
+      "default": 100,
+      "visible_if": "{{ block.settings.show_border and block.settings.border != \"none\" }}"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
     }
   ],
   "presets": [

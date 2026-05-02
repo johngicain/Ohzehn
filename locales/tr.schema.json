@@ -275,6 +275,7 @@
     "show_grid_layout_selector": "Izgara düzeni seçiciyi göster",
     "view_more_show": "\"Daha fazla görüntüle\" düğmesini göster",
     "image_gap": "Görsel boşluğu",
+    "width_compress": "Compress width",
     "width_desktop": "Masaüstü genişliği",
     "width_mobile": "Mobil genişliği",
     "border_style": "Kenarlık stili",
@@ -348,6 +349,7 @@
     "currency_code": "Para birimi kodu",
     "custom_height": "Özel yükseklik",
     "desktop_height": "Masaüstü yüksekliği",
+    "details_show_border": "Apply border to rows",
     "direction": "Yön",
     "display": "Görünüm",
     "divider_thickness": "Ayırıcı kalınlığı",
@@ -877,6 +879,7 @@
   "content": {
     "background_video": "Arka plan videosu",
     "describe_the_video_for": "Ekran okuyucu kullanan müşteriler için videoyu açıklayın. [Daha fazla bilgi edinin](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "details_borders": "Row borders",
     "desktop_alignment": "Masaüstü hizalaması",
     "width_is_automatically_optimized": "Genişlik, mobil cihazlar için otomatik olarak optimize edilir.",
     "advanced": "Gelişmiş",

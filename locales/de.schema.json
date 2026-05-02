@@ -275,6 +275,7 @@
     "show_grid_layout_selector": "Rasterlayout-Auswahl anzeigen",
     "view_more_show": "Schaltfläche „Mehr anzeigen“ anzeigen",
     "image_gap": "Bildabstand",
+    "width_compress": "Compress width",
     "width_desktop": "Desktop-Breite",
     "width_mobile": "Mobile Breite",
     "border_style": "Randstil",
@@ -335,6 +336,7 @@
     "currency_code": "Währungscode",
     "custom_height": "Benutzerdefinierte Höhe",
     "desktop_height": "Desktop-Höhe",
+    "details_show_border": "Apply border to rows",
     "direction": "Richtung",
     "display": "Anzeige",
     "divider_thickness": "Stärke der Trennlinie",
@@ -877,6 +879,7 @@
   "content": {
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "details_borders": "Row borders",
     "desktop_alignment": "Desktop-Ausrichtung",
     "width_is_automatically_optimized": "Die Breite wird für Mobilgeräte automatisch optimiert.",
     "advanced": "Erweitert",

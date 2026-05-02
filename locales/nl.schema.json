@@ -275,6 +275,7 @@
     "show_grid_layout_selector": "Selector voor grid-indeling weergeven",
     "view_more_show": "Knop ‘Meer bekijken’ weergeven",
     "image_gap": "Tussenruimte afbeelding",
+    "width_compress": "Compress width",
     "width_desktop": "Breedte op desktop",
     "width_mobile": "Breedte op mobiel",
     "border_style": "Randstijl",
@@ -351,6 +352,7 @@
     "custom_height": "Aangepaste hoogte",
     "custom_mobile_width": "Aangepaste breedte voor mobiel",
     "desktop_height": "Hoogte op desktop",
+    "details_show_border": "Apply border to rows",
     "direction": "Richting",
     "display": "Weergave",
     "divider_thickness": "Dikte scheidingslijn",
@@ -877,6 +879,7 @@
   "content": {
     "background_video": "Achtergrondvideo",
     "describe_the_video_for": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "details_borders": "Row borders",
     "desktop_alignment": "Uitlijning op desktop",
     "width_is_automatically_optimized": "Breedte wordt automatisch geoptimaliseerd voor mobiel.",
     "advanced": "Geavanceerd",

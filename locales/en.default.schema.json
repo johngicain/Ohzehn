@@ -60,6 +60,7 @@
     "copyright_additional_text": "Additional text",
     "customer_account": "Customer account",
     "describe_the_video_for": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "details_borders": "Row borders",
     "desktop_alignment": "Desktop alignment",
     "edit_empty_state_collection_in_theme_settings": "Edit empty state collection in [theme settings](/editor?context=theme&category=search)",
     "edit_logo_in_theme_settings": "Edit logo in [theme settings](/editor?context=theme&category=logo%20and%20favicon)",
@@ -852,6 +853,7 @@
     "default_logo": "Default logo",
     "desktop_height": "Desktop height",
     "desktop_pagination": "Desktop pagination",
+    "details_show_border": "Apply border to rows",
     "direction": "Direction",
     // Button appearance for email signup form
     "display": "Display",
@@ -1095,6 +1097,7 @@
     "show_as_accordion": "Show as accordion on mobile",
     "show_author": "Author",
     "show_alignment": "Show alignment",
+    "show_border": "Show border",
     "show_count": "Show count",
     "show_date": "Date",
     "show_filter_label": "Text labels for applied filters",
@@ -1177,6 +1180,7 @@
     // Typography setting for font weight/thickness
     "weight": "Weight",
     "width": "Width",
+    "width_compress": "Compress width",
     "width_desktop": "Desktop width",
     "width_mobile": "Mobile width",
     "wrap": "Wrap",
