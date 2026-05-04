@@ -243,7 +243,9 @@
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
     "media_type_info": "Features are populated from your menu links",
-    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media."
+    "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
+    "scroll_reveal_blocks": "Each top-level block animates in when it enters the viewport. On by default for the Rich text, FAQ, and Split showcase (banner) presets.",
+    "scroll_reveal_style": "Fade only changes opacity. Slide up adds a short vertical motion. Multicolumn layout always uses slide up."
   },
   "names": {
     "column": "Column",
@@ -531,6 +533,7 @@
     "facebook": "Facebook",
     "featured_collections": "Featured collections",
     "featured_products": "Featured products",
+    "fade_only": "Fade only",
     "fill": "Fill",
     "fire": "Fire",
     // Layout option for content sizing behavior
@@ -1077,6 +1080,8 @@
     "right": "Right",
     "right_padding": "Right padding",
     "row": "Row",
+    "scroll_reveal_blocks": "Fade in blocks on scroll",
+    "scroll_reveal_style": "Scroll reveal motion",
     "scroll_speed": "Time to next announcement",
     "search": "Search",
     "search_icon": "Search icon",

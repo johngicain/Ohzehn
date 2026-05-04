@@ -22,6 +22,10 @@
     {%- render 'gap-style', value: section.settings.gap -%}
   "
   data-featured-blog-posts-section="{{ section.id }}"
+  {% if request.visual_preview_mode == false %}
+    data-scroll-block-reveal
+    data-scroll-reveal-uses="resource-list-items"
+  {% endif %}
 >
   {% content_for 'block', id: 'static-blog-title', type: 'text', text: '<h3>{{ closest.blog.title }}</h3>', type_preset: 'rte' %}
 
@@ -115,6 +119,77 @@
     test_id: 'featured-blog-posts'
   %}
 </div>
+
+{% stylesheet %}
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list__item:not(.scroll-block-reveal--visible) {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+    transition:
+      opacity 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
+      transform 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(1) {
+    transition-delay: 0s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(2) {
+    transition-delay: 0.05s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(4) {
+    transition-delay: 0.15s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(5) {
+    transition-delay: 0.2s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(6) {
+    transition-delay: 0.25s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(7) {
+    transition-delay: 0.3s;
+  }
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list--grid
+    .resource-list__item:nth-child(n + 8) {
+    transition-delay: 0.35s;
+  }
+
+  [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+    .resource-list__item.scroll-block-reveal--visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
+      .resource-list__item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% if request.visual_preview_mode == false %}
+  <script src="{{ 'scroll-block-reveal.js' | asset_url }}" defer></script>
+{% endif %}
 
 {% if section.settings.show_featured_image_border %}
   <style>
