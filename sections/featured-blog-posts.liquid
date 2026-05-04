@@ -126,8 +126,8 @@
     opacity: 0;
     transform: translate3d(0, 1rem, 0);
     transition:
-      opacity 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
-      transform 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
+      opacity 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
+      transform 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
   }
 
   [data-featured-blog-posts-section][data-scroll-block-reveal][data-scroll-reveal-uses='resource-list-items']
@@ -186,10 +186,6 @@
     }
   }
 {% endstylesheet %}
-
-{% if request.visual_preview_mode == false %}
-  <script src="{{ 'scroll-block-reveal.js' | asset_url }}" defer></script>
-{% endif %}
 
 {% if section.settings.show_featured_image_border %}
   <style>

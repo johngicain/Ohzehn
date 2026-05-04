@@ -54,7 +54,12 @@
         {{ 'hero-apparel-1' | placeholder_svg_tag: 'hotspots__background-image' }}
       {% endif %}
 
-      <div class="hotspots-container">
+      <div
+        class="hotspots-container"
+        {% if request.visual_preview_mode == false %}
+          data-scroll-block-reveal
+        {% endif %}
+      >
         {% content_for 'blocks' %}
       </div>
     </div>

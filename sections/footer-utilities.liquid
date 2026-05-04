@@ -9,6 +9,9 @@
     class="utilities utilities--direction-{{ section.settings.layout_direction | default: 'horizontal' }} utilities--blocks-{{ section.blocks.size }} spacing-style"
     style="{% render 'spacing-style', settings: section.settings %} --border-width: {{ section.settings.divider_thickness }}px; --gap: {{ section.settings.gap }}px;"
     data-testid="footer-utilities"
+    {% if request.visual_preview_mode == false and section.settings.scroll_reveal_blocks %}
+      data-scroll-block-reveal
+    {% endif %}
   >
     {% content_for 'blocks' %}
   </div>
@@ -180,6 +183,13 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": true,
+      "info": "t:info.scroll_reveal_blocks"
     },
     {
       "type": "header",

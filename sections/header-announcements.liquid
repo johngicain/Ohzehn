@@ -32,7 +32,12 @@
       {% render 'slideshow-arrows', icon_style: 'chevron' %}
     {% endif %}
 
-    <div class="announcement-bar__slides">
+    <div
+      class="announcement-bar__slides"
+      {% if request.visual_preview_mode == false %}
+        data-scroll-block-reveal
+      {% endif %}
+    >
       {% content_for 'blocks' %}
     </div>
   </announcement-bar-component>

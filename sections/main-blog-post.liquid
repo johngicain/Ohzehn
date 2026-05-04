@@ -26,7 +26,13 @@
     {%- content_for 'block', id: 'blog-post-content', type: '_blog-post-content' %}
 
     {% comment %} Dynamic area for @app blocks only, at the bottom {% endcomment %}
-    {% content_for 'blocks' %}
+    <div
+      {% if request.visual_preview_mode == false %}
+        data-scroll-block-reveal
+      {% endif %}
+    >
+      {% content_for 'blocks' %}
+    </div>
 
     {% if blog.comments_enabled? %}
       <div class="blog-post-comments-container">

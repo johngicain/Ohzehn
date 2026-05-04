@@ -14,6 +14,9 @@
       {% render 'layout-panel-style', settings: section.settings %}
       {% render 'spacing-style', settings: section.settings %}
     "
+    {% if request.visual_preview_mode == false %}
+      data-scroll-block-reveal
+    {% endif %}
   >
     {% content_for 'blocks' %}
   </div>

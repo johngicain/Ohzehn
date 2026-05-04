@@ -264,24 +264,6 @@
       "info": "t:info.scroll_reveal_blocks"
     },
     {
-      "type": "select",
-      "id": "scroll_reveal_style",
-      "label": "t:settings.scroll_reveal_style",
-      "options": [
-        {
-          "value": "slide_up",
-          "label": "t:options.slide_up"
-        },
-        {
-          "value": "fade",
-          "label": "t:options.fade_only"
-        }
-      ],
-      "default": "slide_up",
-      "info": "t:info.scroll_reveal_style",
-      "visible_if": "{{ section.settings.scroll_reveal_blocks and section.settings.multicolumn_layout == false }}"
-    },
-    {
       "type": "image_picker",
       "id": "multicolumn_background_image",
       "label": "t:content.background_image",
@@ -647,8 +629,7 @@
         "border_radius": 0,
         "padding-block-start": 48,
         "padding-block-end": 48,
-        "scroll_reveal_blocks": true,
-        "scroll_reveal_style": "fade"
+        "scroll_reveal_blocks": true
       }
     },
     {

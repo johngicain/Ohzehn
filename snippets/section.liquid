@@ -59,25 +59,7 @@
     {% liquid
       assign scroll_reveal_active = false
       if request.visual_preview_mode == false
-        if section.settings.multicolumn_layout or section.settings.scroll_reveal_blocks
-          assign scroll_reveal_active = true
-        endif
-      endif
-      assign scroll_reveal_motion = 'slide_up'
-      if scroll_reveal_active and section.settings.multicolumn_layout == false
-        assign section_editor_name = section.name | strip
-        assign rich_text_sections_fade_motion = false
-        if section_editor_name == 't:names.rich_text_section'
-          assign rich_text_sections_fade_motion = true
-        elsif section_editor_name != blank and section_editor_name != 't:names.section'
-          assign section_editor_name_downcase = section_editor_name | downcase
-          if section_editor_name_downcase == 'rich text'
-            assign rich_text_sections_fade_motion = true
-          endif
-        endif
-        if rich_text_sections_fade_motion or section.settings.scroll_reveal_style == 'fade'
-          assign scroll_reveal_motion = 'fade'
-        endif
+        assign scroll_reveal_active = true
       endif
     %}
     <div
@@ -95,9 +77,6 @@
       data-testid="section-content"
       {% if scroll_reveal_active %}
         data-scroll-block-reveal
-        {% if scroll_reveal_motion == 'fade' %}
-          data-scroll-reveal-motion="fade"
-        {% endif %}
       {% endif %}
     >
       {{ children }}
@@ -139,8 +118,8 @@
     opacity: 0;
     transform: translate3d(0, 1rem, 0);
     transition:
-      opacity 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
-      transform 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
+      opacity 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
+      transform 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
   }
 
   [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(1) {
@@ -175,7 +154,7 @@
 
   [data-scroll-block-reveal][data-scroll-reveal-motion='fade']:not([data-scroll-reveal-uses]) > * {
     transform: none;
-    transition: opacity 0.65s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
+    transition: opacity 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
   }
 
   [data-scroll-block-reveal][data-scroll-reveal-motion='fade']:not([data-scroll-reveal-uses])

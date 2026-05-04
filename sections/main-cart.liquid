@@ -1,7 +1,12 @@
 
 
 {% capture cart_page_more_blocks_content %}
-  <div class="cart-page__more-blocks">
+  <div
+    class="cart-page__more-blocks"
+    {% if request.visual_preview_mode == false %}
+      data-scroll-block-reveal
+    {% endif %}
+  >
     {%- content_for 'blocks' -%}
   </div>
 {% endcapture %}

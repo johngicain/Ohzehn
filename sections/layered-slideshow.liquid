@@ -47,7 +47,12 @@
           ></button>
         {% endfor %}
       </div>
-      <div class="layered-slideshow__panels">
+      <div
+        class="layered-slideshow__panels"
+        {% if request.visual_preview_mode == false %}
+          data-scroll-block-reveal
+        {% endif %}
+      >
         {% content_for 'blocks' %}
       </div>
     </div>

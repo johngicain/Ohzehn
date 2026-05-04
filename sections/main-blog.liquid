@@ -31,6 +31,9 @@
     "
     data-testid="blog-posts"
     style="{% render 'spacing-style', settings: section.settings %}"
+    {% if request.visual_preview_mode == false %}
+      data-scroll-block-reveal
+    {% endif %}
   >
     {% content_for 'blocks' %}
 

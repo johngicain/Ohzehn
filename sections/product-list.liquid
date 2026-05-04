@@ -75,6 +75,9 @@
   <div
     class="section-resource-list__content"
     style="--horizontal-alignment: {{ section.settings.horizontal_alignment }};"
+    {% if request.visual_preview_mode == false %}
+      data-scroll-block-reveal
+    {% endif %}
   >
     {%- content_for 'blocks' -%}
   </div>

@@ -21,7 +21,12 @@
     {% render 'gap-style', value: section.settings.gap %}
   "
 >
-  <div class="section-resource-list__content">
+  <div
+    class="section-resource-list__content"
+    {% if request.visual_preview_mode == false %}
+      data-scroll-block-reveal
+    {% endif %}
+  >
     {%- content_for 'blocks' -%}
   </div>
 
