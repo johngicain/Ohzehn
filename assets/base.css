@@ -3986,6 +3986,12 @@ fly-to-cart.fly-to-cart--sticky {
   width: 100%;
 }
 
+.group-block-content .shopify-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Container styles */
 .section-content-wrapper.section-content-wrapper:where(.layout-panel-flex)
   .group-block--fill {
