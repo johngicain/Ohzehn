@@ -309,7 +309,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h3>You may also like </h3>",
+            "text": "<p><strong>YOU MIGHT LIKE</strong></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -321,6 +321,36 @@
             "case": "none",
             "wrap": "pretty",
             "color": "",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_bWRJ3f": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>We think these products pair perfectly.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
             "strong_color_enable": false,
             "strong_color": "#000000",
             "em_color_enable": false,
@@ -425,11 +455,12 @@
         }
       },
       "block_order": [
-        "text_cbcgyb"
+        "text_cbcgyb",
+        "text_bWRJ3f"
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "{{ closest.product }}",
+        "product": "clay-court-seamless-set-saffron",
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
