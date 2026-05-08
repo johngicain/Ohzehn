@@ -505,7 +505,7 @@
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "clay-court-seamless-set-saffron",
+        "product": "",
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": true,
