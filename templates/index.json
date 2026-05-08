@@ -300,6 +300,8 @@
           "settings": {
             "image": "shopify://shop_images/ohzehn-logo-white.png",
             "link": "",
+            "zoom_in_on_hover": false,
+            "hover_zoom_scale": 110,
             "image_ratio": "adapt",
             "width": "custom",
             "custom_width": 3,
@@ -542,6 +544,8 @@
               "settings": {
                 "image": "shopify://shop_images/women-collection.png",
                 "link": "",
+                "zoom_in_on_hover": true,
+                "hover_zoom_scale": 110,
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1236,6 +1240,8 @@
               "settings": {
                 "image": "shopify://shop_images/men-collection.png",
                 "link": "",
+                "zoom_in_on_hover": true,
+                "hover_zoom_scale": 110,
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1559,6 +1565,8 @@
                   "settings": {
                     "image": "shopify://shop_images/leaf-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -1689,6 +1697,8 @@
                   "settings": {
                     "image": "shopify://shop_images/shield-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -1819,6 +1829,8 @@
                   "settings": {
                     "image": "shopify://shop_images/plastic-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -1949,6 +1961,8 @@
                   "settings": {
                     "image": "shopify://shop_images/body-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -2622,6 +2636,8 @@
                   "settings": {
                     "image": "shopify://shop_images/leaf-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -2752,6 +2768,8 @@
                   "settings": {
                     "image": "shopify://shop_images/leaf-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -2882,6 +2900,8 @@
                   "settings": {
                     "image": "shopify://shop_images/leaf-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -3012,6 +3032,8 @@
                   "settings": {
                     "image": "shopify://shop_images/leaf-icon.svg",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "custom",
                     "custom_width": 15,
@@ -3327,6 +3349,8 @@
                   "settings": {
                     "image": "shopify://shop_images/forbes-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3418,6 +3442,8 @@
                   "settings": {
                     "image": "shopify://shop_images/popsugar-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3509,6 +3535,8 @@
                   "settings": {
                     "image": "shopify://shop_images/instyle-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3600,6 +3628,8 @@
                   "settings": {
                     "image": "shopify://shop_images/whowhatwear-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3691,6 +3721,8 @@
                   "settings": {
                     "image": "shopify://shop_images/forbes-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3782,6 +3814,8 @@
                   "settings": {
                     "image": "shopify://shop_images/popsugar-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3873,6 +3907,8 @@
                   "settings": {
                     "image": "shopify://shop_images/instyle-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -3964,6 +4000,8 @@
                   "settings": {
                     "image": "shopify://shop_images/whowhatwear-logo.png",
                     "link": "",
+                    "zoom_in_on_hover": false,
+                    "hover_zoom_scale": 110,
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -4545,6 +4583,8 @@
           "settings": {
             "image": "shopify://shop_images/ohzehn-logo-letter.png",
             "link": "",
+            "zoom_in_on_hover": false,
+            "hover_zoom_scale": 110,
             "image_ratio": "adapt",
             "width": "fill",
             "custom_width": 100,
