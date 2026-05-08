@@ -587,7 +587,7 @@
       "settings": {
         "blog": "news",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "post_limit": 4,
         "blog_post_tags": "science, guides, coming soon, vs them",
         "show_featured_image_border": false,
@@ -601,8 +601,8 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 10,
+        "padding-block-end": 10
       }
     }
   },
