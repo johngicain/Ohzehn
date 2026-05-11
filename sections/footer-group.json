@@ -74,6 +74,11 @@
         "text_RUUdzX",
         "image_HU8Q9V"
       ],
+      "custom_css": [
+        "p {font-weight: 600;}",
+        "strong,em {font-weight: 600;}",
+        "em {font-style: normal;}"
+      ],
       "name": "t:names.rich_text_section",
       "settings": {
         "content_direction": "column",
@@ -85,7 +90,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 25,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "multicolumn_layout": false,
