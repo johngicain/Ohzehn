@@ -29,18 +29,16 @@
     >
       {% assign tab_button_index = 0 %}
       {% for tab_block in section.blocks %}
+        {% if tab_block.type == '_content-tab' %}{% endif %}
           {% assign tab_button_index = tab_button_index | plus: 1 %}
           {% liquid
-            assign tab_label = tab_block.settings.tab_label | strip
-            if tab_label == blank
-              assign tab_label = 'Tab ' | append: tab_button_index
-            endif
             assign tab_id = 'Tab-' | append: tab_block.id | append: '-' | append: section.id
             assign panel_id = 'Panel-' | append: tab_block.id | append: '-' | append: section.id
             assign is_first_tab = false
             if tab_button_index == 1
               assign is_first_tab = true
             endif
+            assign tab_label_stripped = tab_block.settings.tab_label | strip
           %}
           <button
             type="button"
@@ -52,7 +50,13 @@
             aria-selected="{% if is_first_tab %}true{% else %}false{% endif %}"
             tabindex="{% if is_first_tab %}0{% else %}-1{% endif %}"
           >
-            <span class="content-tabs__tab-label">{{ tab_label | escape }}</span>
+            <span class="content-tabs__tab-label">
+              {% if tab_label_stripped != blank %}
+                {{ tab_label_stripped | escape }}
+              {% else %}
+                Tab {{ tab_button_index }}
+              {% endif %}
+            </span>
           </button>
       {% endfor %}
     </div>
