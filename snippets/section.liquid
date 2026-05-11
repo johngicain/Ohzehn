@@ -56,12 +56,6 @@
       {% render 'overlay', settings: section.settings, layer: '0' %}
     {% endif %}
 
-    {% liquid
-      assign scroll_reveal_active = false
-      if request.visual_preview_mode == false
-        assign scroll_reveal_active = true
-      endif
-    %}
     <div
       class="
         spacing-style
@@ -75,9 +69,6 @@
         {% render 'spacing-style', settings: section.settings %}
       "
       data-testid="section-content"
-      {% if scroll_reveal_active %}
-        data-scroll-block-reveal
-      {% endif %}
     >
       {{ children }}
     </div>
@@ -114,65 +105,4 @@
     z-index: var(--layer-flat);
   }
 
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > * {
-    opacity: 0;
-    transform: translate3d(0, 1rem, 0);
-    transition:
-      opacity 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)),
-      transform 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
-  }
-
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(1) {
-    transition-delay: 0s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(2) {
-    transition-delay: 0.05s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(3) {
-    transition-delay: 0.1s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(4) {
-    transition-delay: 0.15s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(5) {
-    transition-delay: 0.2s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(6) {
-    transition-delay: 0.25s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(7) {
-    transition-delay: 0.3s;
-  }
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:nth-child(n + 8) {
-    transition-delay: 0.35s;
-  }
-
-  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *.scroll-block-reveal--visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  [data-scroll-block-reveal][data-scroll-reveal-motion='fade']:not([data-scroll-reveal-uses]) > * {
-    transform: none;
-    transition: opacity 3s var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1));
-  }
-
-  [data-scroll-block-reveal][data-scroll-reveal-motion='fade']:not([data-scroll-reveal-uses])
-    > *.scroll-block-reveal--visible {
-    transform: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > * {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-  }
 {% endstylesheet %}
-
-{% if request.visual_preview_mode == false %}
-  {% if scroll_reveal_active %}
-    <script src="{{ 'scroll-block-reveal.js' | asset_url }}" defer></script>
-  {% endif %}
-{% endif %}

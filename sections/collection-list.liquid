@@ -34,8 +34,9 @@
 >
   <div
     class="section-resource-list__content"
-    {% if request.visual_preview_mode == false %}
+    {% if request.visual_preview_mode == false and section.settings.enable_scroll_reveal %}
       data-scroll-block-reveal
+      data-scroll-reveal-motion="fade"
     {% endif %}
   >
     {%- content_for 'blocks' -%}
@@ -120,6 +121,12 @@
       "type": "collection_list",
       "id": "collection_list",
       "label": "t:settings.collection_list"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_reveal",
+      "label": "Enable on-scroll fade-in",
+      "default": false
     },
     {
       "type": "header",

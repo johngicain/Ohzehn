@@ -19,6 +19,11 @@
 
     root.dataset.blockRevealLoaded = 'true';
 
+    if (root.dataset.scrollBlockRevealForceVisible === 'true') {
+      blocks.forEach((el) => el.classList.add('scroll-block-reveal--visible', 'on-scroll'));
+      return;
+    }
+
     if (reducedMotion.matches) {
       blocks.forEach((el) => el.classList.add('scroll-block-reveal--visible'));
       return;

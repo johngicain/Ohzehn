@@ -31,8 +31,9 @@
     "
     data-testid="blog-posts"
     style="{% render 'spacing-style', settings: section.settings %}"
-    {% if request.visual_preview_mode == false %}
+    {% if request.visual_preview_mode == false and section.settings.enable_scroll_reveal %}
       data-scroll-block-reveal
+      data-scroll-reveal-motion="fade"
     {% endif %}
   >
     {% content_for 'blocks' %}
@@ -267,6 +268,12 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_reveal",
+      "label": "Enable on-scroll fade-in",
+      "default": false
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

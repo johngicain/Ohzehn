@@ -14,8 +14,9 @@
       {% render 'layout-panel-style', settings: section.settings %}
       {% render 'spacing-style', settings: section.settings %}
     "
-    {% if request.visual_preview_mode == false %}
+    {% if request.visual_preview_mode == false and section.settings.enable_scroll_reveal %}
       data-scroll-block-reveal
+      data-scroll-reveal-motion="fade"
     {% endif %}
   >
     {% content_for 'blocks' %}
@@ -53,6 +54,12 @@
       ],
       "default": "column",
       "visible_if": "{{ section.settings.gap < 0 }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_reveal",
+      "label": "Enable on-scroll fade-in",
+      "default": false
     },
     {
       "type": "range",

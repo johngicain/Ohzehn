@@ -5,6 +5,13 @@
   fetchpriority="low"
 ></script>
 
+{% stylesheet %}
+  slideshow-slide.product-media-container,
+  slideshow-slide.card-gallery__placeholder {
+    opacity: 1 !important;
+  }
+{% endstylesheet %}
+
 {% liquid
   case section.settings.layout_type
     when 'grid'
@@ -58,8 +65,9 @@
   >
     <div
       class="section-resource-list__content"
-      {% if request.visual_preview_mode == false %}
+      {% if request.visual_preview_mode == false and section.settings.enable_scroll_reveal %}
         data-scroll-block-reveal
+        data-scroll-reveal-motion="fade"
       {% endif %}
     >
       {% content_for 'blocks' %}
@@ -240,6 +248,12 @@
     {
       "type": "paragraph",
       "content": "t:content.complementary_products"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_reveal",
+      "label": "Enable on-scroll fade-in",
+      "default": false
     },
     {
       "type": "header",

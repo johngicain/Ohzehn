@@ -3981,12 +3981,12 @@ fly-to-cart.fly-to-cart--sticky {
 }
 
 .group-block-content,
-.group-block-content .shopify-block {
+.shopify-block {
   height: 100%;
   width: 100%;
 }
 
-.group-block-content .shopify-block {
+.shopify-block {
   display: flex;
   justify-content: center;
   align-items: center;
