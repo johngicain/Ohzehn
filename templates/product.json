@@ -309,10 +309,10 @@
           "type": "_content-tab",
           "settings": {
             "tab_label": "Designer for",
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -358,53 +358,99 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_zcA9ht": {
-                  "type": "text",
+                "icon_heading_text_7iHTnY": {
+                  "type": "icon-heading-text",
+                  "name": "t:names.icon_heading_text",
                   "settings": {
-                    "text": "<p>We ship within 1–2 business days. Tracking is sent when your order leaves our warehouse.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "icon": "check_box",
+                    "image_upload": "shopify://shop_images/sweat-wicking-icon.svg",
+                    "width": 28,
+                    "heading": "<strong>Sweat-wicking</strong>",
+                    "heading_preset": "h5",
+                    "text": "<p>Sweat-wicking tech moves sweat away from your skin, keeping you cool, dry and<br/>focused.</p>",
+                    "layout": "horizontal",
+                    "alignment": "start",
+                    "gap": 12
+                  },
+                  "blocks": {}
+                },
+                "icon_heading_text_DA9nEh": {
+                  "type": "icon-heading-text",
+                  "name": "t:names.icon_heading_text",
+                  "settings": {
+                    "icon": "check_box",
+                    "image_upload": "shopify://shop_images/breathable-icon.svg",
+                    "width": 28,
+                    "heading": "<strong>Breathable</strong>",
+                    "heading_preset": "h5",
+                    "text": "<p>Air and moisture flow through the fabric, allowing your body to breathe so you don't<br/>overheat.</p>",
+                    "layout": "horizontal",
+                    "alignment": "start",
+                    "gap": 12
+                  },
+                  "blocks": {}
+                },
+                "icon_heading_text_VTdCLQ": {
+                  "type": "icon-heading-text",
+                  "name": "t:names.icon_heading_text",
+                  "settings": {
+                    "icon": "check_box",
+                    "image_upload": "shopify://shop_images/seamless-icon.svg",
+                    "width": 28,
+                    "heading": "<strong>Seamless</strong>",
+                    "heading_preset": "h5",
+                    "text": "<p>A comfortable, seamless design means zero distractions and full focus on your<br/>training.</p>",
+                    "layout": "horizontal",
+                    "alignment": "start",
+                    "gap": 12
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
-                "text_zcA9ht"
+                "icon_heading_text_7iHTnY",
+                "icon_heading_text_DA9nEh",
+                "icon_heading_text_VTdCLQ"
               ]
+            },
+            "image_7LjHCR": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "link": "",
+                "zoom_in_on_hover": false,
+                "hover_zoom_scale": 110,
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "group_LYL9d6"
+            "group_LYL9d6",
+            "image_7LjHCR"
           ]
         },
         "content_tab_CLHYra": {
           "type": "_content-tab",
           "settings": {
             "tab_label": "Description",
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -483,20 +529,45 @@
               "block_order": [
                 "text_G6Wdq7"
               ]
+            },
+            "image_hEDKde": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "link": "",
+                "zoom_in_on_hover": false,
+                "hover_zoom_scale": 110,
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "group_KfenD4"
+            "group_KfenD4",
+            "image_hEDKde"
           ]
         },
         "content_tab_xFXrBD": {
           "type": "_content-tab",
           "settings": {
             "tab_label": "Fabric",
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -575,10 +646,35 @@
               "block_order": [
                 "text_iPGin9"
               ]
+            },
+            "image_Hw8QyR": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "link": "",
+                "zoom_in_on_hover": false,
+                "hover_zoom_scale": 110,
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "group_xQNybx"
+            "group_xQNybx",
+            "image_Hw8QyR"
           ]
         }
       },
