@@ -695,7 +695,7 @@
         "tab_button_radius": 24,
         "color_scheme": "scheme-1",
         "padding-block-start": 40,
-        "padding-block-end": 40,
+        "padding-block-end": 20,
         "padding-inline-start": 0,
         "padding-inline-end": 0
       }
@@ -918,8 +918,8 @@
         "section_width": "page-width",
         "gap": 28,
         "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 20,
+        "padding-block-end": 60
       }
     },
     "featured_blog_posts_mUV7FW": {
