@@ -42,6 +42,7 @@
     "new_window": "Se deschide într-o fereastră nouă.",
     "slideshow_next": "Diapozitivul următor",
     "slideshow_previous": "Diapozitivul anterior",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Închide dialogul",
     "reset_search": "Resetează căutarea",
     "search_results_count": "{{ count }} rezultate ale căutării găsite pentru „{{ query }}”",

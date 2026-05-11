@@ -42,6 +42,7 @@
     "new_window": "Új ablakban nyílik meg.",
     "slideshow_next": "Következő dia",
     "slideshow_previous": "Előző dia",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Párbeszédablak bezárása",
     "reset_search": "Keresés alaphelyzetbe állítása",
     "search_results_count": "{{ count }} találat a(z) „{{ query }}” kifejezésre",

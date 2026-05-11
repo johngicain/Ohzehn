@@ -42,6 +42,7 @@
     "new_window": "Atidaroma naujame lange.",
     "slideshow_next": "Kita skaidrė",
     "slideshow_previous": "Ankstesnė skaidrė",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Uždaryti dialogo langą",
     "reset_search": "Nustatyti paiešką iš naujo",
     "search_results_count": "Rasti {{ count }} rezultatai (-ų) pagal užklausą „{{ query }}“",

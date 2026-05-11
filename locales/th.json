@@ -42,6 +42,7 @@
     "new_window": "เปิดในหน้าต่างใหม่",
     "slideshow_next": "สไลด์ถัดไป",
     "slideshow_previous": "สไลด์ก่อนหน้า",
+    "content_tabs": "Tabbed content",
     "close_dialog": "ปิดกล่องโต้ตอบ",
     "reset_search": "รีเซ็ตการค้นหา",
     "search_results_count": "พบผลลัพธ์การค้นหาจำนวน {{ count }} รายการสำหรับ \"{{ query }}\"",

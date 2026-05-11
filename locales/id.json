@@ -46,6 +46,7 @@
     "search_results_no_results": "Tidak ditemukan hasil untuk \"{{ query }}\"",
     "slideshow_next": "Slide berikutnya",
     "slideshow_previous": "Slide sebelumnya",
+    "content_tabs": "Tabbed content",
     "filters": "Filter",
     "account": "Akun",
     "cart": "Keranjang",

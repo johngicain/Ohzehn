@@ -42,6 +42,7 @@
     "new_window": "Yeni bir pencerede açılır.",
     "slideshow_next": "Sonraki slayt",
     "slideshow_previous": "Önceki slayt",
+    "content_tabs": "Tabbed content",
     "close_dialog": "İletişim kutusunu kapat",
     "reset_search": "Aramayı sıfırla",
     "search_results_count": "\"{{ query }}\" için {{ count }} arama sonucu bulundu",

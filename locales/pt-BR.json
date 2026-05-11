@@ -46,6 +46,7 @@
     "search_results_no_results": "Não encontramos resultados para \"{{ query }}\"",
     "slideshow_next": "Próximo slide",
     "slideshow_previous": "Slide anterior",
+    "content_tabs": "Tabbed content",
     "filters": "Filtros",
     "filter_count": {
       "one": "{{ count }} filtro aplicado",

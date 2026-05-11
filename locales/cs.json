@@ -42,6 +42,7 @@
     "new_window": "Otevře se v novém okně.",
     "slideshow_next": "Další snímek",
     "slideshow_previous": "Předchozí snímek",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Zavřít dialog",
     "reset_search": "Resetovat hledání",
     "search_results_count": "Pro dotaz „{{ query }}“ byl nalezen tento počet výsledků: {{ count }}",

@@ -46,6 +46,7 @@
     "search_results_no_results": "Δεν βρέθηκαν αποτελέσματα για \"{{ query }}\"",
     "slideshow_next": "Επόμενη διαφάνεια",
     "slideshow_previous": "Προηγούμενη διαφάνεια",
+    "content_tabs": "Tabbed content",
     "filters": "Φίλτρα",
     "account": "Λογαριασμός",
     "cart": "Καλάθι",

@@ -1,0 +1,484 @@
+{% liquid
+  assign s = block.settings
+  assign hp = s.heading_preset | default: 'h5'
+  if hp == 'paragraph'
+    assign heading_class = 'paragraph'
+  else
+    assign heading_class = hp | append: ' ' | append: hp
+  endif
+  assign show_icon = false
+  if s.icon != 'none' or s.image_upload != blank
+    assign show_icon = true
+  endif
+  assign text_align = 'start'
+  if s.alignment == 'center'
+    assign text_align = 'center'
+  elsif s.alignment == 'end'
+    assign text_align = 'end'
+  endif
+  assign cross_align = 'flex-start'
+  if s.layout == 'vertical'
+    if s.alignment == 'center'
+      assign cross_align = 'center'
+    elsif s.alignment == 'end'
+      assign cross_align = 'flex-end'
+    endif
+  endif
+%}
+<div
+  class="icon-heading-text icon-heading-text--{{ s.layout }}{% unless show_icon %} icon-heading-text--no-icon{% endunless %}"
+  style="--icon-heading-text-gap: {{ s.gap }}px; --icon-heading-text-align: {{ text_align }};{% if s.layout == 'vertical' %} --icon-heading-text-cross: {{ cross_align }};{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% if show_icon %}
+    <div class="icon-heading-text__icon" aria-hidden="true">
+      {% render 'icon-or-image',
+        icon: s.icon,
+        image_upload: s.image_upload,
+        width: s.width,
+        class_name: 'icon-heading-text__media'
+      %}
+    </div>
+  {% endif %}
+  <div class="icon-heading-text__body">
+    {% if s.heading != blank %}
+      <div class="icon-heading-text__heading {{ heading_class }}">{{ s.heading }}</div>
+    {% endif %}
+    {% if s.text != blank %}
+      <div class="icon-heading-text__text rte">
+        <rte-formatter>
+          {{ s.text }}
+        </rte-formatter>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .icon-heading-text {
+    display: flex;
+    width: 100%;
+    gap: var(--icon-heading-text-gap, 12px);
+  }
+
+  .icon-heading-text--vertical {
+    flex-direction: column;
+    align-items: var(--icon-heading-text-cross, flex-start);
+  }
+
+  .icon-heading-text--horizontal {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .icon-heading-text--horizontal.icon-heading-text--no-icon .icon-heading-text__body {
+    width: 100%;
+  }
+
+  .icon-heading-text__icon {
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .icon-heading-text__media {
+    height: auto;
+    vertical-align: top;
+  }
+
+  .icon-heading-text__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    text-align: var(--icon-heading-text-align, start);
+  }
+
+  .icon-heading-text__heading {
+    margin: 0;
+  }
+
+  .icon-heading-text__text {
+    margin: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.icon_heading_text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "apple",
+          "label": "t:options.apple"
+        },
+        {
+          "value": "arrow",
+          "label": "t:options.arrow"
+        },
+        {
+          "value": "banana",
+          "label": "t:options.banana"
+        },
+        {
+          "value": "bottle",
+          "label": "t:options.bottle"
+        },
+        {
+          "value": "box",
+          "label": "t:options.box"
+        },
+        {
+          "value": "carrot",
+          "label": "t:options.carrot"
+        },
+        {
+          "value": "chat_bubble",
+          "label": "t:options.chat_bubble"
+        },
+        {
+          "value": "check_box",
+          "label": "t:options.check_box"
+        },
+        {
+          "value": "clipboard",
+          "label": "t:options.clipboard"
+        },
+        {
+          "value": "dairy",
+          "label": "t:options.dairy"
+        },
+        {
+          "value": "dairy_free",
+          "label": "t:options.dairy_free"
+        },
+        {
+          "value": "dryer",
+          "label": "t:options.dryer"
+        },
+        {
+          "value": "eye",
+          "label": "t:options.eye"
+        },
+        {
+          "value": "fire",
+          "label": "t:options.fire"
+        },
+        {
+          "value": "gluten_free",
+          "label": "t:options.gluten_free"
+        },
+        {
+          "value": "heart",
+          "label": "t:options.heart"
+        },
+        {
+          "value": "iron",
+          "label": "t:options.iron"
+        },
+        {
+          "value": "leaf",
+          "label": "t:options.leaf"
+        },
+        {
+          "value": "leather",
+          "label": "t:options.leather"
+        },
+        {
+          "value": "lightning_bolt",
+          "label": "t:options.lightning_bolt"
+        },
+        {
+          "value": "lipstick",
+          "label": "t:options.lipstick"
+        },
+        {
+          "value": "lock",
+          "label": "t:options.lock"
+        },
+        {
+          "value": "map_pin",
+          "label": "t:options.map_pin"
+        },
+        {
+          "value": "nut_free",
+          "label": "t:options.nut_free"
+        },
+        {
+          "value": "pants",
+          "label": "t:options.pants"
+        },
+        {
+          "value": "paw_print",
+          "label": "t:options.paw_print"
+        },
+        {
+          "value": "pepper",
+          "label": "t:options.pepper"
+        },
+        {
+          "value": "perfume",
+          "label": "t:options.perfume"
+        },
+        {
+          "value": "plane",
+          "label": "t:options.plane"
+        },
+        {
+          "value": "plant",
+          "label": "t:options.plant"
+        },
+        {
+          "value": "price_tag",
+          "label": "t:options.price_tag"
+        },
+        {
+          "value": "question_mark",
+          "label": "t:options.question_mark"
+        },
+        {
+          "value": "recycle",
+          "label": "t:options.recycle"
+        },
+        {
+          "value": "return",
+          "label": "t:options.return"
+        },
+        {
+          "value": "ruler",
+          "label": "t:options.ruler"
+        },
+        {
+          "value": "serving_dish",
+          "label": "t:options.serving_dish"
+        },
+        {
+          "value": "shirt",
+          "label": "t:options.shirt"
+        },
+        {
+          "value": "shoe",
+          "label": "t:options.shoe"
+        },
+        {
+          "value": "silhouette",
+          "label": "t:options.silhouette"
+        },
+        {
+          "value": "bluesky",
+          "label": "t:options.social_bluesky"
+        },
+        {
+          "value": "facebook",
+          "label": "t:options.social_facebook"
+        },
+        {
+          "value": "instagram",
+          "label": "t:options.social_instagram"
+        },
+        {
+          "value": "linkedin",
+          "label": "t:options.social_linkedin"
+        },
+        {
+          "value": "pinterest",
+          "label": "t:options.social_pinterest"
+        },
+        {
+          "value": "snapchat",
+          "label": "t:options.social_snapchat"
+        },
+        {
+          "value": "spotify",
+          "label": "t:options.social_spotify"
+        },
+        {
+          "value": "threads",
+          "label": "t:options.social_threads"
+        },
+        {
+          "value": "tiktok",
+          "label": "t:options.social_tiktok"
+        },
+        {
+          "value": "tumblr",
+          "label": "t:options.social_tumblr"
+        },
+        {
+          "value": "twitter",
+          "label": "t:options.social_twitter"
+        },
+        {
+          "value": "vimeo",
+          "label": "t:options.social_vimeo"
+        },
+        {
+          "value": "youtube",
+          "label": "t:options.social_youtube"
+        },
+        {
+          "value": "whatsapp",
+          "label": "t:options.social_whatsapp"
+        },
+        {
+          "value": "snowflake",
+          "label": "t:options.snowflake"
+        },
+        {
+          "value": "star",
+          "label": "t:options.star"
+        },
+        {
+          "value": "stopwatch",
+          "label": "t:options.stopwatch"
+        },
+        {
+          "value": "truck",
+          "label": "t:options.truck"
+        },
+        {
+          "value": "washing",
+          "label": "t:options.washing"
+        }
+      ],
+      "default": "check_box"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_upload",
+      "label": "t:settings.image_icon"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "t:settings.width",
+      "min": 12,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "t:text_defaults.heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "paragraph",
+          "label": "t:options.paragraph"
+        },
+        {
+          "value": "h6",
+          "label": "t:options.h6"
+        },
+        {
+          "value": "h5",
+          "label": "t:options.h5"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        }
+      ],
+      "default": "h5"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "<p>Add supporting text.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "t:options.horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "t:options.vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.icon_heading_text",
+      "category": "t:categories.text",
+      "settings": {
+        "icon": "check_box",
+        "width": 28,
+        "heading_preset": "h5",
+        "layout": "horizontal",
+        "alignment": "start",
+        "gap": 12
+      }
+    }
+  ]
+}
+{% endschema %}

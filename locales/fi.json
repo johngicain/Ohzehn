@@ -42,6 +42,7 @@
     "new_window": "Avautuu uuteen ikkunaan.",
     "slideshow_next": "Seuraava dia",
     "slideshow_previous": "Edellinen dia",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Sulje valintaikkuna",
     "reset_search": "Nollaa haku",
     "search_results_count": "{{ count }} hakutulosta haulla {{ query }}",

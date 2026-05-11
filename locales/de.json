@@ -42,6 +42,7 @@
     "new_window": "Wird in einem neuen Fenster geöffnet.",
     "slideshow_next": "Nächste Folie",
     "slideshow_previous": "Vorherige Folie",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Dialogfeld schließen",
     "reset_search": "Suche zurücksetzen",
     "search_results_count": "{{ count }} Suchergebnisse für „{{ query }}“ gefunden",

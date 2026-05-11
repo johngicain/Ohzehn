@@ -46,6 +46,7 @@
     "search_results_no_results": "Não foram encontrados resultados para \"{{ query }}\"",
     "slideshow_next": "Diapositivo seguinte",
     "slideshow_previous": "Diapositivo anterior",
+    "content_tabs": "Tabbed content",
     "filters": "Filtros",
     "filter_count": {
       "one": "{{ count }} filtro aplicado",

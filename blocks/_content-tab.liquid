@@ -1,0 +1,200 @@
+{% liquid
+  assign is_first_tab = false
+  for b in section.blocks
+    if b.type == '_content-tab'
+      if b.id == block.id
+        assign is_first_tab = true
+      endif
+      break
+    endif
+  endfor
+  assign tab_id = 'Tab-' | append: block.id | append: '-' | append: section.id
+  assign panel_id = 'Panel-' | append: block.id | append: '-' | append: section.id
+  assign content_direction = block.settings.content_direction | default: 'column'
+%}
+<div
+  id="{{ panel_id }}"
+  class="tabcontent"
+  role="tabpanel"
+  aria-labelledby="{{ tab_id }}"
+  ref="panels[]"
+  {% unless is_first_tab %}hidden{% endunless %}
+  {{ block.shopify_attributes }}
+>
+  <div
+    class="tabcontent__inner layout-panel-flex layout-panel-flex--{{ content_direction }}{% if content_direction == 'row' and block.settings.vertical_on_mobile %} mobile-column{% endif %}"
+    style="{% render 'layout-panel-style', settings: block.settings %}"
+  >
+    {% content_for 'blocks' %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .tabcontent__inner {
+    width: 100%;
+    min-width: 0;
+    gap: 2rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.content_tab",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_divider"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "t:names.content_tab_link",
+      "default": "Tab"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "content_direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "column",
+          "label": "t:options.vertical"
+        },
+        {
+          "value": "row",
+          "label": "t:options.horizontal"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_on_mobile",
+      "label": "t:settings.vertical_on_mobile",
+      "default": true,
+      "visible_if": "{{ block.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        },
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        }
+      ],
+      "default": "flex-start",
+      "visible_if": "{{ block.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ block.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "align_baseline",
+      "label": "t:settings.align_baseline",
+      "default": false,
+      "visible_if": "{{ block.settings.vertical_alignment == 'flex-end' }}"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_flex_direction_column",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "flex-start",
+      "visible_if": "{{ block.settings.content_direction != 'row' }}"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_flex_direction_column",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        },
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ block.settings.content_direction == 'column' }}"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

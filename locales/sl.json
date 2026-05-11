@@ -42,6 +42,7 @@
     "new_window": "Odpre se v novem oknu.",
     "slideshow_next": "Naslednji diapozitiv",
     "slideshow_previous": "Prejšnji diapozitiv",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Zapri pogovorno okno",
     "reset_search": "Ponastavi iskanje",
     "search_results_count": "Št. najdenih rezultatov za poizvedbo »{{ query }}«: {{ count }}",

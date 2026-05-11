@@ -1,0 +1,521 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="section section--{{ section.settings.section_width }} spacing-style color-{{ section.settings.color_scheme }}"
+  style="{% render 'spacing-style', settings: section.settings %}"
+>
+  {% liquid
+    assign tp = section.settings.tab_type_preset
+    if tp == 'paragraph'
+      assign tab_typo_classes = 'paragraph'
+    else
+      assign tab_typo_classes = tp | append: ' ' | append: tp
+    endif
+  %}
+  <content-tabs-component
+    class="content-tabs content-tabs--{{ section.settings.tab_button_appearance }}"
+    style="
+      --content-tabs-tablist-align: {{ section.settings.tab_alignment }};
+      --content-tabs-tab-gap: {{ section.settings.tab_button_gap }}px;
+      --content-tabs-tab-pad-y: {{ section.settings.tab_button_padding_vertical }}px;
+      --content-tabs-tab-pad-x: {{ section.settings.tab_button_padding_horizontal }}px;
+      --content-tabs-tab-radius: {{ section.settings.tab_button_radius }}px;
+    "
+  >
+    <div
+      class="content-tabs__tablist"
+      role="tablist"
+      ref="tablist"
+      aria-label="{{ 'accessibility.content_tabs' | t }}"
+    >
+      {% assign tab_button_index = 0 %}
+      {% for tab_block in section.blocks %}
+          {% assign tab_button_index = tab_button_index | plus: 1 %}
+          {% liquid
+            assign tab_label = tab_block.settings.tab_label | strip
+            if tab_label == blank
+              assign tab_label = 'Tab ' | append: tab_button_index
+            endif
+            assign tab_id = 'Tab-' | append: tab_block.id | append: '-' | append: section.id
+            assign panel_id = 'Panel-' | append: tab_block.id | append: '-' | append: section.id
+            assign is_first_tab = false
+            if tab_button_index == 1
+              assign is_first_tab = true
+            endif
+          %}
+          <button
+            type="button"
+            class="content-tabs__tab {{ tab_typo_classes }}"
+            role="tab"
+            ref="tabs[]"
+            id="{{ tab_id }}"
+            aria-controls="{{ panel_id }}"
+            aria-selected="{% if is_first_tab %}true{% else %}false{% endif %}"
+            tabindex="{% if is_first_tab %}0{% else %}-1{% endif %}"
+          >
+            <span class="content-tabs__tab-label">{{ tab_label | escape }}</span>
+          </button>
+      {% endfor %}
+    </div>
+    <div class="content-tabs__panels">
+      {% content_for 'blocks' %}
+    </div>
+  </content-tabs-component>
+</div>
+
+{% stylesheet %}
+  .content-tabs {
+    display: block;
+    width: 100%;
+  }
+
+  .content-tabs__tablist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: var(--content-tabs-tablist-align, flex-start);
+    gap: 0.25rem var(--content-tabs-tab-gap, 12px);
+    margin-block-end: 3rem;
+  }
+
+  .content-tabs--underline .content-tabs__tablist {
+    border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.15);
+  }
+
+  .content-tabs--minimal .content-tabs__tablist {
+    border-bottom: none;
+    margin-block-end: 0.75rem;
+  }
+
+  .content-tabs--pill .content-tabs__tablist {
+    border-bottom: none;
+    align-items: center;
+    margin-block-end: 3rem;
+  }
+
+  .content-tabs__tab {
+    position: relative;
+    margin: 0;
+    padding: var(--content-tabs-tab-pad-y, 10px) var(--content-tabs-tab-pad-x, 6px);
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: center;
+    color: rgb(var(--color-foreground-rgb) / 0.65);
+    background: none;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .content-tabs--underline .content-tabs__tab {
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+
+  .content-tabs--minimal .content-tabs__tab {
+    padding: var(--content-tabs-tab-pad-y, 8px) var(--content-tabs-tab-pad-x, 10px);
+  }
+
+  .content-tabs__tab:hover {
+    color: rgb(var(--color-foreground-rgb) / 0.9);
+  }
+
+  .content-tabs__tab[aria-selected='false'] {
+    color: rgb(var(--color-foreground-rgb) / 0.65);
+  }
+
+  .content-tabs--underline .content-tabs__tab[aria-selected='true'] {
+    color: var(--color-foreground);
+    border-bottom-color: var(--color-foreground);
+  }
+
+  .content-tabs--minimal .content-tabs__tab[aria-selected='true'] {
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .content-tabs.content-tabs--pill .content-tabs__tab {
+    border: none;
+    margin-bottom: 0;
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    color: inherit;
+    padding: 7px 12px;
+    border-radius: 1rem;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .content-tabs.content-tabs--pill .content-tabs__tab[aria-selected='false'] {
+    color: inherit;
+  }
+
+  .content-tabs.content-tabs--pill .content-tabs__tab:hover,
+  .content-tabs.content-tabs--pill .content-tabs__tab[aria-selected='true'] {
+    color: #ffffff;
+    background: var(--color-foreground);
+  }
+
+  .content-tabs__tab:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 2px;
+  }
+
+  .content-tabs__tab-label {
+    display: inline-block;
+    pointer-events: none;
+  }
+
+  .content-tabs__panels {
+    display: block;
+    width: 100%;
+  }
+
+  .content-tabs .tabcontent {
+    display: block;
+  }
+
+  .content-tabs .tabcontent[hidden] {
+    display: none !important;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.content_tabs",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "_content-tab"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "tab_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        },
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "header",
+      "content": "t:content.tab_buttons"
+    },
+    {
+      "type": "select",
+      "id": "tab_button_appearance",
+      "label": "t:settings.tab_button_appearance",
+      "options": [
+        {
+          "value": "underline",
+          "label": "t:options.underline"
+        },
+        {
+          "value": "pill",
+          "label": "t:options.pill"
+        },
+        {
+          "value": "minimal",
+          "label": "t:options.text_only"
+        }
+      ],
+      "default": "underline"
+    },
+    {
+      "type": "select",
+      "id": "tab_type_preset",
+      "label": "t:settings.tab_type_preset",
+      "options": [
+        {
+          "value": "paragraph",
+          "label": "t:options.paragraph"
+        },
+        {
+          "value": "h6",
+          "label": "t:options.h6"
+        },
+        {
+          "value": "h5",
+          "label": "t:options.h5"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        }
+      ],
+      "default": "h6"
+    },
+    {
+      "type": "range",
+      "id": "tab_button_gap",
+      "label": "t:settings.tab_button_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "tab_button_padding_vertical",
+      "label": "t:settings.tab_button_padding_vertical",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "tab_button_padding_horizontal",
+      "label": "t:settings.tab_button_padding_horizontal",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    { 
+      "type": "range",
+      "id": "tab_button_radius",
+      "label": "t:settings.tab_button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.tab_button_appearance == 'pill' }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.content_tabs",
+      "category": "t:categories.text",
+      "blocks": {
+        "tab_1": {
+          "type": "_content-tab",
+          "settings": {
+            "tab_label": "Shipping"
+          },
+          "blocks": {
+            "group_1": {
+              "type": "group",
+              "blocks": {
+                "text_1": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>We ship within 1–2 business days. Tracking is sent when your order leaves our warehouse.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": ["text_1"],
+              "settings": {
+                "gap": 12,
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": ["group_1"]
+        },
+        "tab_2": {
+          "type": "_content-tab",
+          "settings": {
+            "tab_label": "Returns"
+          },
+          "blocks": {
+            "group_2": {
+              "type": "group",
+              "blocks": {
+                "text_2": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Eligible items can be returned within 30 days in original condition. Start a return from your account.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": ["text_2"],
+              "settings": {
+                "gap": 12,
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": ["group_2"]
+        },
+        "tab_3": {
+          "type": "_content-tab",
+          "settings": {
+            "tab_label": "Care"
+          },
+          "blocks": {
+            "group_3": {
+              "type": "group",
+              "blocks": {
+                "text_3": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Follow the care label on each product. Most pieces are machine washable on a gentle cycle.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": ["text_3"],
+              "settings": {
+                "gap": 12,
+                "vertical_on_mobile": true,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": ["group_3"]
+        }
+      },
+      "block_order": ["tab_1", "tab_2", "tab_3"],
+      "settings": {
+        "section_width": "page-width",
+        "tab_alignment": "flex-start",
+        "tab_button_appearance": "underline",
+        "tab_type_preset": "h6",
+        "tab_button_gap": 12,
+        "tab_button_padding_vertical": 10,
+        "tab_button_padding_horizontal": 8,
+        "tab_button_radius": 24,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 40,
+        "padding-block-end": 40,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    }
+  ]
+}
+{% endschema %}

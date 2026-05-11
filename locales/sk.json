@@ -42,6 +42,7 @@
     "new_window": "Otvorí sa v novom okne.",
     "slideshow_next": "Nasledujúca snímka",
     "slideshow_previous": "Predchádzajúca snímka",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Zavrieť dialógové okno",
     "reset_search": "Resetovať vyhľadávanie",
     "search_results_count": "{{ count }} nájdené výsledky vyhľadávania pre „{{ query }}“",

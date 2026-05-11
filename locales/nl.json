@@ -42,6 +42,7 @@
     "new_window": "Wordt geopend in een nieuw venster.",
     "slideshow_next": "Volgende dia",
     "slideshow_previous": "Vorige dia",
+    "content_tabs": "Tabbed content",
     "close_dialog": "Dialoogvenster sluiten",
     "reset_search": "Zoekactie opnieuw instellen",
     "search_results_count": "{{ count }} zoekresultaten gevonden voor '{{ query }}'",

@@ -110,6 +110,19 @@ document.addEventListener('shopify:block:select', function (event) {
       // Use instant transition if the same slide is selected again
       layeredSlideshow.select(index, { instant: isAlreadyActive });
     }
+
+    const contentTabsPanel = event.target.closest('content-tabs-component [role="tabpanel"]');
+
+    if (contentTabsPanel instanceof HTMLElement) {
+      const contentTabs = contentTabsPanel.closest('content-tabs-component');
+      if (!contentTabs || !('selectTab' in contentTabs) || typeof contentTabs.selectTab !== 'function') return;
+
+      const panels = contentTabs.querySelectorAll('[role="tabpanel"]');
+      const index = Array.from(panels).indexOf(contentTabsPanel);
+      if (index === -1) return;
+
+      contentTabs.selectTab(index);
+    }
   }
 });
 

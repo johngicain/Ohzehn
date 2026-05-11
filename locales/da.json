@@ -46,6 +46,7 @@
     "search_results_no_results": "Ingen resultater fundet for “{{ query }}”",
     "slideshow_next": "Næste dias",
     "slideshow_previous": "Forrige dias",
+    "content_tabs": "Tabbed content",
     "filters": "Filtre",
     "filter_count": {
       "one": "{{ count }} filter anvendt",
