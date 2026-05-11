@@ -11,6 +11,106 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "section_AfjBRE": {
+      "type": "section",
+      "blocks": {
+        "text_RUUdzX": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p><strong>Designed for your body</strong> <strong>— not just performance</strong>     We’ve engineered an alternative to synthetic activewear    <em>Because what  you were to be healthy; </em>should also make you healthierLess Plastic. <strong>More Human.    Move Freely. With Style & Intention.</strong></p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "2rem",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "strong_color_enable": true,
+            "strong_color": "#5e5d59",
+            "em_color_enable": true,
+            "em_color": "#6f6e69",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "image_HU8Q9V": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/ohzehn-logo-letter.png",
+            "link": "",
+            "zoom_in_on_hover": false,
+            "hover_zoom_scale": 110,
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_RUUdzX",
+        "image_HU8Q9V"
+      ],
+      "name": "t:names.rich_text_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 25,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "multicolumn_layout": false,
+        "scroll_reveal_blocks": true,
+        "multicolumn_background_image_position": "cover",
+        "multicolumn_section_wrapper_padding_top": 0,
+        "multicolumn_section_wrapper_padding_bottom": 0,
+        "multicolumn_section_wrapper_padding_left": 0,
+        "multicolumn_section_wrapper_padding_right": 0,
+        "multicolumn_background_border_radius": 0,
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
     "footer_m9NzUG": {
       "type": "footer",
       "blocks": {
@@ -403,6 +503,7 @@
     }
   },
   "order": [
+    "section_AfjBRE",
     "footer_m9NzUG",
     "footer_utilities_jLGE8U"
   ]
