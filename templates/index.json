@@ -2487,7 +2487,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>The New Performance Category</p>",
+                "text": "<p><strong>The New Performance Category</strong></p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
