@@ -8,7 +8,12 @@
 -%}
 
 {% unless product_resource == blank %}
-  {% render 'variant-main-picker', product_resource: product_resource, section: section, product: product %}
+  {% render 'variant-main-picker',
+    product_resource: product_resource,
+    section: section,
+    product: product,
+    block: block
+  %}
 {% endunless %}
 
 {% schema %}
@@ -47,10 +52,60 @@
       "default": true
     },
     {
+      "type": "header",
+      "content": "Size guide"
+    },
+    {
+      "type": "image_picker",
+      "id": "size_guide_image",
+      "label": "Size guide image"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_label",
+      "label": "Size guide link label",
+      "default": "Size Guide"
+    },
+    {
       "type": "text_alignment",
       "id": "alignment",
       "label": "t:settings.alignment",
       "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "t:content.variant_option_dividers"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_bottom_all_variant_fieldsets",
+      "label": "t:settings.divider_bottom_all_variant_fieldsets",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_after_fieldset_1",
+      "label": "t:settings.divider_after_variant_fieldset_1",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_after_fieldset_2",
+      "label": "t:settings.divider_after_variant_fieldset_2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_after_fieldset_3",
+      "label": "t:settings.divider_after_variant_fieldset_3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divider_after_fieldset_4",
+      "label": "t:settings.divider_after_variant_fieldset_4",
+      "default": false,
+      "info": "t:info.variant_option_divider_fieldsets"
     },
     {
       "type": "header",

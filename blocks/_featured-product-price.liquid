@@ -37,11 +37,17 @@
   {{ block.shopify_attributes }}
 >
   {% if product.price_varies and has_swatches_only == false and price_min != blank %}
-    <span class="price">{{ display_price }}</span>
+    <span
+      class="price"
+      {% if block_settings.bold_price_text %}
+        style="font-weight: var(--font-weight-semibold);"
+      {% endif %}
+    >{{ display_price }}</span>
   {% else %}
     {% render 'price',
       show_unit_price: true,
       show_sale_price_first: block_settings.show_sale_price_first,
+      bold_price_text: block_settings.bold_price_text,
       product_resource: product
     %}
   {% endif %}
@@ -50,7 +56,7 @@
 {% schema %}
 {
   "name": "t:names.product_price",
-  "tag": null,
+  "tag": "div",
   "settings": [
     {
       "type": "paragraph",
@@ -65,6 +71,12 @@
       "id": "show_sale_price_first",
       "label": "t:settings.show_sale_price_first",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bold_price_text",
+      "label": "t:settings.bold_price_text",
+      "default": false
     },
     {
       "type": "select",

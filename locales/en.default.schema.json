@@ -156,6 +156,7 @@
     "typography_primary": "Primary typography",
     "typography_secondary": "Secondary typography",
     "typography_tertiary": "Tertiary typography",
+    "variant_option_dividers": "Variant option dividers",
     "variant_settings": "Variant settings",
     "visibility": "Visibility",
     "width": "Width",
@@ -245,7 +246,8 @@
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
     "media_type_info": "Features are populated from your menu links",
     "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
-    "scroll_reveal_blocks": "Each top-level block slides up and fades in over 3 seconds when it enters the viewport. On by default for the Rich text, FAQ, and Split showcase (banner) presets."
+    "scroll_reveal_blocks": "Each top-level block slides up and fades in over 3 seconds when it enters the viewport. On by default for the Rich text, FAQ, and Split showcase (banner) presets.",
+    "variant_option_divider_fieldsets": "Each toggle adds a horizontal border below that option fieldset when another option row follows. The last fieldset has no divider below."
   },
   "names": {
     "column": "Column",
@@ -780,6 +782,7 @@
     "add_discount_code": "Allow discounts in cart",
     "add_to_cart_animation": "Add to cart",
     "always_stack_buttons": "Always stack buttons",
+    "uppercase_buy_buttons": "Uppercase button text",
     "aspect_ratio": "Aspect ratio",
     "custom_mobile_media": "Show different media on mobile",
     "stack_media_on_mobile": "Stack media",
@@ -1122,10 +1125,16 @@
     "show_copyright_line": "Show year and store name",
     "show_powered_by_shopify": "Show \"Powered by Shopify\"",
     "show_sale_price_first": "Show sale price first",
+    "bold_price_text": "Bold price text",
     "show_search": "Show search",
     "show_second_image_on_hover": "Show second image on hover",
     "show_swatch_label": "Text labels for swatches",
     "show_tax_info": "Tax information",
+    "divider_after_variant_fieldset_1": "Divider below 1st option (fieldset)",
+    "divider_after_variant_fieldset_2": "Divider below 2nd option (fieldset)",
+    "divider_after_variant_fieldset_3": "Divider below 3rd option (fieldset)",
+    "divider_after_variant_fieldset_4": "Divider below 4th option (fieldset)",
+    "divider_bottom_all_variant_fieldsets": "Dividers below all options (except last)",
     // Font size or element dimensions setting
     "size": "Size",
     "skus": "SKUs",

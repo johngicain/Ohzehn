@@ -36,7 +36,7 @@
 %}
 
 <span
-  class="buy-buttons-block buy-buttons-block--{{ block.id }}"
+  class="buy-buttons-block{% if block_settings.uppercase %} buy-buttons-block--uppercase{% endif %} buy-buttons-block--{{ block.id }}"
   {{ block.shopify_attributes }}
 >
   {%- if product != blank -%}
@@ -379,6 +379,12 @@
       "type": "checkbox",
       "id": "stacking",
       "label": "t:settings.always_stack_buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "t:settings.uppercase_buy_buttons",
       "default": false
     },
     {

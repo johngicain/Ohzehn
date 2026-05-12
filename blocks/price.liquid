@@ -50,7 +50,8 @@
   {% render 'price',
     show_unit_price: true,
     product_resource: product_resource,
-    show_sale_price_first: block_settings.show_sale_price_first
+    show_sale_price_first: block_settings.show_sale_price_first,
+    bold_price_text: block_settings.bold_price_text
   %}
 
   {% if block_settings.show_tax_info %}
@@ -87,7 +88,7 @@
 {% schema %}
 {
   "name": "t:names.product_price",
-  "tag": null,
+  "tag": "div",
   "settings": [
     {
       "type": "paragraph",
@@ -102,6 +103,12 @@
       "id": "show_sale_price_first",
       "label": "t:settings.show_sale_price_first",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bold_price_text",
+      "label": "t:settings.bold_price_text",
+      "default": false
     },
     {
       "type": "checkbox",
