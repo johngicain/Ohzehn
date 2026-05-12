@@ -158,6 +158,7 @@
                   "type": "price",
                   "settings": {
                     "show_sale_price_first": true,
+                    "bold_price_text": false,
                     "show_installments": false,
                     "show_tax_info": false,
                     "type_preset": "paragraph",
@@ -225,7 +226,14 @@
               "settings": {
                 "variant_style": "buttons",
                 "show_swatches": true,
+                "size_guide_image": "shopify://shop_images/23c23665-9638-42a9-9b4c-0abac852a661_d4ac6db4-db39-4b96-8d13-caf557330063.jpg",
+                "size_guide_label": "Size Guide",
                 "alignment": "left",
+                "divider_bottom_all_variant_fieldsets": true,
+                "divider_after_fieldset_1": false,
+                "divider_after_fieldset_2": false,
+                "divider_after_fieldset_3": false,
+                "divider_after_fieldset_4": false,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -253,6 +261,7 @@
               "type": "buy-buttons",
               "settings": {
                 "stacking": true,
+                "uppercase": false,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
                 "padding-block-start": 0,
@@ -912,6 +921,7 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
+                "bold_price_text": false,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
