@@ -20,6 +20,18 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .media-gallery--two_then_three-column .media-gallery__grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .media-gallery--two_then_three-column .media-gallery__grid > li:nth-child(-n + 2) {
+      grid-column: span 3;
+    }
+
+    .media-gallery--two_then_three-column .media-gallery__grid > li:nth-child(n + 3) {
+      grid-column: span 2;
+    }
+
     /* Display grid view as a carousel on mobile, grid on desktop */
     media-gallery:is(.media-gallery--grid) slideshow-component {
       display: none;

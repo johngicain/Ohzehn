@@ -120,6 +120,11 @@
   endif
   assign has_image_drop = sorted_media | has: 'media_type', 'image'
 
+  assign mixed_column_grid = false
+  if media_presentation == 'grid' and block_settings.media_columns == 'two_then_three'
+    assign mixed_column_grid = true
+  endif
+
   # Determine if we're in single column mode (carousel or grid with one column)
   assign is_single_column = false
   if media_presentation == 'carousel' or sorted_media.size == 1 or media_presentation == 'grid' and block_settings.media_columns == 'one'
@@ -357,13 +362,30 @@
     {% capture slides %}
       {% for media in sorted_media %}
         {% capture children %}
-          {%- liquid
-              if needs_both_sizes and forloop.first
-                assign media_sizes = sizes_single
-              else
-                assign media_sizes = sizes
+          {%- if mixed_column_grid -%}
+            {%- liquid
+              assign item_grid_cols = 2
+              if forloop.index > 2
+                assign item_grid_cols = 3
               endif
-          -%}
+            -%}
+            {%- capture media_sizes -%}
+              {%- render 'util-product-media-sizes-attr',
+                block: block,
+                section: section,
+                settings: settings,
+                is_first_image: false,
+                is_single_column: false,
+                needs_both_sizes: false,
+                grid_columns_count: item_grid_cols
+              -%}
+            {%- endcapture -%}
+            {%- assign media_sizes = media_sizes | strip -%}
+          {%- elsif needs_both_sizes and forloop.first -%}
+            {%- assign media_sizes = sizes_single -%}
+          {%- else -%}
+            {%- assign media_sizes = sizes -%}
+          {%- endif -%}
           {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
             <div
               class="product-media-constraint-wrapper">
@@ -443,7 +465,7 @@
       arrows_position: icons_position,
       controls: controls
     %}
-
+ 
     {% if media_presentation == 'grid' %}
       <ul
         class="media-gallery__grid list-unstyled"
@@ -473,13 +495,30 @@
               >
               </button>
             {%- endif -%}
-            {%- liquid
-              if needs_both_sizes and forloop.first
-                assign media_sizes = sizes_single
-              else
-                assign media_sizes = sizes
-              endif
-            -%}
+            {%- if mixed_column_grid -%}
+              {%- liquid
+                assign item_grid_cols = 2
+                if forloop.index > 2
+                  assign item_grid_cols = 3
+                endif
+              -%}
+              {%- capture media_sizes -%}
+                {%- render 'util-product-media-sizes-attr',
+                  block: block,
+                  section: section,
+                  settings: settings,
+                  is_first_image: false,
+                  is_single_column: false,
+                  needs_both_sizes: false,
+                  grid_columns_count: item_grid_cols
+                -%}
+              {%- endcapture -%}
+              {%- assign media_sizes = media_sizes | strip -%}
+            {%- elsif needs_both_sizes and forloop.first -%}
+              {%- assign media_sizes = sizes_single -%}
+            {%- else -%}
+              {%- assign media_sizes = sizes -%}
+            {%- endif -%}
             {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
               <div class="product-media-constraint-wrapper">
                 {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}

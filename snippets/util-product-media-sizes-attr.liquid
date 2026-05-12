@@ -7,6 +7,7 @@
   @param {boolean} [is_first_image] - Whether this is the first image (for large_first_image mode)
   @param {boolean} [is_single_column] - Whether the layout is single column (carousel or one-column grid)
   @param {boolean} [needs_both_sizes] - Whether we need to calculate different sizes for first and other images
+  @param {number} [grid_columns_count] - Grid column count for sizing (default 2)
 
   @example
   {% capture media_sizes %}
@@ -18,6 +19,7 @@
 
 {%- liquid
   assign block_settings = block.settings
+  assign grid_columns_count = grid_columns_count | default: 2
   # Constants
   assign page_margin = '40px'
   # Section gap divided by 2 (used for single column layouts)
@@ -55,11 +57,10 @@
       assign default_sizes = '(min-width: 750px) calc(50vw - [gap_half]), 100vw' | replace: '[gap_half]', gap_half
     endif
   else
-    # Default for two column grid - includes image gap and quarter section gap
     if section.settings.equal_columns == false
-      assign default_sizes = '(min-width: 750px) calc((100vw - 25rem) / 2 - [gap_quarter] - [image_gap_half]), 100vw' | replace: '[gap_quarter]', gap_quarter | replace: '[image_gap_half]', image_gap_half
+      assign default_sizes = '(min-width: 750px) calc((100vw - 25rem) / [cols] - [gap_quarter] - [image_gap_half]), 100vw' | replace: '[cols]', grid_columns_count | replace: '[gap_quarter]', gap_quarter | replace: '[image_gap_half]', image_gap_half
     else
-      assign default_sizes = '(min-width: 750px) calc(50vw / 2 - [gap_quarter] - [image_gap_half]), 100vw' | replace: '[gap_quarter]', gap_quarter | replace: '[image_gap_half]', image_gap_half
+      assign default_sizes = '(min-width: 750px) calc(50vw / [cols] - [gap_quarter] - [image_gap_half]), 100vw' | replace: '[cols]', grid_columns_count | replace: '[gap_quarter]', gap_quarter | replace: '[image_gap_half]', image_gap_half
     endif
   endif
 
@@ -105,10 +106,8 @@
 
     # Build calculation based on column type
     if calculate_grid_column
-      # Grid column calculation - includes image gap
-      assign medium_base = '([medium_base]) / 2' | replace: '[medium_base]', medium_base
-      # Build the complete large size expression
-      assign large_size_expr = '([large_size_base]) / 2 - [image_gap_half]' | replace: '[large_size_base]', large_size_base | replace: '[image_gap_half]', image_gap_half
+      assign medium_base = '([medium_base]) / [cols]' | replace: '[medium_base]', medium_base | replace: '[cols]', grid_columns_count
+      assign large_size_expr = '([large_size_base]) / [cols] - [image_gap_half]' | replace: '[large_size_base]', large_size_base | replace: '[cols]', grid_columns_count | replace: '[image_gap_half]', image_gap_half
       assign large_size = 'calc([large_size_expr])' | replace: '[large_size_expr]', large_size_expr
 
       if block_settings.extend_media
