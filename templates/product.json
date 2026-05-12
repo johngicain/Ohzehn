@@ -295,18 +295,6 @@
               },
               "block_order": []
             },
-            "divider_fHMdJg": {
-              "type": "_divider",
-              "name": "t:names.divider",
-              "settings": {
-                "thickness": 1,
-                "corner_radius": "square",
-                "width_percent": 100,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            },
             "details_rows_JaC6b6": {
               "type": "_details-rows",
               "name": "t:names.details_rows",
@@ -331,6 +319,18 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_fHMdJg": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
               },
               "blocks": {}
             },
@@ -371,8 +371,8 @@
             "divider_VJhene",
             "appstle_subscription_appstle_subscription_product_page_widget_K9a6wB",
             "buy_buttons_eYQEYi",
-            "divider_fHMdJg",
             "details_rows_JaC6b6",
+            "divider_fHMdJg",
             "text_knEtCG"
           ]
         }
