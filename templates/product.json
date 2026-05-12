@@ -14,6 +14,7 @@
       "blocks": {
         "tabs_studio_product_tabs_block_LatH7X": {
           "type": "shopify://apps/tabs-studio/blocks/product_tabs_block/19980fb9-f2ca-4ada-ad36-c0364c3318b8",
+          "disabled": true,
           "settings": {
             "default_tab": "app",
             "start_tab_element": "app",
