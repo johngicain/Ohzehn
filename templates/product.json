@@ -311,7 +311,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p><strong>DELIVERY & RETURNS  </strong>›</p>",
+                "text": "<p><a href=\"#\" title=\"DELIVERY & RETURNS\"><strong>DELIVERY & RETURNS   </strong>›</a></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
