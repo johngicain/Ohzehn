@@ -1,0 +1,456 @@
+{%- liquid
+  assign s = block.settings
+  assign rows_class = 'details-rows spacing-style'
+  if s.show_border
+    assign rows_class = rows_class | append: ' details-rows--bordered'
+  endif
+-%}
+{%- capture rows_style -%}
+  {%- render 'spacing-style', settings: s -%}
+  --rows-gap: {{ s.gap | default: 8 }}px;
+  --rows-icon-size: {{ s.icon_size | default: 20 }}px;
+{%- endcapture -%}
+
+<ul
+  class="{{ rows_class }}"
+  role="list"
+  style="{{ rows_style }}"
+  {{ block.shopify_attributes }}
+>
+  {%- for index in (1..3) -%}
+    {%- case index -%}
+      {%- when 1 -%}
+        {%- assign row_icon = s.row_1_icon -%}
+        {%- assign row_text = s.row_1_text -%}
+        {%- assign row_color = s.row_1_text_color -%}
+        {%- assign row_font_size = s.row_1_font_size -%}
+      {%- when 2 -%}
+        {%- assign row_icon = s.row_2_icon -%}
+        {%- assign row_text = s.row_2_text -%}
+        {%- assign row_color = s.row_2_text_color -%}
+        {%- assign row_font_size = s.row_2_font_size -%}
+      {%- when 3 -%}
+        {%- assign row_icon = s.row_3_icon -%}
+        {%- assign row_text = s.row_3_text -%}
+        {%- assign row_color = s.row_3_text_color -%}
+        {%- assign row_font_size = s.row_3_font_size -%}
+    {%- endcase -%}
+    {%- capture row_style -%}
+      {%- if row_color != blank %}color: {{ row_color }};{%- endif -%}
+      {%- if row_font_size != blank %}font-size: {{ row_font_size }};{%- endif -%}
+    {%- endcapture -%}
+    {%- if row_text != blank or row_icon != 'none' -%}
+      <li class="details-rows__row"{% if row_style != blank %} style="{{ row_style }}"{% endif %}>
+        {%- if s.show_icons and row_icon != 'none' -%}
+          <span class="details-rows__icon" aria-hidden="true">
+            <svg
+              class="details-rows__icon-svg icon-default"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              focusable="false"
+            >
+              {%- render 'icon', icon: row_icon -%}
+            </svg>
+          </span>
+        {%- endif -%}
+        {%- if row_text != blank -%}
+          <span class="details-rows__text">{{ row_text }}</span>
+        {%- endif -%}
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+
+{% stylesheet %}
+  .details-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--rows-gap, 8px);
+  }
+
+  .details-rows__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .details-rows--bordered {
+    padding: 12px;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.15);
+    border-radius: var(--style-border-radius-inputs, 0);
+  }
+
+  .details-rows__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .details-rows__icon-svg {
+    width: var(--rows-icon-size, 20px);
+    height: var(--rows-icon-size, 20px);
+    vertical-align: top;
+  }
+
+  .details-rows__text {
+    flex: 1;
+    min-width: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.details_rows",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons",
+      "label": "t:settings.show_icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "t:settings.show_border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.icon",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ block.settings.show_icons }}"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.row_1"
+    },
+    {
+      "type": "select",
+      "id": "row_1_icon",
+      "label": "t:settings.icon",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "apple", "label": "t:options.apple" },
+        { "value": "arrow", "label": "t:options.arrow" },
+        { "value": "banana", "label": "t:options.banana" },
+        { "value": "bottle", "label": "t:options.bottle" },
+        { "value": "box", "label": "t:options.box" },
+        { "value": "carrot", "label": "t:options.carrot" },
+        { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+        { "value": "check_box", "label": "t:options.check_box" },
+        { "value": "checkmark", "label": "t:options.checkmark" },
+        { "value": "checkmark_circle", "label": "t:options.checkmark_circle" },
+        { "value": "clipboard", "label": "t:options.clipboard" },
+        { "value": "dairy", "label": "t:options.dairy" },
+        { "value": "dairy_free", "label": "t:options.dairy_free" },
+        { "value": "dryer", "label": "t:options.dryer" },
+        { "value": "eye", "label": "t:options.eye" },
+        { "value": "fire", "label": "t:options.fire" },
+        { "value": "gluten_free", "label": "t:options.gluten_free" },
+        { "value": "heart", "label": "t:options.heart" },
+        { "value": "iron", "label": "t:options.iron" },
+        { "value": "leaf", "label": "t:options.leaf" },
+        { "value": "leather", "label": "t:options.leather" },
+        { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+        { "value": "lipstick", "label": "t:options.lipstick" },
+        { "value": "lock", "label": "t:options.lock" },
+        { "value": "map_pin", "label": "t:options.map_pin" },
+        { "value": "nut_free", "label": "t:options.nut_free" },
+        { "value": "pants", "label": "t:options.pants" },
+        { "value": "paw_print", "label": "t:options.paw_print" },
+        { "value": "pepper", "label": "t:options.pepper" },
+        { "value": "perfume", "label": "t:options.perfume" },
+        { "value": "plane", "label": "t:options.plane" },
+        { "value": "plant", "label": "t:options.plant" },
+        { "value": "price_tag", "label": "t:options.price_tag" },
+        { "value": "question_mark", "label": "t:options.question_mark" },
+        { "value": "recycle", "label": "t:options.recycle" },
+        { "value": "return", "label": "t:options.return" },
+        { "value": "ruler", "label": "t:options.ruler" },
+        { "value": "serving_dish", "label": "t:options.serving_dish" },
+        { "value": "shirt", "label": "t:options.shirt" },
+        { "value": "shoe", "label": "t:options.shoe" },
+        { "value": "silhouette", "label": "t:options.silhouette" },
+        { "value": "snowflake", "label": "t:options.snowflake" },
+        { "value": "star", "label": "t:options.star" },
+        { "value": "stopwatch", "label": "t:options.stopwatch" },
+        { "value": "truck", "label": "t:options.truck" },
+        { "value": "washing", "label": "t:options.washing" }
+      ],
+      "default": "truck",
+      "visible_if": "{{ block.settings.show_icons }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "row_1_text",
+      "label": "t:settings.text",
+      "default": "Free shipping over $50"
+    },
+    {
+      "type": "color",
+      "id": "row_1_text_color",
+      "label": "t:settings.text_color"
+    },
+    {
+      "type": "select",
+      "id": "row_1_font_size",
+      "label": "t:settings.text_size",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "t:content.row_2"
+    },
+    {
+      "type": "select",
+      "id": "row_2_icon",
+      "label": "t:settings.icon",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "apple", "label": "t:options.apple" },
+        { "value": "arrow", "label": "t:options.arrow" },
+        { "value": "banana", "label": "t:options.banana" },
+        { "value": "bottle", "label": "t:options.bottle" },
+        { "value": "box", "label": "t:options.box" },
+        { "value": "carrot", "label": "t:options.carrot" },
+        { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+        { "value": "check_box", "label": "t:options.check_box" },
+        { "value": "checkmark", "label": "t:options.checkmark" },
+        { "value": "checkmark_circle", "label": "t:options.checkmark_circle" },
+        { "value": "clipboard", "label": "t:options.clipboard" },
+        { "value": "dairy", "label": "t:options.dairy" },
+        { "value": "dairy_free", "label": "t:options.dairy_free" },
+        { "value": "dryer", "label": "t:options.dryer" },
+        { "value": "eye", "label": "t:options.eye" },
+        { "value": "fire", "label": "t:options.fire" },
+        { "value": "gluten_free", "label": "t:options.gluten_free" },
+        { "value": "heart", "label": "t:options.heart" },
+        { "value": "iron", "label": "t:options.iron" },
+        { "value": "leaf", "label": "t:options.leaf" },
+        { "value": "leather", "label": "t:options.leather" },
+        { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+        { "value": "lipstick", "label": "t:options.lipstick" },
+        { "value": "lock", "label": "t:options.lock" },
+        { "value": "map_pin", "label": "t:options.map_pin" },
+        { "value": "nut_free", "label": "t:options.nut_free" },
+        { "value": "pants", "label": "t:options.pants" },
+        { "value": "paw_print", "label": "t:options.paw_print" },
+        { "value": "pepper", "label": "t:options.pepper" },
+        { "value": "perfume", "label": "t:options.perfume" },
+        { "value": "plane", "label": "t:options.plane" },
+        { "value": "plant", "label": "t:options.plant" },
+        { "value": "price_tag", "label": "t:options.price_tag" },
+        { "value": "question_mark", "label": "t:options.question_mark" },
+        { "value": "recycle", "label": "t:options.recycle" },
+        { "value": "return", "label": "t:options.return" },
+        { "value": "ruler", "label": "t:options.ruler" },
+        { "value": "serving_dish", "label": "t:options.serving_dish" },
+        { "value": "shirt", "label": "t:options.shirt" },
+        { "value": "shoe", "label": "t:options.shoe" },
+        { "value": "silhouette", "label": "t:options.silhouette" },
+        { "value": "snowflake", "label": "t:options.snowflake" },
+        { "value": "star", "label": "t:options.star" },
+        { "value": "stopwatch", "label": "t:options.stopwatch" },
+        { "value": "truck", "label": "t:options.truck" },
+        { "value": "washing", "label": "t:options.washing" }
+      ],
+      "default": "return",
+      "visible_if": "{{ block.settings.show_icons }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "row_2_text",
+      "label": "t:settings.text",
+      "default": "Free 30-day returns"
+    },
+    {
+      "type": "color",
+      "id": "row_2_text_color",
+      "label": "t:settings.text_color"
+    },
+    {
+      "type": "select",
+      "id": "row_2_font_size",
+      "label": "t:settings.text_size",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "t:content.row_3"
+    },
+    {
+      "type": "select",
+      "id": "row_3_icon",
+      "label": "t:settings.icon",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "apple", "label": "t:options.apple" },
+        { "value": "arrow", "label": "t:options.arrow" },
+        { "value": "banana", "label": "t:options.banana" },
+        { "value": "bottle", "label": "t:options.bottle" },
+        { "value": "box", "label": "t:options.box" },
+        { "value": "carrot", "label": "t:options.carrot" },
+        { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+        { "value": "check_box", "label": "t:options.check_box" },
+        { "value": "checkmark", "label": "t:options.checkmark" },
+        { "value": "checkmark_circle", "label": "t:options.checkmark_circle" },
+        { "value": "clipboard", "label": "t:options.clipboard" },
+        { "value": "dairy", "label": "t:options.dairy" },
+        { "value": "dairy_free", "label": "t:options.dairy_free" },
+        { "value": "dryer", "label": "t:options.dryer" },
+        { "value": "eye", "label": "t:options.eye" },
+        { "value": "fire", "label": "t:options.fire" },
+        { "value": "gluten_free", "label": "t:options.gluten_free" },
+        { "value": "heart", "label": "t:options.heart" },
+        { "value": "iron", "label": "t:options.iron" },
+        { "value": "leaf", "label": "t:options.leaf" },
+        { "value": "leather", "label": "t:options.leather" },
+        { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+        { "value": "lipstick", "label": "t:options.lipstick" },
+        { "value": "lock", "label": "t:options.lock" },
+        { "value": "map_pin", "label": "t:options.map_pin" },
+        { "value": "nut_free", "label": "t:options.nut_free" },
+        { "value": "pants", "label": "t:options.pants" },
+        { "value": "paw_print", "label": "t:options.paw_print" },
+        { "value": "pepper", "label": "t:options.pepper" },
+        { "value": "perfume", "label": "t:options.perfume" },
+        { "value": "plane", "label": "t:options.plane" },
+        { "value": "plant", "label": "t:options.plant" },
+        { "value": "price_tag", "label": "t:options.price_tag" },
+        { "value": "question_mark", "label": "t:options.question_mark" },
+        { "value": "recycle", "label": "t:options.recycle" },
+        { "value": "return", "label": "t:options.return" },
+        { "value": "ruler", "label": "t:options.ruler" },
+        { "value": "serving_dish", "label": "t:options.serving_dish" },
+        { "value": "shirt", "label": "t:options.shirt" },
+        { "value": "shoe", "label": "t:options.shoe" },
+        { "value": "silhouette", "label": "t:options.silhouette" },
+        { "value": "snowflake", "label": "t:options.snowflake" },
+        { "value": "star", "label": "t:options.star" },
+        { "value": "stopwatch", "label": "t:options.stopwatch" },
+        { "value": "truck", "label": "t:options.truck" },
+        { "value": "washing", "label": "t:options.washing" }
+      ],
+      "default": "lock",
+      "visible_if": "{{ block.settings.show_icons }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "row_3_text",
+      "label": "t:settings.text",
+      "default": "Secure checkout"
+    },
+    {
+      "type": "color",
+      "id": "row_3_text_color",
+      "label": "t:settings.text_color"
+    },
+    {
+      "type": "select",
+      "id": "row_3_font_size",
+      "label": "t:settings.text_size",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.details_rows"
+    }
+  ]
+}
+{% endschema %}
