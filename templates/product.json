@@ -307,6 +307,33 @@
               },
               "blocks": {}
             },
+            "details_rows_JaC6b6": {
+              "type": "_details-rows",
+              "name": "t:names.details_rows",
+              "settings": {
+                "show_icons": true,
+                "show_border": false,
+                "icon_size": 20,
+                "gap": 8,
+                "row_1_icon": "truck",
+                "row_1_text": "Become a member to unlock Access to Exclusive Rewards & Benefits",
+                "row_1_text_color": "",
+                "row_1_font_size": "",
+                "row_2_icon": "return",
+                "row_2_text": "Express Delivery Available",
+                "row_2_text_color": "",
+                "row_2_font_size": "",
+                "row_3_icon": "lock",
+                "row_3_text": "Free domestic shipping on orders $175+ and free internationalshipping on orders $250+. <span style=\"text-decoration:underline\">Learn More</span>",
+                "row_3_text_color": "",
+                "row_3_font_size": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_knEtCG": {
               "type": "text",
               "name": "t:names.text",
@@ -345,6 +372,7 @@
             "appstle_subscription_appstle_subscription_product_page_widget_K9a6wB",
             "buy_buttons_eYQEYi",
             "divider_fHMdJg",
+            "details_rows_JaC6b6",
             "text_knEtCG"
           ]
         }
