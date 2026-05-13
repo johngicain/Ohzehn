@@ -322,6 +322,35 @@
               },
               "blocks": {}
             },
+            "recommended_product_images_RjKqhq": {
+              "type": "_recommended-product-images",
+              "name": "t:names.recommended_product_images",
+              "settings": {
+                "recommendation_type": "related",
+                "show_heading": true,
+                "heading": "You may also like",
+                "heading_preset": "h5",
+                "heading_alignment": "left",
+                "heading_gap": 12,
+                "heading_font_size": "",
+                "image_ratio": "portrait",
+                "gap": 8,
+                "max_products": 8,
+                "border": "solid",
+                "border_width": 1,
+                "border_opacity": 60,
+                "border_radius": 5,
+                "item_border": "solid",
+                "item_border_width": 1,
+                "item_border_opacity": 50,
+                "item_border_radius": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
+                "padding-inline-start": 15,
+                "padding-inline-end": 15
+              },
+              "blocks": {}
+            },
             "divider_fHMdJg": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -372,6 +401,7 @@
             "appstle_subscription_appstle_subscription_product_page_widget_K9a6wB",
             "buy_buttons_eYQEYi",
             "details_rows_JaC6b6",
+            "recommended_product_images_RjKqhq",
             "divider_fHMdJg",
             "text_knEtCG"
           ]
@@ -1513,8 +1543,8 @@
             "air_allReviewsBlock_heading": "All reviews page",
             "air_allReviewsBlock_useSimpleSummary": false,
             "air_allReviewsBlock_maxReview": 20,
-            "air_allReviewsBlock_summaryBgColor": "#F8F8F8",
-            "air_allReviewsBlock_bgColor": "#FFFFFF",
+            "air_allReviewsBlock_summaryBgColor": "#f8f8f8",
+            "air_allReviewsBlock_bgColor": "#ffffff",
             "air_allReviewsBlock_onlyMedia": false,
             "air_allReviewsBlock_mediaFirst": false,
             "air_allReviewsBlock_onlyPositive": false,
