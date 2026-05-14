@@ -837,6 +837,7 @@
       "settings": {
         "section_width": "page-width",
         "tab_alignment": "flex-start",
+        "tab_labels": "designer for, description, Fabric",
         "tab_button_appearance": "pill",
         "tab_type_preset": "h6",
         "tab_button_gap": 12,
