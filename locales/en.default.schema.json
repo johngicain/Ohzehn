@@ -251,7 +251,10 @@
     "media_type_info": "Features are populated from your menu links",
     "multicolumn_layout": "When enabled, you can set a dedicated background image without changing background media.",
     "scroll_reveal_blocks": "Each top-level block slides up and fades in over 3 seconds when it enters the viewport. On by default for the Rich text, FAQ, and Split showcase (banner) presets.",
-    "variant_option_divider_fieldsets": "Each toggle adds a horizontal border below that option fieldset when another option row follows. The last fieldset has no divider below."
+    "variant_option_divider_fieldsets": "Each toggle adds a horizontal border below that option fieldset when another option row follows. The last fieldset has no divider below.",
+    "tab_labels_comma_separated": "Separate each tab label with a comma. One label is applied per tab block in order.",
+    "tab_label_parts_comma_separated": "Separate multiple label parts with commas. Each part renders as its own label in the tab button.",
+    "tab_label_type_presets_comma_separated": "Separate a text preset per label part with commas. Matches the order of parts in Tab label. Uses the section tab text preset when a part is left blank."
   },
   "names": {
     "column": "Column",
@@ -313,6 +316,7 @@
     "content_tabs": "Content tabs",
     "content_tab_panel": "Tab panel",
     "content_tab_link": "Tab label",
+    "content_tab_link_secondary": "Tab label (secondary)",
     "copyright": "Copyright",
     "count": "Count",
     "custom_section": "Custom section",
@@ -1171,6 +1175,8 @@
     "tab_button_padding_horizontal": "Tab horizontal padding",
     "tab_button_padding_vertical": "Tab vertical padding",
     "tab_button_radius": "Tab corner radius",
+    "tab_labels": "Tab labels",
+    "tab_label_type_preset": "Tab label text preset",
     "tab_type_preset": "Tab text preset",
     "tertiary_font": "Tertiary font",
     // Generic label for text-related settings (content or color)

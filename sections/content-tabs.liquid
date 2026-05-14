@@ -5,11 +5,6 @@
 >
   {% liquid
     assign tp = section.settings.tab_type_preset
-    if tp == 'paragraph'
-      assign tab_typo_classes = 'paragraph'
-    else
-      assign tab_typo_classes = tp | append: ' ' | append: tp
-    endif
   %}
   <content-tabs-component
     class="content-tabs content-tabs--{{ section.settings.tab_button_appearance }}"
@@ -23,41 +18,73 @@
   >
     <div
       class="content-tabs__tablist"
-      role="tablist"
+      role="tablist" 
       ref="tablist"
       aria-label="{{ 'accessibility.content_tabs' | t }}"
     >
       {% assign tab_button_index = 0 %}
       {% for tab_block in section.blocks %}
-        {% if tab_block.type == '_content-tab' %}{% endif %}
-          {% assign tab_button_index = tab_button_index | plus: 1 %}
-          {% liquid
-            assign tab_id = 'Tab-' | append: tab_block.id | append: '-' | append: section.id
-            assign panel_id = 'Panel-' | append: tab_block.id | append: '-' | append: section.id
-            assign is_first_tab = false
-            if tab_button_index == 1
-              assign is_first_tab = true
+        {% comment %} {% if tab_block.type != '_content-tab' %}
+          {% continue %}
+        {% endif %} {% endcomment %}
+        {% assign tab_button_index = tab_button_index | plus: 1 %}
+        {% liquid
+          assign tab_id = 'Tab-' | append: tab_block.id | append: '-' | append: section.id
+          assign panel_id = 'Panel-' | append: tab_block.id | append: '-' | append: section.id
+          assign is_first_tab = false
+          if tab_button_index == 1
+            assign is_first_tab = true
+          endif
+          assign tab_label_parts_source = tab_block.settings.tab_label | strip
+          assign section_tab_labels_source = section.settings.tab_labels | strip
+          if section_tab_labels_source != blank
+            assign section_tab_labels = section_tab_labels_source | split: ','
+            assign section_tab_label_index = tab_button_index | minus: 1
+            assign section_tab_label = section_tab_labels[section_tab_label_index] | strip
+            if section_tab_label != blank
+              assign tab_label_parts_source = section_tab_label
             endif
-            assign tab_label_stripped = tab_block.settings.tab_label | strip
-          %}
-          <button
-            type="button"
-            class="content-tabs__tab {{ tab_typo_classes }}"
-            role="tab"
-            ref="tabs[]"
-            id="{{ tab_id }}"
-            aria-controls="{{ panel_id }}"
-            aria-selected="{% if is_first_tab %}true{% else %}false{% endif %}"
-            tabindex="{% if is_first_tab %}0{% else %}-1{% endif %}"
-          >
-            <span class="content-tabs__tab-label">
-              {% if tab_label_stripped != blank %}
-                {{ tab_label_stripped | escape }}
-              {% else %}
-                Tab {{ tab_button_index }}
-              {% endif %}
-            </span>
-          </button>
+          endif
+          if tab_label_parts_source == blank
+            assign tab_label_parts_source = 'Tab ' | append: tab_button_index
+          endif
+          assign tab_label_parts = tab_label_parts_source | split: ','
+          assign tab_label_type_presets_source = tab_block.settings.tab_label_type_preset | strip
+          if tab_label_type_presets_source != blank
+            assign tab_label_type_presets = tab_label_type_presets_source | split: ','
+          endif
+        %}
+        <button
+          type="button"
+          class="content-tabs__tab"
+          role="tab"
+          ref="tabs[]" 
+          id="{{ tab_id }}"
+          aria-controls="{{ panel_id }}"
+          aria-selected="{% if is_first_tab %}true{% else %}false{% endif %}"
+          tabindex="{% if is_first_tab %}0{% else %}-1{% endif %}"
+        >
+          {% for tab_label_part in tab_label_parts %}
+            {% assign tab_label_part_stripped = tab_label_part | strip %}
+            {% if tab_label_part_stripped != blank %}
+              {% liquid
+                assign part_type_preset = tp
+                if tab_label_type_presets_source != blank
+                  assign part_type_preset_raw = tab_label_type_presets[forloop.index0] | strip
+                  if part_type_preset_raw != blank
+                    assign part_type_preset = part_type_preset_raw
+                  endif
+                endif
+                if part_type_preset == 'paragraph'
+                  assign part_typo_classes = 'paragraph'
+                else
+                  assign part_typo_classes = part_type_preset | append: ' ' | append: part_type_preset
+                endif
+              %}
+              <span class="content-tabs__tab-label {{ part_typo_classes }}">{{ tab_label_part_stripped | escape }}</span>
+            {% endif %}
+          {% endfor %}
+        </button>
       {% endfor %}
     </div>
     <div class="content-tabs__panels">
@@ -158,6 +185,10 @@
     transition: all 0.2s ease;
   }
 
+  .content-tabs.content-tabs--pill .content-tabs__tab .content-tabs__tab-label {
+    text-transform: uppercase;
+  }
+
   .content-tabs.content-tabs--pill .content-tabs__tab[aria-selected='false'] {
     color: inherit;
   }
@@ -176,6 +207,10 @@
   .content-tabs__tab-label {
     display: inline-block;
     pointer-events: none;
+  }
+
+  .content-tabs__tab-label:not(:last-child)::after {
+    content: ', ';
   }
 
   .content-tabs__panels {
@@ -248,6 +283,12 @@
     {
       "type": "header",
       "content": "t:content.tab_buttons"
+    },
+    {
+      "type": "text",
+      "id": "tab_labels",
+      "label": "t:settings.tab_labels",
+      "info": "t:info.tab_labels_comma_separated"
     },
     {
       "type": "select",
