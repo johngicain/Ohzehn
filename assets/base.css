@@ -4045,7 +4045,7 @@ fly-to-cart.fly-to-cart--sticky {
   display: flex;
 }
 
-.group-block-content .shopify-block {
+.layout-panel-flex .shopify-block {
   flex-direction: column;
   align-items: var(--horizontal-alignment);
 }
