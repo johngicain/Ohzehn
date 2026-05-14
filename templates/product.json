@@ -1540,7 +1540,7 @@
           "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
             "product": "{{closest.product}}",
-            "widget_type": "reviews_widget"
+            "widget_type": "combined_widget"
           }
         }
       },
@@ -1572,7 +1572,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 50,
-        "padding-block-end": 50
+        "padding-block-end": 100
       }
     }
   },
