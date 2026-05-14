@@ -1599,7 +1599,9 @@
             "air_allReviewsBlock_mediaFirst": false,
             "air_allReviewsBlock_onlyPositive": false,
             "air_allReviewsBlock_hideProductThumbnails": false,
-            "air_allReviewsBlock_selectedProduct": []
+            "air_allReviewsBlock_selectedProduct": [
+              "women-s-seamless-set-clay"
+            ]
           }
         }
       },
