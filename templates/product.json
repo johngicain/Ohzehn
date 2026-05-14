@@ -1534,24 +1534,16 @@
     "1778589672494ab9c1": {
       "type": "_blocks",
       "blocks": {
-        "ag_product_reviews_app_block_all_review_mnHqTx": {
-          "type": "shopify://apps/ag-product-reviews/blocks/app-block-all-review/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+        "okendo_reviews_widget_Jt6Mfd": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
-            "air_allReviewsBlock_heading": "All reviews page",
-            "air_allReviewsBlock_useSimpleSummary": false,
-            "air_allReviewsBlock_maxReview": 20,
-            "air_allReviewsBlock_summaryBgColor": "#f8f8f8",
-            "air_allReviewsBlock_bgColor": "#ffffff",
-            "air_allReviewsBlock_onlyMedia": false,
-            "air_allReviewsBlock_mediaFirst": true,
-            "air_allReviewsBlock_onlyPositive": true,
-            "air_allReviewsBlock_hideProductThumbnails": false,
-            "air_allReviewsBlock_selectedProduct": []
+            "product": "{{closest.product}}",
+            "widget_type": "reviews_widget"
           }
         }
       },
       "block_order": [
-        "ag_product_reviews_app_block_all_review_mnHqTx"
+        "okendo_reviews_widget_Jt6Mfd"
       ],
       "settings": {
         "content_direction": "column",
