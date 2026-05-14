@@ -1546,8 +1546,8 @@
             "air_allReviewsBlock_summaryBgColor": "#f8f8f8",
             "air_allReviewsBlock_bgColor": "#ffffff",
             "air_allReviewsBlock_onlyMedia": false,
-            "air_allReviewsBlock_mediaFirst": false,
-            "air_allReviewsBlock_onlyPositive": false,
+            "air_allReviewsBlock_mediaFirst": true,
+            "air_allReviewsBlock_onlyPositive": true,
             "air_allReviewsBlock_hideProductThumbnails": false,
             "air_allReviewsBlock_selectedProduct": []
           }
