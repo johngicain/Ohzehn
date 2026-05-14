@@ -206,19 +206,12 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "okendo_star_rating_X4AGEa": {
-                  "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-                  "settings": {
-                    "product": "{{closest.product}}"
-                  }
                 }
               },
               "block_order": [
                 "text_xrnftG",
                 "price_tVjtKg",
-                "text_immDeW",
-                "okendo_star_rating_X4AGEa"
+                "text_immDeW"
               ]
             },
             "variant_picker_R3rGDr": {
