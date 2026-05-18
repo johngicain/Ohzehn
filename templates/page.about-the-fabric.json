@@ -2528,8 +2528,8 @@
                 "placeholder": "",
                 "padding-block-start": 15,
                 "padding-block-end": 15,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "text_MTB7Q7": {
@@ -2691,8 +2691,8 @@
                 "placeholder": "",
                 "padding-block-start": 15,
                 "padding-block-end": 15,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "text_VmBLTx": {
@@ -2854,8 +2854,8 @@
                 "placeholder": "",
                 "padding-block-start": 15,
                 "padding-block-end": 15,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "text_wYAU39": {
