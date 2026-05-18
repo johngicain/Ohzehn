@@ -2346,9 +2346,9 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 20,
-            "padding-block-end": 15,
-            "padding-inline-start": 20,
-            "padding-inline-end": 20
+            "padding-block-end": 20,
+            "padding-inline-start": 30,
+            "padding-inline-end": 30
           },
           "blocks": {
             "text_w8dKM6": {
