@@ -263,7 +263,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 25,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "scheme-ce2129b4-6641-4862-818c-9009bd6b29a3",
         "multicolumn_layout": false,
@@ -285,8 +285,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 100,
+        "padding-block-end": 100
       }
     },
     "section_A9bnAm": {
