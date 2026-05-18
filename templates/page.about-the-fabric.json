@@ -65,6 +65,143 @@
     "section_A9bnAm": {
       "type": "section",
       "blocks": {
+        "group_JhAXdt": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 60,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 80,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_APUiip": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>THE PROBLEM NO ONE IS TALKING ABOUT</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.25rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_hchkWC": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p><strong>Your skin is your most absorptive organ.What touches it matters.</strong></p>",
+                "width": "fit-content",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2.5rem",
+                "line_height": "tight",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_4Wkx4i": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>You wear activewear 12 to 16 hours a day. It sits against your most absorptive organ.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.125rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "strong_color_enable": false,
+                "strong_color": "#000000",
+                "em_color_enable": false,
+                "em_color": "#000000",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_APUiip",
+            "text_hchkWC",
+            "text_4Wkx4i"
+          ]
+        },
         "column_xiGJNW": {
           "type": "column",
           "name": "t:names.column",
@@ -109,6 +246,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
+                "image": "shopify://shop_images/leaf-icon.svg",
                 "link": "",
                 "zoom_in_on_hover": false,
                 "hover_zoom_scale": 110,
@@ -133,7 +271,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Intentional design</h2>",
+                "text": "<p><strong>Most Fabric Are Petroleum-Driven</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -163,7 +301,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
+                "text": "<p>Synthetic polymers engineered from fossil fuels, not biological systems. The body was never considered in their design.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -240,6 +378,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
+                "image": "shopify://shop_images/shield-icon.svg",
                 "link": "",
                 "zoom_in_on_hover": false,
                 "hover_zoom_scale": 110,
@@ -264,7 +403,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Quality first</h2>",
+                "text": "<p><strong>Chemical Treatments Remain Undisclosed</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -294,7 +433,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We obsess over the details and strive to deliver the best products at the best prices, every time.</p>",
+                "text": "<p>Industry standards don't require transparency on finishing chemistry — what's applied to your fabric, you'll likely never know.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -371,6 +510,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
+                "image": "shopify://shop_images/plastic-icon.svg",
                 "link": "",
                 "zoom_in_on_hover": false,
                 "hover_zoom_scale": 110,
@@ -395,7 +535,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Customer care</h2>",
+                "text": "<p><strong>Your Skin Isn't Just Covered — It's Interacting</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -425,7 +565,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We're always on your side: keeping our loyal customers happy is our top priority and number one goal.</p>",
+                "text": "<p>Continuous contact creates opportunity for chemical transfer and absorption. Low- dose, cumulative exposure builds up over years of daily wear.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -460,6 +600,7 @@
         }
       },
       "block_order": [
+        "group_JhAXdt",
         "column_xiGJNW",
         "column_i6hpfw",
         "column_QnMdYU"
