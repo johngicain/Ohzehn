@@ -1446,8 +1446,8 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "flex-start",
-                "gap": 20,
-                "width": "fill",
+                "gap": 100,
+                "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -1475,48 +1475,18 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_kxfhhk": {
+                "text_aYcgCU": {
                   "type": "text",
-                  "name": "t:names.heading",
+                  "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>B</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_NWrDcc": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>BPA Testing</strong></p>",
+                    "text": "<p>×</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "custom",
+                    "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
-                    "line_height": "tight",
+                    "font_size": "1rem",
+                    "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
@@ -1539,7 +1509,7 @@
                   "type": "text",
                   "name": "t:names.description",
                   "settings": {
-                    "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
+                    "text": "<p>No Conventional Petroleum Plastics</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1567,8 +1537,7 @@
                 }
               },
               "block_order": [
-                "text_kxfhhk",
-                "text_NWrDcc",
+                "text_aYcgCU",
                 "text_tX9CCT"
               ]
             },
