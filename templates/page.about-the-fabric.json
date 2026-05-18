@@ -2526,8 +2526,8 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 20,
-                "padding-block-end": 20,
+                "padding-block-start": 15,
+                "padding-block-end": 15,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20
               },
@@ -2689,8 +2689,8 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 20,
-                "padding-block-end": 20,
+                "padding-block-start": 15,
+                "padding-block-end": 15,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20
               },
@@ -2852,8 +2852,8 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 20,
-                "padding-block-end": 20,
+                "padding-block-start": 15,
+                "padding-block-end": 15,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20
               },
@@ -2937,7 +2937,7 @@
             "corner_radius": "square",
             "width_percent": 100,
             "padding-block-start": 0,
-            "padding-block-end": 0
+            "padding-block-end": 20
           },
           "blocks": {}
         },
