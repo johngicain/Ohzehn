@@ -1937,7 +1937,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>B</strong></p>",
+                    "text": "<p><strong>Hm</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -2074,7 +2074,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>P</strong></p>",
+                    "text": "<p><strong>F</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -2211,7 +2211,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Pt</strong></p>",
+                    "text": "<p><strong>Az</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
