@@ -538,7 +538,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Most Fabric Are Petroleum-Driven</strong></p>",
+                    "text": "<p>Most Fabric Are Petroleum-Driven</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -670,7 +670,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Chemical Treatments Remain Undisclosed</strong></p>",
+                    "text": "<p>Chemical Treatments Remain Undisclosed</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -802,7 +802,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Your Skin Isn't Just Covered — It's Interacting</strong></p>",
+                    "text": "<p>Your Skin Isn't Just Covered — It's Interacting</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
