@@ -892,7 +892,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
         "multicolumn_layout": true,
-        "scroll_reveal_blocks": false,
+        "scroll_reveal_blocks": true,
         "multicolumn_background_image": "shopify://shop_images/about-banner.png",
         "multicolumn_background_image_position": "cover",
         "multicolumn_section_wrapper_padding_top": 10,
