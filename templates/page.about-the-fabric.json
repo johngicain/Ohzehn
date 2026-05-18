@@ -1967,7 +1967,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>BPA Testing</strong></p>",
+                    "text": "<p><strong>Heavy Metals</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1997,7 +1997,7 @@
                   "type": "text",
                   "name": "t:names.description",
                   "settings": {
-                    "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
+                    "text": "<p>Testing for lead, cadmium, chromium, and<br/>other heavy metals found in synthetic dye<br/>processes.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2104,7 +2104,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>PFAS Screening</strong></p>",
+                    "text": "<p><strong>Formaldehyde</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2134,7 +2134,7 @@
                   "type": "text",
                   "name": "t:names.description",
                   "settings": {
-                    "text": "<p>Comprehensive per- and polyfluoroalkyl<br/>substance panel — not just a subset of<br/>known compounds.</p>",
+                    "text": "<p>Widely used as a wrinkle-resistance<br/>treatment — independently verified absent<br/>in all Ohzehn textiles.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2241,7 +2241,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Phthalate Panel</strong></p>",
+                    "text": "<p><strong>Azo Dyes</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2271,7 +2271,7 @@
                   "type": "text",
                   "name": "t:names.description",
                   "settings": {
-                    "text": "<p>Full phthalate screening including all major<br/>plasticizer compounds linked to hormonal<br/>disruption.</p>",
+                    "text": "<p>Screening for aromatic amine-releasing<br/>colorants across the full garment — not just<br/>surface treatment areas.<br/><br/></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
