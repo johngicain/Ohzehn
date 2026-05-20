@@ -9,6 +9,11 @@
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
+{% liquid
+  assign button_padding_vertical = block_settings.button_padding_vertical | default: 16
+  assign button_padding_horizontal = block_settings.button_padding_horizontal | default: 24
+  assign button_border_radius = block_settings.button_border_radius | default: 100
+%}
 
 <a
   {% if link == blank %}
@@ -22,7 +27,12 @@
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
   "
-  style="{% render 'size-style', settings: block_settings %}"
+  style="
+    {% render 'size-style', settings: block_settings %}
+    --button-padding-block: {{ button_padding_vertical }}px;
+    --button-padding-inline: {{ button_padding_horizontal }}px;
+    border-radius: {{ button_border_radius }}px;
+  "
   {%- if block_settings.open_in_new_tab -%}
     target="_blank"
     rel="noopener noreferrer"

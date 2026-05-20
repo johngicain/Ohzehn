@@ -1175,6 +1175,8 @@
     "tab_button_padding_horizontal": "Tab horizontal padding",
     "tab_button_padding_vertical": "Tab vertical padding",
     "tab_button_radius": "Tab corner radius",
+    "button_padding_horizontal": "Button horizontal padding",
+    "button_padding_vertical": "Button vertical padding",
     "tab_labels": "Tab labels",
     "tab_label_type_preset": "Tab label text preset",
     "tab_type_preset": "Tab text preset",
