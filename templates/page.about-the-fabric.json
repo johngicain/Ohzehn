@@ -953,7 +953,7 @@
             "border_opacity": 100,
             "border_radius": 10,
             "toggle_overlay": true,
-            "overlay_color": "#0b0b0b58",
+            "overlay_color": "#0b0b0b59",
             "overlay_style": "solid",
             "gradient_direction": "to top",
             "link": "",
@@ -1110,7 +1110,7 @@
             "border_opacity": 100,
             "border_radius": 10,
             "toggle_overlay": true,
-            "overlay_color": "#0b0b0b58",
+            "overlay_color": "#0b0b0b59",
             "overlay_style": "solid",
             "gradient_direction": "to top",
             "link": "",
@@ -1276,8 +1276,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 10,
+        "padding-block-end": 40
       }
     },
     "section_LBhReL": {
