@@ -2923,6 +2923,18 @@
             "column_xxQpt6"
           ]
         },
+        "divider_V7gD4K": {
+          "type": "_divider",
+          "name": "t:names.divider",
+          "settings": {
+            "thickness": 1,
+            "corner_radius": "square",
+            "width_percent": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 0
+          },
+          "blocks": {}
+        },
         "group_UezfUY": {
           "type": "group",
           "name": "t:names.group",
@@ -3170,6 +3182,7 @@
         "group_kTzhHp",
         "divider_fWcAUU",
         "group_pnK4KE",
+        "divider_V7gD4K",
         "group_UezfUY",
         "divider_z76FqL",
         "group_3PjReV"
