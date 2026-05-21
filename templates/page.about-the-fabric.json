@@ -3433,7 +3433,7 @@
                   "type": "heading-text",
                   "name": "t:names.heading_text",
                   "settings": {
-                    "gap": 8,
+                    "gap": 10,
                     "alignment": "left",
                     "max_width": "full_width"
                   },
