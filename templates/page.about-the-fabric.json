@@ -3770,7 +3770,7 @@
             "column_znPDfq"
           ]
         },
-        "group_PcfjLW": {
+        "group_eApfAc": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -3810,7 +3810,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "column_ijmQzY": {
+            "column_g7rkXP": {
               "type": "column",
               "name": "t:names.column",
               "settings": {
@@ -3850,104 +3850,97 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_HbfeE4": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_xEadLq": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>Hm</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_AeNtew": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>Heavy Metals</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "Hm",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 12,
+                    "padding-inline-end": 12
                   },
                   "blocks": {}
                 },
-                "text_JfkQtV": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_kKcy7g": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>Testing for lead, cadmium, chromium, and<br/>other heavy metals found in synthetic dye<br/>processes.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 10,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_htCEyr": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>Heavy Metals</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_kjBaEe": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Testing for lead, cadmium, chromium, and other heavy metals found in synthetic dye processes.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_htCEyr",
+                    "text_kjBaEe"
+                  ]
                 }
               },
               "block_order": [
-                "text_HbfeE4",
-                "text_AeNtew",
-                "text_JfkQtV"
+                "badge_xEadLq",
+                "heading_text_kKcy7g"
               ]
             },
-            "column_KiMD8U": {
+            "column_QJHWtw": {
               "type": "column",
               "name": "t:names.column",
               "settings": {
@@ -3987,104 +3980,97 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_TUNTBP": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_fHM7nB": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>F</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_EDyiya": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>Formaldehyde</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "F",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 19,
+                    "padding-inline-end": 19
                   },
                   "blocks": {}
                 },
-                "text_Bj7mk3": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_HzCPih": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>Widely used as a wrinkle-resistance<br/>treatment — independently verified absent<br/>in all Ohzehn textiles.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 10,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_DxpeQj": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>Formaldehyde</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_tHcwc8": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Widely used as a wrinkle-resistance treatment — independently verified absent in all Ohzehn textiles.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_DxpeQj",
+                    "text_tHcwc8"
+                  ]
                 }
               },
               "block_order": [
-                "text_TUNTBP",
-                "text_EDyiya",
-                "text_Bj7mk3"
+                "badge_fHM7nB",
+                "heading_text_HzCPih"
               ]
             },
-            "column_XUiU6r": {
+            "column_WDkpHM": {
               "type": "column",
               "name": "t:names.column",
               "settings": {
@@ -4124,108 +4110,101 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_3d7gaP": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_7gkeqY": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>Az</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_W3yTBW": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>Azo Dyes</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "Az",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 15,
+                    "padding-inline-end": 15
                   },
                   "blocks": {}
                 },
-                "text_VgCeVM": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_DcqYyK": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>Screening for aromatic amine-releasing<br/>colorants across the full garment — not just<br/>surface treatment areas.<br/><br/></p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 10,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_9jXTzd": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>Azo Dyes</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_D3Y8FY": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Screening for aromatic amine-releasing colorants across the full garment — not just surface treatment areas.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_9jXTzd",
+                    "text_D3Y8FY"
+                  ]
                 }
               },
               "block_order": [
-                "text_3d7gaP",
-                "text_W3yTBW",
-                "text_VgCeVM"
+                "badge_7gkeqY",
+                "heading_text_DcqYyK"
               ]
             }
           },
           "block_order": [
-            "column_ijmQzY",
-            "column_KiMD8U",
-            "column_XUiU6r"
+            "column_g7rkXP",
+            "column_QJHWtw",
+            "column_WDkpHM"
           ]
         },
         "group_TkpaN9": {
@@ -4307,7 +4286,7 @@
       "block_order": [
         "group_6hybrx",
         "group_FjTkrh",
-        "group_PcfjLW",
+        "group_eApfAc",
         "group_TkpaN9"
       ],
       "name": "t:names.multicolumn",
