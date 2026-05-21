@@ -4072,6 +4072,8 @@ fly-to-cart.fly-to-cart--sticky {
 /* Dimension utilities - Height */
 .group-block--height-fit {
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .group-block--height-custom,
@@ -4079,7 +4081,7 @@ fly-to-cart.fly-to-cart--sticky {
   height: var(--size-style-height);
 }
 
-.group-block--height-fit {
+.group-block-content .group-block--height-fit {
   height: 100%;
   display: flex;
 }
