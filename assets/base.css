@@ -2760,6 +2760,16 @@ form.payment-terms {
     min-width: 0;
     box-sizing: border-box;
   }
+
+  .layout-panel-flex--row > .button-width--fit-content {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  .layout-panel-flex--row > .button-width--custom {
+    flex: 0 0 var(--size-style-width);
+    max-width: var(--size-style-width);
+  }
 }
 
 .layout-panel-flex--column {
@@ -2791,8 +2801,14 @@ form.payment-terms {
       flex: 1 1 var(--size-style-width-mobile-min);
     }
 
-    > .button {
-      flex: 0 0 fit-content;
+    > .button-width--fit-content {
+      flex: 0 0 auto;
+      max-width: none;
+    }
+
+    > .button-width--custom {
+      flex: 0 0 var(--size-style-width-mobile, var(--size-style-width));
+      max-width: var(--size-style-width-mobile, var(--size-style-width));
     }
 
     > .group-block--height-fill {

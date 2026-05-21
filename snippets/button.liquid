@@ -10,6 +10,7 @@
 
 {% assign block_settings = block.settings %}
 {% liquid
+  assign button_width = block_settings.width | default: 'fit-content'
   assign button_padding_vertical = block_settings.button_padding_vertical | default: 16
   assign button_padding_horizontal = block_settings.button_padding_horizontal | default: 24
   assign button_border_radius = block_settings.button_border_radius | default: 100
@@ -24,6 +25,7 @@
   {% endif %}
   class="
     size-style
+    {% if block != blank %}button-width--{{ button_width }}{% endif %}
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
   "

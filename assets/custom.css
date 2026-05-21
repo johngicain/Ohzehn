@@ -25,3 +25,18 @@ a.link {
 .buy-buttons-block .shopify-payment-button__more-options {
   font-weight: bold;
 }
+
+/* .layout-panel-flex--row {
+  flex-flow: column;
+}
+
+.layout-panel-flex--row .group-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 990px) {
+  .layout-panel-flex--row {
+    flex-flow: row;
+  }
+} */

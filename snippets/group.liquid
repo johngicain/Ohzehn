@@ -11,6 +11,22 @@
   {% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
 {%- enddoc -%}
 
+{%- liquid
+  assign group_max_width_class = ''
+  assign group_max_width_style = ''
+  if settings.content_direction == 'row' and settings.max_width != blank and settings.max_width != 'none'
+    assign group_max_width_class = ' group-block--max-width'
+    if settings.max_width == 'custom'
+      assign custom_max_width = settings.custom_max_width | default: 50
+      assign group_max_width_style = '--group-max-width-desktop: ' | append: custom_max_width | append: '%;'
+    elsif settings.max_width == 'auto_fit'
+      assign group_max_width_style = '--group-max-width-desktop: max-content;'
+    else
+      assign group_max_width_style = '--group-max-width-desktop: var(--max-width--body-' | append: settings.max_width | append: ');'
+    endif
+  endif
+-%}
+
 <div
   class="
     group-block
@@ -21,6 +37,7 @@
     size-style
     {% if settings.toggle_overlay and settings.toggle_border_left %} group-block--overlay-border-left{% endif %}
     {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }}{% endif %}
+    {{ group_max_width_class }}
     {{ class }}
   "
   style="
@@ -31,6 +48,7 @@
     {% endif %}
     {% render 'spacing-style', settings: settings %}
     {% render 'size-style', settings: settings %}
+    {{ group_max_width_style }}
     {{ style }}
   "
   {{ shopify_attributes }}
@@ -95,5 +113,11 @@
 
   .group-block--overlay-border-left {
     border-left: var(--border-left-width) solid var(--border-left-color);
+  }
+
+  @media screen and (min-width: 750px) {
+    .group-block--max-width {
+      max-width: var(--group-max-width-desktop);
+    }
   }
 {% endstylesheet %}

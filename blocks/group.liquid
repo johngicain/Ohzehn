@@ -226,6 +226,46 @@
     },
     {
       "type": "select",
+      "id": "max_width",
+      "label": "t:settings.max_width",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "narrow",
+          "label": "t:options.narrow"
+        },
+        {
+          "value": "normal",
+          "label": "t:options.normal"
+        },
+        {
+          "value": "auto_fit",
+          "label": "t:options.auto_fit"
+        },
+        {
+          "value": "custom",
+          "label": "t:settings.custom_width"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "range",
+      "id": "custom_max_width",
+      "label": "t:settings.custom_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50,
+      "visible_if": "{{ block.settings.content_direction == 'row' and block.settings.max_width == 'custom' }}"
+    },
+    {
+      "type": "select",
       "id": "height",
       "label": "t:settings.height",
       "options": [
