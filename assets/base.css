@@ -4079,6 +4079,11 @@ fly-to-cart.fly-to-cart--sticky {
   height: var(--size-style-height);
 }
 
+.group-block--height-fit {
+  height: 100%;
+  display: flex;
+}
+
 /* Flex behavior for height variants */
 .layout-panel-flex--column > .group-block--height-fit {
   flex: 0 1 auto;
