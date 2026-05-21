@@ -2363,7 +2363,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 50,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -2422,29 +2422,30 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 30,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_pyryMN": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
             "text_Mk9XNE",
-            "text_RDTha3"
+            "text_RDTha3",
+            "divider_pyryMN"
           ]
-        },
-        "divider_eXiAmq": {
-          "type": "_divider",
-          "name": "t:names.divider",
-          "settings": {
-            "thickness": 1,
-            "corner_radius": "square",
-            "width_percent": 80,
-            "padding-block-start": 0,
-            "padding-block-end": 0
-          },
-          "blocks": {}
         },
         "group_HTb44e": {
           "type": "group",
@@ -3176,7 +3177,6 @@
       },
       "block_order": [
         "group_i6xAnd",
-        "divider_eXiAmq",
         "group_HTb44e",
         "divider_pkFYNh",
         "group_kTzhHp",
