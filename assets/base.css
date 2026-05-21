@@ -4082,7 +4082,7 @@ fly-to-cart.fly-to-cart--sticky {
 }
 
 .group-block-content .group-block--height-fit {
-  height: 100%;
+  height: stretch;
   display: flex;
 }
 
