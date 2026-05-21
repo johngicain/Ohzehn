@@ -19,11 +19,16 @@
     border-style
     spacing-style
     size-style
+    {% if settings.toggle_overlay and settings.toggle_border_left %} group-block--overlay-border-left{% endif %}
     {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }}{% endif %}
     {{ class }}
   "
   style="
     {% render 'border-override', settings: settings %}
+    {% if settings.toggle_overlay and settings.toggle_border_left %}
+      --border-left-width: {{ settings.border_left_width | default: 1 }}px;
+      --border-left-color: {{ settings.border_left_color | default: 'rgb(var(--color-border-rgb))' }};
+    {% endif %}
     {% render 'spacing-style', settings: settings %}
     {% render 'size-style', settings: settings %}
     {{ style }}
@@ -86,5 +91,9 @@
   /* Needs the .group-block__link ~ to be specific enough to take effect. */
   .group-block__link ~ .group-block-content--design-mode {
     pointer-events: auto;
+  }
+
+  .group-block--overlay-border-left {
+    border-left: var(--border-left-width) solid var(--border-left-color);
   }
 {% endstylesheet %}

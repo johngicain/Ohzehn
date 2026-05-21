@@ -435,6 +435,37 @@
     },
     {
       "type": "header",
+      "content": "t:content.border_left",
+      "visible_if": "{{ block.settings.toggle_overlay }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle_border_left",
+      "label": "t:content.border_left",
+      "default": false,
+      "visible_if": "{{ block.settings.toggle_overlay }}"
+    },
+    {
+      "type": "range",
+      "id": "border_left_width",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "t:settings.border_width",
+      "default": 1,
+      "visible_if": "{{ block.settings.toggle_overlay and block.settings.toggle_border_left }}"
+    },
+    {
+      "type": "color",
+      "id": "border_left_color",
+      "label": "t:settings.border_color",
+      "alpha": true,
+      "default": "#000000",
+      "visible_if": "{{ block.settings.toggle_overlay and block.settings.toggle_border_left }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.block_link"
     },
     {

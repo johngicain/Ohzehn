@@ -44,6 +44,7 @@
     // Typography setting for body text size
     "body_size": "Body size",
     "borders": "Borders",
+    "border_left": "Border left",
     "bottom_row_appearance": "Bottom row appearance",
     "buttons": "Buttons",
     "cards_layout": "Cards layout",

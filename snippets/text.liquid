@@ -62,7 +62,11 @@
     {% render 'spacing-padding', settings: block_settings %}
     {% render 'typography-style', settings: block_settings %}
     --width: {{ text_width }};
-    --max-width: var(--max-width--{{ type }}-{{ max_width }});
+    {% if max_width == 'custom' %}
+      --max-width: {{ block_settings.custom_max_width | default: 50 }}%;
+    {% else %}
+      --max-width: var(--max-width--{{ type }}-{{ max_width }});
+    {% endif %}
     {% if text_width == "100%" %}
       --text-align: {{ block_settings.alignment }};
     {% endif %}
