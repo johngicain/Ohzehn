@@ -3413,101 +3413,94 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_tkQz44": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_qt36UU": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>B</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_FFAeqJ": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>BPA Testing</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "B",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 20,
+                    "padding-inline-end": 20
                   },
                   "blocks": {}
                 },
-                "text_dwDRxA": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_7G4NVr": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 8,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_XM8geb": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>BPA Testing</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_ziW3bw": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_XM8geb",
+                    "text_ziW3bw"
+                  ]
                 }
               },
               "block_order": [
-                "text_tkQz44",
-                "text_FFAeqJ",
-                "text_dwDRxA"
+                "badge_qt36UU",
+                "heading_text_7G4NVr"
               ]
             },
             "column_8TKPGx": {
@@ -4669,6 +4662,8 @@
                 "color": "var(--color-foreground)",
                 "text": "<h4>{{ closest.article.title }}</h4>",
                 "read_only": false,
+                "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
                 "show_alignment": false,
                 "padding-block-start": 0,
