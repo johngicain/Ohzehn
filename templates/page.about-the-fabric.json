@@ -3424,8 +3424,8 @@
                     "border_radius": 100,
                     "padding-block-start": 15,
                     "padding-block-end": 15,
-                    "padding-inline-start": 20,
-                    "padding-inline-end": 20
+                    "padding-inline-start": 19,
+                    "padding-inline-end": 19
                   },
                   "blocks": {}
                 },
@@ -3503,7 +3503,7 @@
                 "heading_text_7G4NVr"
               ]
             },
-            "column_8TKPGx": {
+            "column_PBqBy3": {
               "type": "column",
               "name": "t:names.column",
               "settings": {
@@ -3543,104 +3543,97 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_bTRfAB": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_hDgq3z": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>P</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_3ykB6p": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>PFAS Screening</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "P",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 19,
+                    "padding-inline-end": 19
                   },
                   "blocks": {}
                 },
-                "text_cHky6K": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_VFVNtn": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>Comprehensive per- and polyfluoroalkyl<br/>substance panel — not just a subset of<br/>known compounds.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 10,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_x3fa8N": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>PFAS Screening</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_Jxdbtc": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Comprehensive per- and polyfluoroalkyl substance panel — not just a subset of<br/>known compounds.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_x3fa8N",
+                    "text_Jxdbtc"
+                  ]
                 }
               },
               "block_order": [
-                "text_bTRfAB",
-                "text_3ykB6p",
-                "text_cHky6K"
+                "badge_hDgq3z",
+                "heading_text_VFVNtn"
               ]
             },
-            "column_qk6NVw": {
+            "column_znPDfq": {
               "type": "column",
               "name": "t:names.column",
               "settings": {
@@ -3680,108 +3673,101 @@
                 "padding-inline-end": 30
               },
               "blocks": {
-                "text_cKaExb": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "badge_iib9rA": {
+                  "type": "badge",
+                  "name": "t:names.badge",
                   "settings": {
-                    "text": "<p><strong>Pt</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": true,
-                    "strong_color": "#ffffff",
-                    "em_color_enable": false,
-                    "em_color": "#ffffff",
-                    "background": true,
-                    "background_color": "#1a1a17",
-                    "corner_radius": 50,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_774nPX": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p><strong>Phthalate Panel</strong></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
+                    "text": "Pt",
+                    "max_width": "auto_fit",
+                    "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
                     "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "border_radius": 100,
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 17,
+                    "padding-inline-end": 17
                   },
                   "blocks": {}
                 },
-                "text_CLYkdh": {
-                  "type": "text",
-                  "name": "t:names.description",
+                "heading_text_n8UYfB": {
+                  "type": "heading-text",
+                  "name": "t:names.heading_text",
                   "settings": {
-                    "text": "<p>Full phthalate screening including all major<br/>plasticizer compounds linked to hormonal<br/>disruption.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
+                    "gap": 10,
                     "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "0.75rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "strong_color_enable": false,
-                    "strong_color": "#000000",
-                    "em_color_enable": false,
-                    "em_color": "#000000",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "max_width": "full_width"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "heading_mQKmVa": {
+                      "type": "_heading",
+                      "settings": {
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "text": "<p><strong>Phthalate Panel</strong></p>",
+                        "read_only": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "show_alignment": true,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_gAjbUT": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Full phthalate screening including all major plasticizer compounds linked to hormonal disruption.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "strong_color_enable": false,
+                        "strong_color": "#000000",
+                        "em_color_enable": false,
+                        "em_color": "#000000",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_mQKmVa",
+                    "text_gAjbUT"
+                  ]
                 }
               },
               "block_order": [
-                "text_cKaExb",
-                "text_774nPX",
-                "text_CLYkdh"
+                "badge_iib9rA",
+                "heading_text_n8UYfB"
               ]
             }
           },
           "block_order": [
             "column_4jKiXQ",
-            "column_8TKPGx",
-            "column_qk6NVw"
+            "column_PBqBy3",
+            "column_znPDfq"
           ]
         },
         "group_PcfjLW": {
