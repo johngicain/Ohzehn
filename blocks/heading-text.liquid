@@ -1,0 +1,128 @@
+{%- liquid
+  assign s = block.settings
+  assign align_items = 'flex-start'
+  if s.alignment == 'center'
+    assign align_items = 'center'
+  elsif s.alignment == 'right'
+    assign align_items = 'flex-end'
+  endif
+  assign max_width_class = ' heading-text--full-width'
+  if s.max_width == 'auto-fit'
+    assign max_width_class = ' heading-text--auto-fit'
+  endif
+-%}
+
+{%- capture children -%}
+  {%- content_for 'blocks' -%}
+{%- endcapture -%}
+
+<div
+  class="heading-text{{ max_width_class }}"
+  style="--heading-text-gap: {{ s.gap }}px; --heading-text-align-items: {{ align_items }};"
+  {{ block.shopify_attributes }}
+>
+  {{ children }}
+</div>
+
+{% stylesheet %}
+  .heading-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--heading-text-gap, 8px);
+    width: 100%;
+    align-items: var(--heading-text-align-items, flex-start);
+  }
+
+  .heading-text--full-width {
+    max-width: 100% !important;
+  }
+
+  .heading-text--auto-fit {
+    width: fit-content;
+    max-width: fit-content; 
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.heading_text",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_heading"
+    },
+    {
+      "type": "text"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "max_width",
+      "label": "t:settings.max_width",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "t:options.full_width"
+        },
+        {
+          "value": "auto-fit",
+          "label": "t:options.auto_fit"
+        }
+      ],
+      "default": "full_width"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.heading_text",
+      "category": "t:categories.text",
+      "settings": {
+        "gap": 8,
+        "alignment": "left",
+        "max_width": "full_width"
+      },
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "settings": {
+            "text": "t:html_defaults.intentional_design",
+            "type_preset": "h4",
+            "width": "100%",
+            "alignment": "left"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "t:html_defaults.make_things_better_extended",
+            "width": "100%",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": ["heading", "body"]
+    }
+  ]
+}
+{% endschema %}

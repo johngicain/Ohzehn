@@ -1,0 +1,213 @@
+{% liquid
+  assign s = block.settings
+  assign max_width_class = 'badge-block--auto-fit'
+  if s.max_width == 'full_width'
+    assign max_width_class = 'badge-block--full-width'
+  endif
+%}
+{%- if s.text != blank or request.design_mode -%}
+  <span
+    class="badge-block color-{{ s.color_scheme }} {{ max_width_class }}"
+    style="
+      --badge-block-radius: {{ s.border_radius }}px;
+      --badge-block-padding-block-start: {{ s['padding-block-start'] }}px;
+      --badge-block-padding-block-end: {{ s['padding-block-end'] }}px;
+      --badge-block-padding-inline-start: {{ s['padding-inline-start'] }}px;
+      --badge-block-padding-inline-end: {{ s['padding-inline-end'] }}px;
+      {% if s.font_size != blank %}--badge-block-font-size: {{ s.font_size }};{% endif %}
+    "
+    {{ block.shopify_attributes }}
+  >
+    {{- s.text | escape -}}
+  </span>
+{%- endif -%}
+
+{% stylesheet %}
+  .badge-block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--badge-block-font-size, var(--font-size--xs));
+    font-family: var(--font-body--family);
+    font-weight: var(--font-body--weight);
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-foreground);
+    background: var(--color-background);
+    border-radius: var(--badge-block-radius, 0px);
+    padding-block-start: var(--badge-block-padding-block-start, 0px);
+    padding-block-end: var(--badge-block-padding-block-end, 0px);
+    padding-inline-start: var(--badge-block-padding-inline-start, 0px);
+    padding-inline-end: var(--badge-block-padding-inline-end, 0px);
+  }
+
+  .badge-block--auto-fit {
+    width: fit-content;
+    max-width: max-content !important;
+  }
+
+  .badge-block--full-width {
+    width: 100%;
+    max-width: 100%;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Badge"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "max_width",
+      "label": "t:settings.max_width",
+      "options": [
+        {
+          "value": "auto_fit",
+          "label": "t:options.auto_fit"
+        },
+        {
+          "value": "full_width",
+          "label": "t:options.full_width"
+        }
+      ],
+      "default": "auto_fit"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "t:settings.size",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        },
+        {
+          "value": "1.5rem",
+          "label": "24px"
+        },
+        {
+          "value": "2rem",
+          "label": "32px"
+        }
+      ],
+      "default": "0.75rem"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.badge",
+      "category": "t:categories.text",
+      "settings": {
+        "text": "Badge",
+        "max_width": "auto_fit",
+        "color_scheme": "scheme-1",
+        "font_size": "0.75rem",
+        "border_radius": 4,
+        "padding-block-start": 4,
+        "padding-block-end": 4,
+        "padding-inline-start": 8,
+        "padding-inline-end": 8
+      }
+    }
+  ]
+}
+{% endschema %}

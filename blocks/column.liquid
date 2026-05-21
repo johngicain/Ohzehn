@@ -14,10 +14,19 @@
       "type": "image"
     },
     {
+      "type": "heading-text"
+    },
+    {
+      "type": "_heading"
+    },
+    {
       "type": "text"
     },
     {
       "type": "button"
+    },
+    {
+      "type": "badge"
     },
     {
       "type": "@app"
@@ -545,50 +554,36 @@
             "image_ratio": "square"
           }
         },
-        "heading": {
-          "type": "text",
-          "name": "t:names.heading",
+        "heading_text": {
+          "type": "heading-text",
           "settings": {
-            "text": "<h2>Intentional design</h2>",
-            "width": "100%",
-            "max_width": "normal",
+            "gap": 8,
             "alignment": "center",
-            "type_preset": "h4",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text": {
-          "type": "text",
-          "name": "t:names.description",
-          "settings": {
-            "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
+            "max_width": "full_width"
+          },
+          "blocks": {
+            "heading": {
+              "type": "_heading",
+              "settings": {
+                "text": "t:html_defaults.intentional_design",
+                "type_preset": "h4",
+                "width": "100%",
+                "alignment": "center"
+              }
+            },
+            "body": {
+              "type": "text",
+              "settings": {
+                "text": "t:html_defaults.make_things_better_extended",
+                "width": "100%",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": ["heading", "body"]
         }
       },
-      "block_order": ["image", "heading", "text"]
+      "block_order": ["image", "heading_text"]
     }
   ]
 }

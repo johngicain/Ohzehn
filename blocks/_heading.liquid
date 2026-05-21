@@ -6,7 +6,7 @@
   @param {string} text
 {%- enddoc -%}
 
-{% render 'text', width: '100%', block: block, fallback_text: text %}
+{% render 'text', block: block, fallback_text: text %}
 
 {% # theme-check-disable %}
 {% schema %}
@@ -275,11 +275,55 @@
       "default": false
     },
     {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "fit-content",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "100%",
+          "label": "t:options.fill"
+        }
+      ],
+      "default": "100%"
+    },
+    {
+      "type": "select",
+      "id": "max_width",
+      "label": "t:settings.max_width",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "t:options.narrow"
+        },
+        {
+          "value": "normal",
+          "label": "t:options.normal"
+        },
+        {
+          "value": "auto_fit",
+          "label": "t:options.auto_fit"
+        },
+        {
+          "value": "none",
+          "label": "t:options.none"
+        }
+      ],
+      "default": "normal"
+    },
+    {
       "type": "text_alignment",
       "id": "alignment",
       "label": "t:settings.alignment",
       "default": "left",
-      "visible_if": "{{ block.settings.show_alignment != false }}"
+      "visible_if": "{{ block.settings.width == '100%' and block.settings.show_alignment != false }}"
     },
     {
       "type": "checkbox",
