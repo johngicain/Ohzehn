@@ -328,7 +328,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Designed For The Body You <br/>Live In Every Day</p>",
+            "text": "<p><strong>Designed For The Body You <br/>Live In Every Day</strong></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
