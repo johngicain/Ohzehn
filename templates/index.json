@@ -282,7 +282,7 @@
       "name": "Featured collection",
       "settings": {
         "collection": "all",
-        "enable_scroll_reveal": false,
+        "scroll_reveal_blocks": false,
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,

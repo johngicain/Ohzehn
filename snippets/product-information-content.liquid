@@ -109,11 +109,7 @@
     {% endfor %}
   </div>
 
-  <div
-    {% if request.visual_preview_mode == false %}
-      data-scroll-block-reveal
-    {% endif %}
-  >
+  <div {% render 'scroll-block-reveal-attributes', settings: settings %}>
     {{ additional_blocks }}
   </div>
 </div>

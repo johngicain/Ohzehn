@@ -4,6 +4,7 @@
 <div class="section section--page-width color-{{ section.settings.color_scheme }}">
   <div
     class="spacing-style search-page__header"
+    {% render 'scroll-block-reveal-attributes', section: section %}
     style="
       --horizontal-alignment: {{ section.settings.alignment }};
       {% render 'spacing-style', settings: section.settings %}
@@ -55,6 +56,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

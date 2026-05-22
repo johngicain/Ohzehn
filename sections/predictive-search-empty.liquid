@@ -1,15 +1,25 @@
 
 
-{% render 'predictive-search-empty-state',
-  load_empty_state: true,
-  shadow_opacity: 0.1,
-  products_test_id: 'products-list-default--reset'
-%}
+<div {% render 'scroll-block-reveal-attributes', section: section %}>
+  {% render 'predictive-search-empty-state',
+    load_empty_state: true,
+    shadow_opacity: 0.1,
+    products_test_id: 'products-list-default--reset'
+  %}
+</div>
 
 {% schema %}
 {
   "name": "t:names.predictive_search_empty",
   "class": "predictive-search-empty-section",
-  "settings": []
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    }
+  ]
 }
 {% endschema %}

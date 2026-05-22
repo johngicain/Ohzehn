@@ -40,6 +40,7 @@
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}
+  {% render 'scroll-block-reveal-attributes', section: section %}
 >
   {% content_for 'block', type: '_media-without-appearance', id: 'media' %}
 
@@ -298,6 +299,12 @@
       "default": "scheme-3"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

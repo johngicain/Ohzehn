@@ -38,6 +38,7 @@
     <div
       class="collection-links__container"
       ref="container"
+      {% render 'scroll-block-reveal-attributes', section: section %}
     >
       {% for collection in collection_list limit: limit %}
         {% liquid
@@ -284,6 +285,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

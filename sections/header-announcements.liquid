@@ -34,9 +34,7 @@
 
     <div
       class="announcement-bar__slides"
-      {% if request.visual_preview_mode == false %}
-        data-scroll-block-reveal
-      {% endif %}
+        {% render 'scroll-block-reveal-attributes', section: section %}
     >
       {% content_for 'blocks' %}
     </div>
@@ -184,7 +182,14 @@
       "step": 0.5,
       "unit": "px",
       "default": 0
+    },    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
     },
+
     {
       "type": "header",
       "content": "t:content.padding"

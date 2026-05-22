@@ -1,5 +1,64 @@
-[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > * {
-  opacity: 1;
-  transform: none;
-  transition: none;
+[data-scroll-block-reveal] {
+  --scroll-reveal-distance: 1.25rem;
+  --scroll-reveal-duration: 3s;
+}
+
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > .shopify-block,
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:not(script):not(style) {
+  opacity: 0;
+  transform: translate3d(0, var(--scroll-reveal-distance), 0);
+  will-change: opacity, transform;
+}
+
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > .shopify-block.scroll-block-reveal--visible,
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:not(script):not(style).scroll-block-reveal--visible {
+  animation: scroll-block-reveal-slide-in var(--scroll-reveal-duration)
+    var(--animation-timing-fade-in, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+}
+
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(1).scroll-block-reveal--visible {
+  animation-delay: 0s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(2).scroll-block-reveal--visible {
+  animation-delay: 0.05s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(3).scroll-block-reveal--visible {
+  animation-delay: 0.1s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(4).scroll-block-reveal--visible {
+  animation-delay: 0.15s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(5).scroll-block-reveal--visible {
+  animation-delay: 0.2s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(6).scroll-block-reveal--visible {
+  animation-delay: 0.25s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(7).scroll-block-reveal--visible {
+  animation-delay: 0.3s;
+}
+[data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > :nth-child(n + 8).scroll-block-reveal--visible {
+  animation-delay: 0.35s;
+}
+
+@keyframes scroll-block-reveal-slide-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--scroll-reveal-distance), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > .shopify-block,
+  [data-scroll-block-reveal]:not([data-scroll-reveal-uses]) > *:not(script):not(style) {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+    animation: none;
+  }
 }

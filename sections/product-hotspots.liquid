@@ -56,9 +56,7 @@
 
       <div
         class="hotspots-container"
-        {% if request.visual_preview_mode == false %}
-          data-scroll-block-reveal
-        {% endif %}
+          {% render 'scroll-block-reveal-attributes', section: section %}
       >
         {% content_for 'blocks' %}
       </div>
@@ -669,7 +667,14 @@
       ],
       "default": "",
       "info": "t:info.edit_presets_in_theme_settings"
+    },    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
     },
+
     {
       "type": "header",
       "content": "t:content.padding"

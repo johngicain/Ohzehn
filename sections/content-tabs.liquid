@@ -87,7 +87,10 @@
         </button>
       {% endfor %}
     </div>
-    <div class="content-tabs__panels">
+    <div
+      class="content-tabs__panels"
+      {% render 'scroll-block-reveal-attributes', section: section %}
+    >
       {% content_for 'blocks' %}
     </div>
   </content-tabs-component>
@@ -385,6 +388,14 @@
       "label": "t:settings.color_scheme",
       "default": "scheme-1"
     },
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },
+
     {
       "type": "header",
       "content": "t:content.padding"

@@ -388,7 +388,10 @@
           style="{{ style | strip }}"
         {%- endif -%}
       >
-        <div class="header__columns spacing-style">
+        <div
+          class="header__columns spacing-style"
+          {% render 'scroll-block-reveal-attributes', section: section %}
+        >
           {{ content }}
         </div>
       </div>
@@ -1648,6 +1651,13 @@
       ],
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_collection }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
     }
   ],
   "presets": []

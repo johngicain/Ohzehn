@@ -34,6 +34,7 @@
 
   <div
     class="collection-wrapper grid gap-style{% if section.settings.product_grid_width == 'full-width' %} collection-wrapper--grid-full-width{% endif %}"
+    {% render 'scroll-block-reveal-attributes', section: section %}
   >
     {% content_for 'block',
       type: 'filters',
@@ -224,6 +225,12 @@
       "default": 0
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.section_layout"
     },

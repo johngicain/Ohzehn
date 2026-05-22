@@ -10,6 +10,7 @@
 <div
   class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
   data-testid="divider-{{ section.id }}"
+  {% render 'scroll-block-reveal-attributes', section: section %}
 >
   {% render 'divider', id: section.id, settings: section.settings, attributes: true, full_width: full_width %}
 </div>
@@ -99,6 +100,12 @@
       "visible_if": "{{ section.settings.width_percent < 100 }}"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

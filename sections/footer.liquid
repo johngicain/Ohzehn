@@ -41,6 +41,7 @@
       --last-row-count: {{ last_row_count }};
       --tablet-last-row-count: {{ tablet_last_row_count }};
     "
+    {% render 'scroll-block-reveal-attributes', section: section %}
   >
     {% content_for 'blocks' %}
   </div>
@@ -175,7 +176,14 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-1"
+    },    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
     },
+
     {
       "type": "header",
       "content": "t:content.padding"

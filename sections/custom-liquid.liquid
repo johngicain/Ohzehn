@@ -25,6 +25,10 @@
       section: section
     %}
   </div>
+  <div
+    class="custom-section-blocks"
+    {% render 'scroll-block-reveal-attributes', section: section %}
+  >
   {% if section.settings.logo_image != blank %}
     <div
       class="custom-liquid-logo custom-liquid-logo--align-{{ section.settings.logo_image_alignment }}"
@@ -47,6 +51,7 @@
   {% endif %} 
   <div class="custom-section-content">
     {{ section.settings.custom_liquid }}
+  </div>
   </div>
 </div>
 
@@ -261,6 +266,12 @@
       "default": "center"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

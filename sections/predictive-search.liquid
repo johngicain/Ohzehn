@@ -12,6 +12,7 @@
     <div
       class="predictive-search-results__inner"
       data-search-results
+      {% render 'scroll-block-reveal-attributes', section: section %}
     >
       {% if predictive_search.performed %}
         {% assign search_results_count = predictive_search.resources.products.size
@@ -152,7 +153,15 @@
 {% schema %}
 {
   "name": "t:names.predictive_search",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    }
+  ],
   "blocks": [
     {
       "type": "@theme"

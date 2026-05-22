@@ -69,6 +69,7 @@
         {% render 'spacing-style', settings: section.settings %}
       "
       data-testid="section-content"
+      {% render 'scroll-block-reveal-attributes', section: section %}
     >
       {{ children }}
     </div>

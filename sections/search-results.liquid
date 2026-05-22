@@ -18,6 +18,7 @@
 
   <div
     class="collection-wrapper grid gap-style"
+    {% render 'scroll-block-reveal-attributes', section: section %}
   >
     {% assign products_per_page = 24 %}
 
@@ -211,6 +212,12 @@
       "default": 0
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.section_layout"
     },

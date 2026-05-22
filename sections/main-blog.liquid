@@ -31,10 +31,7 @@
     "
     data-testid="blog-posts"
     style="{% render 'spacing-style', settings: section.settings %}"
-    {% if request.visual_preview_mode == false and section.settings.enable_scroll_reveal %}
-      data-scroll-block-reveal
-      data-scroll-reveal-motion="fade"
-    {% endif %}
+    {% render 'scroll-block-reveal-attributes', section: section %}
   >
     {% content_for 'blocks' %}
 
@@ -270,8 +267,9 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "enable_scroll_reveal",
-      "label": "Enable on-scroll fade-in",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "info": "t:info.scroll_reveal_blocks",
       "default": false
     },
     {

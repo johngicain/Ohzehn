@@ -8,7 +8,19 @@
     if (root.dataset.scrollRevealUses === 'resource-list-items') {
       return Array.from(root.querySelectorAll('.resource-list__item')).filter((n) => n instanceof HTMLElement);
     }
-    return Array.from(root.children).filter((n) => n instanceof HTMLElement);
+    return Array.from(root.children).filter(
+      (n) => n instanceof HTMLElement && n.tagName !== 'SCRIPT' && n.tagName !== 'STYLE'
+    );
+  }
+
+  function revealElement(el) {
+    if (reducedMotion.matches) {
+      el.classList.add('scroll-block-reveal--visible');
+      return;
+    }
+    requestAnimationFrame(() => {
+      el.classList.add('scroll-block-reveal--visible');
+    });
   }
 
   function initRoot(root) {
@@ -20,7 +32,7 @@
     root.dataset.blockRevealLoaded = 'true';
 
     if (root.dataset.scrollBlockRevealForceVisible === 'true') {
-      blocks.forEach((el) => el.classList.add('scroll-block-reveal--visible', 'on-scroll'));
+      blocks.forEach((el) => revealElement(el));
       return;
     }
 
@@ -33,7 +45,7 @@
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting || !(entry.target instanceof HTMLElement)) continue;
-          entry.target.classList.add('scroll-block-reveal--visible');
+          revealElement(entry.target);
           io.unobserve(entry.target);
         }
       },

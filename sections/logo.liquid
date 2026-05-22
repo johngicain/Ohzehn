@@ -35,6 +35,7 @@
       logo-section--{{ section_settings.alignment_horizontal }}
       spacing-style
     "
+    {% render 'scroll-block-reveal-attributes', section: section %}
     style="
       {% if section_settings.unit == 'percent' %}
         --logo-width: {{ section_settings.percent_width }}%;
@@ -300,6 +301,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

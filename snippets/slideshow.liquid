@@ -113,9 +113,7 @@
       {% if slideshow_gutters %}
         gutters="{{ slideshow_gutters }}"
       {% endif %}
-      {% if request.visual_preview_mode == false %}
-        data-scroll-block-reveal
-      {% endif %}
+      {% render 'scroll-block-reveal-attributes', scroll_reveal_enabled: scroll_reveal_blocks %}
     >
       {{ slides }}
     </slideshow-slides>

@@ -1,0 +1,22 @@
+{%- liquid
+  assign scroll_reveal_active = false
+
+  if scroll_reveal_enabled == true
+    assign scroll_reveal_active = true
+  elsif scroll_reveal_enabled == false
+    assign scroll_reveal_active = false
+  elsif section != blank and section.settings.scroll_reveal_blocks
+    assign scroll_reveal_active = true
+  elsif settings != blank and settings.scroll_reveal_blocks
+    assign scroll_reveal_active = true
+  endif
+-%}
+{%- if scroll_reveal_active -%}
+data-scroll-block-reveal
+{%- if scroll_reveal_uses != blank -%}
+data-scroll-reveal-uses="{{ scroll_reveal_uses }}"
+{%- endif -%}
+{%- if request.visual_preview_mode -%}
+data-scroll-block-reveal-force-visible="true"
+{%- endif -%}
+{%- endif -%}

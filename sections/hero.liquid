@@ -544,6 +544,7 @@
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
       "
       style="{% render 'layout-panel-style', settings: section.settings %}"
+      {% render 'scroll-block-reveal-attributes', section: section %}
     >
       {% content_for 'blocks' %}
     </div>
@@ -1245,6 +1246,13 @@
       "unit": "%",
       "default": 75,
       "visible_if": "{{ section.settings.blurred_reflection and section.settings.media_type_1 != 'video' or section.settings.media_type_2 != 'video' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
     },
     {
       "type": "header",

@@ -22,6 +22,7 @@
     {%- render 'gap-style', value: section.settings.gap -%}
   "
   data-featured-blog-posts-section="{{ section.id }}"
+  {% render 'scroll-block-reveal-attributes', section: section %}
 >
   {% content_for 'block', id: 'static-blog-title', type: 'text', text: '<h3>{{ closest.blog.title }}</h3>', type_preset: 'rte' %}
 
@@ -443,6 +444,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },

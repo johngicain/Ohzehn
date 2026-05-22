@@ -27,6 +27,7 @@
   <h2 class="visually-hidden">{{ 'accessibility.featured_product' | t }}</h2>
   <div
     class="section-content-wrapper spacing-style size-style border-style"
+    {% render 'scroll-block-reveal-attributes', section: section %}
     style="
       {% render 'spacing-style', settings: section.settings %}
       --media-height: 100%;
@@ -135,6 +136,12 @@
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "scroll_reveal_blocks",
+      "label": "t:settings.scroll_reveal_blocks",
+      "default": false,
+      "info": "t:info.scroll_reveal_blocks"
+    },    {
       "type": "header",
       "content": "t:content.padding"
     },
