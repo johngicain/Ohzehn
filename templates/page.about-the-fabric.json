@@ -922,7 +922,7 @@
         "multicolumn_background_image": "shopify://shop_images/about-banner.png",
         "multicolumn_background_image_position": "cover",
         "multicolumn_section_wrapper_padding_top": 10,
-        "multicolumn_section_wrapper_padding_bottom": 10,
+        "multicolumn_section_wrapper_padding_bottom": 5,
         "multicolumn_section_wrapper_padding_left": 10,
         "multicolumn_section_wrapper_padding_right": 10,
         "multicolumn_background_border_radius": 10,
