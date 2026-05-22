@@ -167,16 +167,16 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>FOR {{ closest.collection.title }}</p>",
+            "text": "<p><strong>FOR </strong><strong>{{ closest.collection.title }}</strong></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "1.125rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "uppercase",
             "wrap": "pretty",
             "color": "var(--color-foreground)",
             "strong_color_enable": false,
@@ -230,8 +230,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 40,
+        "padding-block-end": 20
       }
     },
     "main": {
@@ -251,7 +251,7 @@
             "enable_grid_density": true,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "padding-block-start": 8,
+            "padding-block-start": 0,
             "padding-block-end": 8,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
@@ -362,7 +362,7 @@
         "padding-inline-end": 0,
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
-        "padding-block-end": 32
+        "padding-block-end": 60
       }
     },
     "featured_blog_posts_D7AQwA": {
@@ -897,7 +897,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 100
       }
     }
   },
