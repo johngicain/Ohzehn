@@ -1,4 +1,14 @@
 
+{% if section.settings.hero_wrapper_padding_enabled or section.name == 'Hero' %}
+  <style>
+    #shopify-section-{{ section.id }}.hero-wrapper {
+      padding-top: {{ section.settings.hero_wrapper_padding_top }}px;
+      padding-bottom: {{ section.settings.hero_wrapper_padding_bottom }}px;
+      padding-left: {{ section.settings.hero_wrapper_padding_left }}px;
+      padding-right: {{ section.settings.hero_wrapper_padding_right }}px;
+    }
+  </style>
+{% endif %}
 
 {% liquid
   assign media_count = 0
@@ -452,11 +462,12 @@
 
 <div
   id="Hero-{{ section.id }}"
-  class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
+  class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}{% if section.settings.hero_border_radius > 0 %} hero--rounded{% endif %}"
   style="
     --hero-border-style: {{ section.settings.border }};
     --hero-border-width: {{ section.settings.border_width }}px;
     --hero-border-opacity: {{ section.settings.border_opacity }}%;
+    --hero-border-radius: {{ section.settings.hero_border_radius }}px;
     --blur-opacity: {{ section.settings.reflection_opacity | divided_by: 100.0 }};
     {% if section.settings.section_height == 'custom' %}
       --hero-min-height: {{ section.settings.section_height_custom }}svh;
@@ -552,6 +563,11 @@
   .hero {
     position: relative;
     min-height: calc(var(--hero-min-height) - var(--hero-height-offset));
+    border-radius: var(--hero-border-radius, 0);
+  }
+
+  .hero--rounded {
+    overflow: hidden;
   }
 
   .hero[data-shopify-visual-preview] {
@@ -1151,6 +1167,20 @@
       "default": "scheme-1"
     },
     {
+      "type": "header",
+      "content": "t:content.hero_corner_radius"
+    },
+    {
+      "type": "range",
+      "id": "hero_border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
       "type": "checkbox",
       "id": "toggle_overlay",
       "label": "t:settings.media_overlay"
@@ -1239,6 +1269,61 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "hero_wrapper_padding_enabled",
+      "label": "t:settings.hero_wrapper_padding_enabled",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:content.hero_section_wrapper_padding",
+      "visible_if": "{{ section.settings.hero_wrapper_padding_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "hero_wrapper_padding_top",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.hero_wrapper_padding_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "hero_wrapper_padding_bottom",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.hero_wrapper_padding_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "hero_wrapper_padding_left",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.hero_wrapper_padding_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "hero_wrapper_padding_right",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.hero_wrapper_padding_enabled }}"
     }
   ],
   "presets": [
@@ -1279,6 +1364,7 @@
         "color_scheme": "scheme-5",
         "padding-block-start": 40,
         "padding-block-end": 40,
+        "hero_wrapper_padding_enabled": true,
         "toggle_overlay": true,
         "overlay_style": "gradient"
       }

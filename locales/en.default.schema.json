@@ -114,6 +114,8 @@
     "mobile_width": "Mobile width",
     "multicolumn_corner_radius": "Background image and overlay",
     "multicolumn_section_wrapper_padding": "Section wrapper padding",
+    "hero_section_wrapper_padding": "Section wrapper padding",
+    "hero_corner_radius": "Hero corner radius",
     "padding": "Padding",
     "padding_desktop": "Desktop padding",
     "paragraph": "Paragraph",
@@ -938,6 +940,7 @@
     "hide_logo_on_home_page": "Hide logo on home page",
     // Checkbox to hide padding control settings
     "hide_padding": "Hide padding",
+    "hero_wrapper_padding_enabled": "Section wrapper padding",
     "hide_unselected_variant_media": "Hide unselected variant media",
     "horizontal_gap": "Horizontal gap",
     "hotspot_color": "Hotspot color",
