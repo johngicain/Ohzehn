@@ -756,15 +756,46 @@
     "177941166713d3a78c": {
       "type": "_blocks",
       "blocks": {
+        "text_BLUKxx": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p>REVIEWS</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.125rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "okendo_reviews_widget_6XXjg8": {
           "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
-            "product": "",
+            "product": "women-s-seamless-set-clay",
             "widget_type": "reviews_widget"
           }
         }
       },
       "block_order": [
+        "text_BLUKxx",
         "okendo_reviews_widget_6XXjg8"
       ],
       "settings": {
