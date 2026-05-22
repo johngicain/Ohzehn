@@ -167,7 +167,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>FAQs{{ closest.collection.title }}</p>",
+            "text": "<p>FOR {{ closest.collection.title }}</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
