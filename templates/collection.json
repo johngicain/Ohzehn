@@ -150,7 +150,7 @@
         "section_height": "auto",
         "section_height_custom": 50,
         "color_scheme": "scheme-a128fdda-6264-4424-ad95-51b211328c6e",
-        "hero_border_radius": 15,
+        "hero_border_radius": 10,
         "toggle_overlay": true,
         "overlay_color": "#00000026",
         "overlay_style": "gradient",
