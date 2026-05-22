@@ -120,7 +120,7 @@
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
-                "font_size": "3rem",
+                "font_size": "3.5rem",
                 "line_height": "tight",
                 "letter_spacing": "tight",
                 "case": "none",
