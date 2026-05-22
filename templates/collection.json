@@ -192,10 +192,41 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "text_gCcKgG": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "{{ closest.collection.description }}",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_QUrxhi"
+        "text_QUrxhi",
+        "text_gCcKgG"
       ],
       "name": "t:names.rich_text_section",
       "settings": {
