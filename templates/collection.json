@@ -25,7 +25,7 @@
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
             "width": "custom",
-            "custom_width": 75,
+            "custom_width": 63,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "max_width": "none",
@@ -61,7 +61,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p><strong>Redefining Fabric for the human biosystem</strong></p>",
+                "text": "<p><strong>Redefining Fabric For The Human Biosystem</strong></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
