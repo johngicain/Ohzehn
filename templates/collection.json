@@ -30,7 +30,7 @@
             "custom_width_mobile": 100,
             "max_width": "none",
             "custom_max_width": 50,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
