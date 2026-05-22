@@ -4614,7 +4614,7 @@
       "name": "t:names.products_grid",
       "settings": {
         "collection": "women",
-        "scroll_reveal_blocks": false,
+        "scroll_reveal_blocks": true,
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -4789,6 +4789,7 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "",
+        "scroll_reveal_blocks": true,
         "padding-block-start": 10,
         "padding-block-end": 30
       }
