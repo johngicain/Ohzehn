@@ -450,11 +450,314 @@
         "padding-block-start": 10,
         "padding-block-end": 30
       }
+    },
+    "section_ACUnLc": {
+      "type": "section",
+      "blocks": {
+        "text_mdby4m": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p>FAQs</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "strong_color_enable": false,
+            "strong_color": "#000000",
+            "em_color_enable": false,
+            "em_color": "#000000",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_Qpzqix": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": false,
+            "width_compress": true,
+            "width_compress_max": "normal",
+            "type_preset": "h4",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "show_border": false,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "details_show_border": false,
+            "details_border": "solid",
+            "details_border_width": 1,
+            "details_border_opacity": 100,
+            "details_border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "accordion_row_PCk76A": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "WORKOUT CLOTHES & GYM CLOTHES",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {
+                "text_ETdffN": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Workout Clothes designed to help you become your personal best. Because when it comes to performing at your max, there should be no obstacles – least of all your workout clothes.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "strong_color_enable": false,
+                    "strong_color": "#000000",
+                    "em_color_enable": false,
+                    "em_color": "#000000",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_ETdffN"
+              ]
+            },
+            "accordion_row_NWTAxX": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "WORKOUT CLOTHES & GYM CLOTHES",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {
+                "text_tVm6eU": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Workout Clothes designed to help you become your personal best. Because when it comes to performing at your max, there should be no obstacles – least of all your workout clothes.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "strong_color_enable": false,
+                    "strong_color": "#000000",
+                    "em_color_enable": false,
+                    "em_color": "#000000",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_tVm6eU"
+              ]
+            },
+            "accordion_row_FYUPKe": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "WORKOUT CLOTHES & GYM CLOTHES",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {
+                "text_UQBxip": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Workout Clothes designed to help you become your personal best. Because when it comes to performing at your max, there should be no obstacles – least of all your workout clothes.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "strong_color_enable": false,
+                    "strong_color": "#000000",
+                    "em_color_enable": false,
+                    "em_color": "#000000",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_UQBxip"
+              ]
+            },
+            "accordion_row_tf6w8T": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "WORKOUT CLOTHES & GYM CLOTHES",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20,
+                "show_border": false,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {
+                "text_rapEAR": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Workout Clothes designed to help you become your personal best. Because when it comes to performing at your max, there should be no obstacles – least of all your workout clothes.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "strong_color_enable": false,
+                    "strong_color": "#000000",
+                    "em_color_enable": false,
+                    "em_color": "#000000",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_rapEAR"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_PCk76A",
+            "accordion_row_NWTAxX",
+            "accordion_row_FYUPKe",
+            "accordion_row_tf6w8T"
+          ]
+        }
+      },
+      "block_order": [
+        "text_mdby4m",
+        "accordion_Qpzqix"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "multicolumn_layout": false,
+        "scroll_reveal_blocks": true,
+        "multicolumn_background_image_position": "cover",
+        "multicolumn_section_wrapper_padding_top": 0,
+        "multicolumn_section_wrapper_padding_bottom": 0,
+        "multicolumn_section_wrapper_padding_left": 0,
+        "multicolumn_section_wrapper_padding_right": 0,
+        "multicolumn_background_border_radius": 0,
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
     }
   },
   "order": [
     "hero_978BpH",
     "main",
-    "featured_blog_posts_D7AQwA"
+    "featured_blog_posts_D7AQwA",
+    "section_ACUnLc"
   ]
 }
