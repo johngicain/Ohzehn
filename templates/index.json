@@ -88,6 +88,7 @@
         "section_height": "medium",
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
+        "hero_border_radius": 0,
         "toggle_overlay": true,
         "overlay_color": "#12121266",
         "overlay_style": "solid",
@@ -95,7 +96,12 @@
         "blurred_reflection": false,
         "reflection_opacity": 75,
         "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-end": 72,
+        "hero_wrapper_padding_enabled": false,
+        "hero_wrapper_padding_top": 0,
+        "hero_wrapper_padding_bottom": 0,
+        "hero_wrapper_padding_left": 0,
+        "hero_wrapper_padding_right": 0
       }
     },
     "product_list_fa6P9H": {
@@ -336,7 +342,7 @@
             "font": "var(--font-heading--family)",
             "font_size": "3.5rem",
             "line_height": "tight",
-            "letter_spacing": "normal",
+            "letter_spacing": "tight",
             "case": "none",
             "wrap": "pretty",
             "color": "var(--color-foreground)",
@@ -442,7 +448,7 @@
                 "button_border_radius": 5,
                 "width": "fit-content",
                 "custom_width": 18,
-                "width_mobile": "fit-content",
+                "width_mobile": "custom",
                 "custom_width_mobile": 100
               },
               "blocks": {}
@@ -460,7 +466,7 @@
                 "button_border_radius": 5,
                 "width": "fit-content",
                 "custom_width": 18,
-                "width_mobile": "fit-content",
+                "width_mobile": "custom",
                 "custom_width_mobile": 100
               },
               "blocks": {}
@@ -501,14 +507,20 @@
         "section_height": "medium",
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
+        "hero_border_radius": 0,
         "toggle_overlay": true,
         "overlay_color": "#00000026",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 60,
+        "padding-block-end": 60,
+        "hero_wrapper_padding_enabled": false,
+        "hero_wrapper_padding_top": 0,
+        "hero_wrapper_padding_bottom": 0,
+        "hero_wrapper_padding_left": 0,
+        "hero_wrapper_padding_right": 0
       }
     },
     "section_kLkCmL": {
