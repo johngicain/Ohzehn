@@ -167,7 +167,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>FOR </strong><strong>{{ closest.collection.title }}</strong></p>",
+            "text": "<p>FOR {{ closest.collection.title }}</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
