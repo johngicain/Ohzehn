@@ -520,7 +520,7 @@
         "padding-block-end": 60,
         "hero_wrapper_padding_enabled": true,
         "hero_wrapper_padding_top": 10,
-        "hero_wrapper_padding_bottom": 10,
+        "hero_wrapper_padding_bottom": 50,
         "hero_wrapper_padding_left": 10,
         "hero_wrapper_padding_right": 10
       }
