@@ -35,8 +35,9 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "color_scheme": "scheme-00d3d18c-2f3e-4486-a1cf-a547733b4cf3",
+        "color_scheme": "scheme-1",
         "divider_width": 1,
+        "scroll_reveal_blocks": false,
         "padding-block-start": 10,
         "padding-block-end": 10
       }
@@ -110,7 +111,8 @@
         "enable_transparent_header_product": false,
         "product_color_scheme": "default",
         "enable_transparent_header_collection": false,
-        "collection_color_scheme": "default"
+        "collection_color_scheme": "default",
+        "scroll_reveal_blocks": false
       }
     }
   },
