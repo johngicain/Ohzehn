@@ -86,6 +86,7 @@
           "blocks": {}
         }
       },
+      "custom_css": [],
       "settings": {
         "logo_position": "center",
         "menu_position": "left",
