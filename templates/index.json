@@ -518,10 +518,10 @@
         "scroll_reveal_blocks": true,
         "padding-block-start": 60,
         "padding-block-end": 60,
-        "hero_wrapper_padding_enabled": false,
-        "hero_wrapper_padding_top": 0,
+        "hero_wrapper_padding_enabled": true,
+        "hero_wrapper_padding_top": 10,
         "hero_wrapper_padding_bottom": 0,
-        "hero_wrapper_padding_left": 0,
+        "hero_wrapper_padding_left": 10,
         "hero_wrapper_padding_right": 0
       }
     },
