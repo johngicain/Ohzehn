@@ -2743,7 +2743,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/leaf-icon.svg",
+                    "image": "shopify://shop_images/Icon_1.svg",
                     "link": "",
                     "zoom_in_on_hover": false,
                     "hover_zoom_scale": 110,
@@ -2875,7 +2875,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/leaf-icon.svg",
+                    "image": "shopify://shop_images/Icon_1_1.svg",
                     "link": "",
                     "zoom_in_on_hover": false,
                     "hover_zoom_scale": 110,
@@ -3007,7 +3007,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/leaf-icon.svg",
+                    "image": "shopify://shop_images/icon_3.svg",
                     "link": "",
                     "zoom_in_on_hover": false,
                     "hover_zoom_scale": 110,
@@ -3139,7 +3139,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/leaf-icon.svg",
+                    "image": "shopify://shop_images/shirt-icon.svg",
                     "link": "",
                     "zoom_in_on_hover": false,
                     "hover_zoom_scale": 110,
