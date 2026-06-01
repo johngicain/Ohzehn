@@ -1,6 +1,6 @@
 {% if section.name == 'Announcement bar' %}{% endif %}
 <style>
-  #header-group .shopify-section-group-header-group {
+  #header-group #shopify-section-{{ section.id }} {
     margin-block-start: {{ section.settings.margin-block-start | default: 0 }}px;
     margin-block-end: {{ section.settings.margin-block-end | default: 0 }}px;
     margin-inline-start: {{ section.settings.margin-inline-start | default: 0 }}px;

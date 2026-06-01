@@ -57,6 +57,59 @@
     ]
   },
   {
+    "name": "t:names.header_group",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:content.header_group_margin"
+      },
+      {
+        "type": "header",
+        "content": "t:content.margin"
+      },
+      {
+        "type": "range",
+        "id": "header_group_margin_top",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "header_group_margin_bottom",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "header_group_margin_left",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "header_group_margin_right",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }
+    ]
+  },
+  {
     "name": "t:names.colors",
     "settings": [
       {

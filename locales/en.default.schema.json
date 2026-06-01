@@ -80,6 +80,7 @@
     "grid_layout": "Grid layout",
     "heading": "Heading",
     "heading_size": "Heading size",
+    "header_group_margin": "Outer margin for the header section group (announcement bar and main header).",
     "heading_visibility": "Heading visibility",
     "utilities": "Utilities",
     "home_page": "Home page",
@@ -351,6 +352,7 @@
     // Layout container block that groups other content
     "group": "Group",
     "header": "Header",
+    "header_group": "Header group",
     "heading": "Heading",
     "heading_text": "Heading and text",
     "hero": "Hero",

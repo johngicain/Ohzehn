@@ -46,7 +46,15 @@
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
-    <div id="header-group">
+    <div
+      id="header-group"
+      style="
+        margin-block-start: {{ settings.header_group_margin_top }}px;
+        margin-block-end: {{ settings.header_group_margin_bottom }}px;
+        margin-inline-start: {{ settings.header_group_margin_left }}px;
+        margin-inline-end: {{ settings.header_group_margin_right }}px;
+      "
+    >
       {% sections 'header-group' %}
     </div>
 
