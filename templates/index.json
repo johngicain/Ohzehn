@@ -1369,9 +1369,9 @@
       "settings": {
         "section_width": "page-width",
         "tab_alignment": "center",
-        "tab_labels": "",
+        "tab_labels": "For Her, For Him",
         "tab_button_appearance": "minimal",
-        "tab_type_preset": "h4",
+        "tab_type_preset": "h3",
         "tab_button_gap": 40,
         "tab_button_padding_vertical": 0,
         "tab_button_padding_horizontal": 0,
