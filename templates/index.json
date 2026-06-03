@@ -531,7 +531,7 @@
         "content_tab_x9hEL8": {
           "type": "_content-tab",
           "settings": {
-            "tab_label": "HerProduct",
+            "tab_label": "",
             "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -945,7 +945,7 @@
         "content_tab_xJaCg7": {
           "type": "_content-tab",
           "settings": {
-            "tab_label": "HisProduct",
+            "tab_label": "",
             "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
