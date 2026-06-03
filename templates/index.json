@@ -1363,7 +1363,8 @@
       ],
       "custom_css": [
         ".tabcontent__inner {gap: 0.625rem;}",
-        ".content-tabs__tablist {margin-block-end: 2.5rem;}"
+        ".content-tabs__tablist {margin-block-end: 2.5rem;}",
+        "span.content-tabs__tab-label.h3.h3 {font-size: 1.25rem !important; font-weight: 400; opacity: 1; color: black;}"
       ],
       "name": "t:names.content_tabs",
       "settings": {
