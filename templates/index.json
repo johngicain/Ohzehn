@@ -1364,7 +1364,9 @@
       "custom_css": [
         ".tabcontent__inner {gap: 0.625rem;}",
         ".content-tabs__tablist {margin-block-end: 2.5rem;}",
-        "span.content-tabs__tab-label.h3.h3 {font-size: 1.25rem !important; font-weight: 400; opacity: 1; color: black;}"
+        "span.content-tabs__tab-label.h3.h3 {font-size: 1.25rem !important; font-weight: 400; opacity: 1; color: black;}",
+        ".content-tabs__tab[aria-selected=\"false\"] {border-bottom: 0px solid black;}",
+        ".content-tabs--minimal .content-tabs__tab[aria-selected=\"true\"] {border-bottom: 1px solid black;}"
       ],
       "name": "t:names.content_tabs",
       "settings": {
@@ -1787,6 +1789,7 @@
         "group_Uwx9Cj",
         "group_Yx3RRU"
       ],
+      "disabled": true,
       "name": "t:names.multicolumn",
       "settings": {
         "content_direction": "row",
